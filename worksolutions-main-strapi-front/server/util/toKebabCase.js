@@ -1,0 +1,1 @@
+exports.toKebabCase = (string) => string.toLowerCase().replace(/[^a-z0-9]+/gi, "-");

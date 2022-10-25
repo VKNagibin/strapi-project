@@ -1,0 +1,35 @@
+mixin partners(attributes)
+    +b.partners#partnersBlock&attributes(attributes)
+        +e.H2.title Наши партнеры
+        +e.list
+            +e.item
+                +b.partnerCard.inList
+                    picture
+                        source(type="image/webp", srcset="/i/partners/carprice.webp")
+                        +e.IMG.logo(src="/i/partners/carprice.png")
+            +e.item
+                +b.partnerCard.inList
+                    picture
+                        source(type="image/webp", srcset="/i/partners/alpha.webp")
+                        +e.IMG.logo(src="/i/partners/alpha.png")
+            +e.item
+                +b.partnerCard.inList
+                    picture
+                        source(type="image/webp", srcset="/i/partners/nic.webp")
+                        +e.IMG.logo(src="/i/partners/nic.png")
+            +e.item
+                +b.partnerCard.inList
+                    picture
+                        source(type="image/webp", srcset="/i/partners/gosgarant.webp")
+                        +e.IMG.logo(src="/i/partners/gosgarant.png")
+            +e.item
+                +b.partnerCard.inList
+                    picture
+                        source(type="image/webp", srcset="/i/partners/yaya.webp")
+                        +e.IMG.logo(src="/i/partners/yaya.png")
+            +e.item
+                +b.partnerCard.inList
+                    picture
+                        source(type="image/webp", srcset="/i/partners/vipservice.webp")
+                        +e.IMG.logo(src="/i/partners/vipservice.png")
+

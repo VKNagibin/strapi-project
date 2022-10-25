@@ -1,0 +1,50 @@
+$cardShadow: "0px 20px 40px rgba(17, 62, 149, 0.06), 0px 2px 6px rgba(17, 62, 148, 0.04)";
+
+.receipt-ocr_image-recognition-block_wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.receipt-ocr_image-and-select-file_wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 0;
+  height: fit-content;
+}
+
+.receipt-ocr_image-wrapper {
+  display: flex;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid $grayBlue3;
+  box-sizing: border-box;
+  box-shadow: $cardShadow;
+  backdrop-filter: blur(56px);
+  border-radius: 20px;
+  scrollbar-width: none;
+}
+
+.receipt-ocr_main-image {
+ width: fit-content;
+}
+
+.receipt-ocr_image-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.receipt-ocr_image-wrapper::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.receipt-ocr_clock-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+}

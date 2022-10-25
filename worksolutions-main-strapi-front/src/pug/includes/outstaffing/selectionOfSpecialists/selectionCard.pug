@@ -1,0 +1,17 @@
+mixin selectionCard(selectionData)
+  +b.selection-card
+    +e.inner
+      +e.H3.title
+        | !{selectionData.title}
+      +e.position(class=selectionData.isLast ? '_last' : '')
+        div=selectionData.position
+        if selectionData.isLast
+          +e.IMG.image(class="lazyload", data-src="/i/check-small.svg")
+        else
+          +e.IMG.image(class="lazyload", data-src="/i/arrow-right-small.svg")
+
+
+    if selectionData.position === '2'
+      +e.IMG.center-line(class="lazyload", data-src="/i/outstaffing/line-center.svg")
+
+    +e.IMG.pointer(class="lazyload", data-src="/i/outstaffing/pointer-selection.svg")

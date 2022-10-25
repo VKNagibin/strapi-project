@@ -1,0 +1,6 @@
+mixin header_benefit
+  - var headerClass = detail_page ? " page-detail" : "";
+
+  +b.HEADER.header.section(class = headerClass)
+    +e.container.container
+      +e.H1.title Полезное

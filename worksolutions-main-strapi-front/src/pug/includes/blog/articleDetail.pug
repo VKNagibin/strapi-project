@@ -1,0 +1,42 @@
+mixin articleDetail
+  - var articleType = full_pic ? " full" : "";
+  - var style = full_pic ? `background-image: url(${background})` : '';
+
+  +b.article-detail(class=articleType, style=style)
+    .container
+      if (contentImage)
+        +e.main-img-container
+          +e.main-img-wrapper
+            picture
+              +e.IMG.main-img(class="lazyload", data-src=contentImage, alt="")
+      +e.info
+        -if(!categoryText)
+          +e.SPAN.category.hidden=categoryText
+        -else
+          +e.SPAN.category=categoryText
+        +e.SPAN.date=date
+      +e.H1.title=title
+      .wrapper-author-services
+        .share.share_top
+          .ya-share2(data-services='vkontakte')
+          .ya-share2(data-services='whatsapp')
+          .ya-share2(data-services='telegram')
+          .copy-address(title='Копировать адрес')
+            include ../blocks/icons/copy-url
+        +b.author.article-detail__author
+          if (authorImage)
+            +e.photo-wrapper
+              +e.DIV.photo
+                picture
+                  img(class="lazyload", data-src=authorImage, alt="")
+          +e.info
+            +e.SPAN.name=author
+            +e.SPAN.position=authorPosition
+
+      .content!=content
+      .share.share_top
+        .ya-share2(data-services='vkontakte')
+        .ya-share2(data-services='whatsapp')
+        .ya-share2(data-services='telegram')
+        .copy-address(title='Копировать адрес')
+          include ../blocks/icons/copy-url

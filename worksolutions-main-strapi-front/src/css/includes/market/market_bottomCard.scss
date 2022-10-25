@@ -1,0 +1,87 @@
+$cardBackground: rgba(255, 255, 255, 0.72);
+$boxShadow1: rgba(17, 62, 149, 0.06);
+$boxShadow2: 0px 2px 6px rgba(17, 62, 148, 0.04);
+$dividerShadow1: rgba(17, 62, 148, 0.2);
+$dividerShadow2: rgba(17, 62, 148, 0.06);
+
+.whatWeDoInWebMarket_bottomCard_wrapper {
+  display: flex;
+  padding: 24px 32px;
+  background: $cardBackground;
+  border: 2px solid $grayBlue1;
+  box-shadow: 0px 20px 40px $boxShadow1, 0px 2px 6px $boxShadow2;
+  backdrop-filter: blur(56px);
+  border-radius: 16px;
+
+  width: fit-content;
+  @media (max-width: 1151px) {
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px 16px;
+  };
+}
+
+.whatWeDoInWebMarket_bottomCard_leftBlock {
+  display: flex;
+  font-family: $fontMedium, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  color: $grayBlue5;
+  align-items: center;
+
+  width: 468px;
+
+  @media (max-width: 1151px) {
+    width: 100%;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.whatWeDoInWebMarket_bottomCard_divider {
+  background: $grayBlue1;
+  width: 2px;
+  box-shadow: 0px 4px 24px $dividerShadow1, 0px 2px 6px $dividerShadow2;
+  margin: 0 32px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 2px;
+    margin: 12px 0;
+  };
+}
+
+.whatWeDoInWebMarket_bottomCard_img{
+  display: flex;
+  flex-shrink: 0;
+  align-self: center;
+  width: 140px;
+  height: 84px;
+
+  @media (max-width: 1151px) {
+    width: 93.3px;
+    height: 56px;
+  }
+
+  @media (max-width: 767px) {
+    width: 80px;
+    height: 48px;
+  }
+}
+
+.whatWeDoInWebMarket_bottomCard_pic {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

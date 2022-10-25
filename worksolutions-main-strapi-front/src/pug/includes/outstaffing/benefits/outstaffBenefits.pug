@@ -1,0 +1,20 @@
+include outstaffBenefitsCard
+-
+  var outstaffBenefitsCards = [
+    {title: 'Нет текучки кадров', text: 'Средний жизненный цикл сотрудника в компании — 2,5 года'},
+    {title: 'Работаем «в белую»', text: 'Легально принимаем платежи, нанимаем в штат только по ТК РФ'},
+    {title: 'Прозрачность', text: 'Каждый день подробно рассказываем, над чем работали'},
+    {title: 'Прямой доступ', text: 'Примем и полюбим вашу инфраструктуру, трекеры и мессенджеры'},
+    {title: 'Уважаем коммерческую тайну', text: 'Готовы подписать NDA и соблюдать его требования'},
+    {title: 'Не требуем особен&shy;ного менеджмента', text: 'Подстроимся под вашу корпоративную политику и методологию разработки'},
+  ]
+
+mixin outstaffBenefits(title, headlineTag)
+  +b.SECTION.outstaff-benefits.section.section_light&attributes(attributes)
+    +e.in.section__in
+      +e.main-outstaff-benefits
+        +e.H2.title.section__title.js-animate-title#benefits
+          | !{title}
+        +e.cards
+          each card in outstaffBenefitsCards
+            +outstaffBenefitsCard(card.title, card.text, headlineTag)

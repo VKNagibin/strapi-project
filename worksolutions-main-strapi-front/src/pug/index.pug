@@ -1,0 +1,39 @@
+- var mainPage = true;
+- var pathJs = "index"
+- var pathCss = "index"
+-
+  var ogUrlSite = process.env.OG_URL
+-
+  var openGraphMeta = {
+    title: "Work Solutions - прозрачный контролируемый аутсорсинг от веб-разработчиков",
+    type: "article",
+    locale: "ru_RU",
+    description: "Прозрачный контролируемый аутсорсинг от веб-разработчиков, которые доводят проекты до конца",
+    image: ogUrlSite + "/i/og/og-image.png",
+    url: ogUrlSite,
+    siteName: "Work Solutions"
+  }
+include includes/_
+
++structure(
+  'Work Solutions - Прозрачный контролируемый аутсорсинг от веб-разработчиков',
+  'Прозрачный контролируемый аутсорсинг от веб-разработчиков, которые доводят проекты до конца',
+  'Аутсорсинг, Прозрачность, Веб-разработка, React, Angular, PHP, Python, Scrum, Kanban',
+  '',
+  {footer: true},
+  openGraphMeta
+)
+  +firstScreen()
+  +services()
+  +experience()
+  +about()
+  +features()
+  +technologies()
+  +difference()
+  +risks()
+  p {{team_template}}
+  +market()
+  +blog()
+  +reviews('Отзывы о нас')
+  +specproject()
+  +consult()

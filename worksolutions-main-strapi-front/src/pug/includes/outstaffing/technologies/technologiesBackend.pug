@@ -1,0 +1,18 @@
+mixin technologiesBackend(backItems)
+  +b.SECTION.technologies-back.section.section_light&attributes(attributes)
+    +e.in.section__in
+      +e.main
+        +e.title-wrapper.section__title-wrapper
+          +e.H2.title.section__title.title-center.js-animate-title#technologies-backend Стек backend-разработки
+          +e.P.title-desc.section__title-desc.title-desc-center Технологии
+        +e.wrapper
+          each backItem in backItems
+            +e.inner-list.technologies__inner-list
+              if backItem.title
+                h4.technologies__item-subtitle= backItem.title
+              +e.UL.inner-sublist.technologies__inner-sublist
+                each tech in backItem.techs
+                  +e.LI.inner-subitem.technologies__inner-subitem
+                    picture
+                      source(type="image/webp", data-srcset=tech.icon + '.webp')
+                      img(class="lazyload", data-src=tech.icon + '.png', title=tech.techTitle, alt="")

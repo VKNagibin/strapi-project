@@ -1,0 +1,14 @@
+mixin otherArticles(listUrl, config)
+  - config = config || {}
+  -var urlToAll = listUrl ? listUrl : "/blog/";
+  -var isBlogMode = urlToAll === "/blog/";
+  -var title = isBlogMode ? "Другие статьи" : "Наши услуги"
+  +b.SECTION.article-detail-container.section(class=(config.withPaddingBottom ? 'article-detail-container_bottom' : null))
+    +e.in.section__in
+      if relatedArticles.length !== 0
+        +e.P.title= title
+        +e.UL.list.list-articles
+          each article in relatedArticles
+            +benefitBlock(article, isBlogMode)
+      +e.btn-wrapper(class=relatedArticles.length === 0?"empty-articles-wrapper":"")
+        +e.A.btn.button(href=urlToAll) Ко всем статьям

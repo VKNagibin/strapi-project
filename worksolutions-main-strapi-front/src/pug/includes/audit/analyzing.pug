@@ -1,0 +1,34 @@
+- var server = process.env.NODE_ENV === "development" ? "https://worksolutions.ru/": "/";
+-
+  var article = {
+    categoryId: null,
+    url: "/blog/frontend-audit",
+    announceImage:  server + "uploads/audit_bd3ecff239.jpg",
+    title: "Как провести технический аудит фронтенд-приложения на примере высоконагруженного информационного портала",
+    announce: "Рассказываем, как провести технический аудит фронтенд приложения на примере highload проекта",
+  }
+
+mixin analyzing(attributes)
+  +b#consultSection.SECTION.section._dark.consult&attributes(attributes)
+    +e.in
+      +b.consult-wrapper
+        +b.consult-header
+          +e.H3.title Что анализируем в рамках технического аудита
+        +b.consult-content
+          +e.col
+            +e.cell Анализ с помощью готовых инструментов
+            +e.cell Исследование запросов через API
+            +e.cell Анализ внешних скриптов
+          +e.col
+            +e.cell Профилирование загрузки страниц
+            +e.cell Нагрузочное тестирование
+            +e.cell Семантический и статический анализ кодовой базы
+        +b.consult-form
+          +e.in
+            +e.H4.title Кейсы
+            +articleBlock(article, true)
+
+        +e.consult-image.m-d-none
+          picture
+            source(type="image/webp", data-srcset="/i/consult/consult-image.webp")
+            img(class="lazyload", data-src="/i/consult/consult-image.png", alt="")

@@ -1,0 +1,43 @@
+include ../forms/formPhoneNumberPrompt
+
+mixin consult(attributes)
+  +b#consultSection.SECTION.section._dark.consult&attributes(attributes)
+    +e.in
+      +b.consult-wrapper
+        +b.consult-header
+          +e.H3.title Персональная консультация по проекту
+          +e.H4.subtitle Закажите бесплатную консультацию и узнайте:
+        +b.consult-content
+          +e.col
+            +e.cell Подойдет ли вашим целям коробочное ПО или требуется индивидуальная разработка
+            +e.cell Как будет проходить создание цифрового продукта, а также сроки и бюджеты
+          +e.col
+            +e.cell Что делать, чтобы результат давал изначально обещанную ценность для бизнеса
+            +e.cell Какие технологии и подходы помогут плавно развивать продукт после запуска
+        +b.consult-form
+          +e.in
+            //- +e.P.quote Обсудите проект лично по
+              = " "
+              a(href="tel:78632701644", target="_blank") телефону
+              = "  "
+              | или оставьте ваш номер и мы вам перезвоним.
+            +e.P.quote Оставьте ваш номер и мы вам перезвоним.
+            +e.FORM.form.js-form(
+              action="#",
+              method="POST",
+              data-yandex-counter-id=isProduction ? yandexCounterId : false,
+              data-metric-goal=(isProduction ? "sendFormOrder" : false)
+            )
+              +hiddenFormTitle("Запрос персональной консультации")
+              +inputTextField("text", "requesterName", "name", "Как к вам обращаться")
+              .phone-wrapper
+                +inputTextField("tel", "requesterPhoneNumber", "phone", "Телефон", "phone", "off")
+                +formPromptAlert("Чтобы не беспокоить вас звонками, мы напишем в мессенджер для выбора удобного канала связи")
+              +inputLocationPage
+              +attachField("Прикрепить бриф или тз", "Чтобы мы лучше подготовились к беседе.")
+              +submitField("Отправить заявку", "Отправить")
+              +agreementField("Отправить заявку")
+        +e.consult-image
+          picture
+            source(type="image/webp", data-srcset="/i/consult/consult-image.webp")
+            img(class="lazyload", data-src="/i/consult/consult-image.png", alt="")

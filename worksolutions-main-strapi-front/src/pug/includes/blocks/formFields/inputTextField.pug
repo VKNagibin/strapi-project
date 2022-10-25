@@ -1,0 +1,5 @@
+mixin inputTextField(type, inputName, inputId, placeholder, dataType, autocomplete, className)
+  .form__field
+    label.form__label(for=inputId)
+      span.visually-hidden= placeholder
+    input.form__input(type=type, name=inputName, id=inputId, placeholder=placeholder, data-required, data-type=dataType, autocomplete=autocomplete, class=className)

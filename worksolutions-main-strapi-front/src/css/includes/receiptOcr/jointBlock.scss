@@ -1,0 +1,113 @@
+$cardShadow: "0px 20px 40px rgba(17, 62, 149, 0.06), 0px 2px 6px rgba(17, 62, 148, 0.04)";
+
+
+.receipt-ocr_joint-block_wrapper{
+  display: none;
+  flex-direction: column;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  padding-right: 0;
+  background: rgb(249, 250, 252);
+  border: 1px solid $grayBlue3;
+  box-sizing: border-box;
+  box-shadow: $cardShadow;
+  backdrop-filter: blur(56px);
+  border-radius: 20px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.receipt-ocr_joint-block_image-wrapper{
+
+}
+
+.receipt-ocr_joint-block_header{
+  display: flex;
+  position: fixed;
+  margin-left: 16px;
+  margin-top: 16px;
+  margin-bottom: 18px;
+  width: calc(100% - 16px);
+  overflow-x: auto;
+  z-index: 1;
+}
+
+.receipt-ocr_joint-block_wrapper::-webkit-scrollbar, .receipt-ocr_joint-block_header::-webkit-scrollbar, .receipt-ocr_joint-block_image-wrapper::-webkit-scrollbar, .receipt-ocr_joint-block_sub-header::-webkit-scrollbar, {
+  display: none;
+}
+
+.receipt-ocr_joint-block_wrapper::-webkit-scrollbar, .receipt-ocr_joint-block_header::-webkit-scrollbar-thumb, .receipt-ocr_joint-block_image-wrapper::-webkit-scrollbar-thumb, .receipt-ocr_joint-block_sub-header::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.receipt-ocr_joint-block_image{
+  width: 100%;
+  object-fit: cover;
+}
+
+.receipt-ocr_joint-block_content{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 540px;
+  width: 100%;
+  align-self: center;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+#receipt-ocr_tab-image_joint, #receipt-ocr_tab-result_joint {
+  margin-right: 8px;
+}
+
+.receipt-ocr_joint-block_content{
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  margin-top: 18px;
+}
+
+.receipt-ocr_joint-block_recognizing{
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;/*
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+}
+
+.receipt-ocr_joint-block_results{
+  display: none;
+  flex-direction: column;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  height: 100%;
+  font-family: $fontBook;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: $grayBlue4;
+  margin-right: 16px;
+  margin-left: 16px;
+  margin-top: 54px;
+}
+
+.receipt-ocr_joint-block_status-text{
+  font-family: $fontDemi;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  color: $grayBlue6;
+  margin-top: 8px;
+}
+
+.receipt-ocr_joint-block_container{
+  width: 100%;
+}

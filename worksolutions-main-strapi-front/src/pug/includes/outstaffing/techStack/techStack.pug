@@ -1,0 +1,11 @@
+include techStackList
+
+mixin techStack(title, lists)
+    +b.SECTION.tech-stack.section_light&attributes(attributes)
+        +e.in.section__in
+            +e.main
+                +e.H2.title.section__title.js-animate-title#techstack
+                    | !{title}
+                +e.content
+                    each list, index in lists
+                        +techStackList(list, index)

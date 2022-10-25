@@ -1,0 +1,20 @@
+include formPriceOutstaffing
+
+mixin outstaffPrices(typeOutstaffing, context)
+  +b.SECTION.outstaff-prices.section.section_light&attributes(attributes)
+    +e.in.section__in
+      +e.main
+        +e.H2.title.section__title.js-animate-title#prices Цены
+        +e.content
+          +e.content-block
+            +e.price
+              +e.price-content
+                +e.prices-wrapper
+                  +e.cost-work
+                    +e.title-price от !{(context && context.minWage) || "1 200"} ₽
+                    +e.desc Стоимость нормо-часа работ
+          +e.content-block
+            if typeOutstaffing === "python"
+              +formPriceOutstaffing(typeOutstaffing, "аутстафф")
+            else
+              +formPriceOutstaffing(typeOutstaffing)

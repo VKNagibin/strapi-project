@@ -1,0 +1,26 @@
+mixin specproject()
+  +b.SECTION.specproject.section.section_light&attributes(attributes)#specproject
+    +e.in.section__in
+      +e.main-specproject
+        +e.content
+          +e.PICTURE.content__background
+            source(type="image/svg+xml", data-srcset="/i/specproject/specproject-background-small.svg", media="(max-width: 511px)")
+            source(type="image/svg+xml", data-srcset="/i/specproject/specproject-background-medium.svg", media="(max-width: 1151px)")
+            img(class="lazyload", data-src="/i/specproject/specproject-background.svg")
+          +e.container
+            +e.main-block
+              +e.center-block
+                +e.title-container
+                  picture
+                    source(type="image/webp", data-srcset="i/fire.webp")
+                    img(class="lazyload", data-src="i/fire.png")
+                  +e.SPAN.title Спецпроект
+                  picture
+                    source(type="image/webp", data-srcset="i/fire.webp")
+                    img(class="lazyload", data-src="i/fire.png")
+                +e.H2.question Готовы ли вы к роли Product Owner?
+                +e.P.text="Определите свой уровень знаний в продуктовой разработке и бесплатно получите рекомендации от экспертов рынка"
+                +e.button-container
+                  a.button(href="https://product-owners.ru/" rel="nofollow")
+                    span.button__text пройти тест
+

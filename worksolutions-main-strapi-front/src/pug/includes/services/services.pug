@@ -1,0 +1,28 @@
+mixin services(attributes)
+  -
+    var services = [
+    {
+    title: 'Fixed Price',
+    desc: 'Короткие проекты с нуля с подробным техническим заданием и фиксированными требованиями'
+    },
+    {
+    title: 'Time & Materials',
+    desc: 'Разработка в условиях высокой неопределенности с минимумом бюрократизма'
+    },
+    {
+    title: 'Retainer',
+    desc: 'Техподдержка и сопровождение больших проектов с выделенной командой'
+    }
+    ]
+
+
+  +b.SECTION.services.section.section_light&attributes(attributes)
+    +e.in.section__in
+      +e.title-wrapper.section__title-wrapper
+        +e.H2.title.section__title.js-animate-title#services Аутсорсинг и аутстаффинг
+        +e.P.title-desc.section__title-desc Услуги
+      +e.UL.list
+        each service in services
+          +e.LI.item
+            +e.H3.item-title= service.title
+            +e.P.item-desc= service.desc

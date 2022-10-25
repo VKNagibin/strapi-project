@@ -1,0 +1,28 @@
+mixin case(type, prevModal, nextModal, content, isClockwise)
+  - var additionalClass = '';
+    if isClockwise
+      - additionalClass = 'clockwise';
+  +b.SECTION.case.section(data-type=type)
+    +e.in.section__in
+      +e.H2.title(data-icon=type)
+        block
+      +e.P.subtitle Реализованный функционал:
+      +e.UL.list(class=additionalClass)
+        each contentItem in content
+          +e.LI.item
+            +e.SPAN.counter= contentItem.number
+            +e.H3.item-title= contentItem.title
+            if contentItem.items
+              +e.divider
+              +e.UL.inner-list
+                each item in contentItem.items
+                  +e.LI.inner-item= item
+      +e.btn-wrapper
+        +e.BUTTON.btn._prev.js-prev-modal(type="button", data-scrollto=prevModal)
+          +e.SPAN.btn-text Предыдущий кейс
+          +e.SPAN.arrow
+            include ../blocks/icons/arrow_left_big
+        +e.BUTTON.btn._next.js-next-modal(type="button", data-scrollto=nextModal)
+          +e.SPAN.btn-text Следующий кейс
+          +e.SPAN.arrow
+            include ../blocks/icons/arrow_right_big

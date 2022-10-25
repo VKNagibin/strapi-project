@@ -1,0 +1,138 @@
+include includes/_
+
+-
+    var mainPage = false;
+    var outstaffingPage = true;
+    var pathJs = "outstaffing";
+    var pathCss = "outstaffing";
+    var ogUrlSite = process.env.OG_URL;
+    var description = "Вам нужен аутстаффинг Strapi? Можете смело доверить свой проект нам. 32 сотрудника! 12 лет на рынке! Узкая специализация!";
+    //- var description = "Вам нужен аутстаффинг Strapi? Можете смело доверить свой проект нам. 32 сотрудника! 12 лет на рынке! Узкая специализация! Звоните 8(863)270-16-44";
+
+    var openGraphMeta = {
+        title: "Аутстаффинг Strapi разработчиков - аренда программистов | Компания «Work Solutions»",
+        type: "article",
+        locale: "ru_RU",
+        description: description,
+        image: ogUrlSite + "/i/og/og-image.png",
+        url: ogUrlSite + "/outstaffing-strapi/",
+        siteName: "Work Solutions"
+    };
+
+    var titleFirst = [
+        {text: "аутстаффинг", highlighted: false},
+        {text: "разработчиков", highlighted: false},
+        {text: "на Strapi", highlighted: false}
+    ];
+
+    var benefitCardHeadlineTag = "h3";
+
+    var servicesItemsText = [
+        "Подготовка технического решения",
+        "Настройка административной панели",
+        "Верстка адаптивных элементов",
+        "Интеграция с API",
+        "Проектирование и разработка библиотеки компонентов",
+        "Верстка сложных анимированных элементов",
+    ];
+
+    var customServices = [
+        {
+            title: "Усиливаем вашу команду",
+            desc: "Войдем в проект командой или одним разработчиком, интегрируемся с вашими менеджерами, разработчиками и другими специалистами."
+        },
+        {
+            title: "Разрабатываем нетиповые проекты на Strapi",
+            desc: "Разберемся в инфраструктуре и предметной области. Учитываем особенности и требования бизнеса."
+        },
+        {
+            title: "Используем подход Time & Materials",
+            desc: "Вы оплачиваете только фактически затраченное время специалистов над проектом. Оплата производится ежемесячно по факту выполненных работ."
+        }
+    ];
+
+    var customSelectionCards = [{
+        title: "Анали&shy;зируем сложность задач",
+        position: "1",
+        isLast: false
+    }, {
+        title: "Подбираем специалистов на Strapi по стеку и опыту",
+        position: "2",
+        isLast: false
+    }, {
+        title: "Назначаем дату собеседования",
+        position: "3",
+        isLast: false
+    }, {
+        title: "Согласо&shy;вываем детали сотрудничества",
+        position: "4",
+        isLast: false
+    }, {
+        title: "Вводим специалиста на проект",
+        position: "5",
+        isLast: true
+    }];
+
+    var developmentTypes = [
+        {name: "Angular разработка", link: "/outstaffing-angular/"},
+        {name: "Node.js разработка", link: "/outstaffing-nodejs/"},
+        {name: "DevOps разработка", link: "/outstaffing-devops/"},
+        {name: "Flutter разработка", link: "/outstaffing-flutter/"},
+    ];
+
+    var usesCards = [
+        {
+            text: "Разработан на JavaScript",
+            iconFileName: "js-usage",
+        },
+        {
+            text: "Быстро настраивается",
+            iconFileName: "quick-setup",
+        },
+        {
+            text: "Позволяет легко управлять контентом",
+            iconFileName: "content-management",
+        },
+        {
+            text: "Легко масштабируется с помощью плагинов",
+            iconFileName: "scalability",
+        },
+        {
+            text: "Не требует углубленных знаний в веб-разработке",
+            iconFileName: "simplicity",
+        },
+        {
+            text: "Подойдет под любой фронтенд-стек",
+            iconFileName: "frontend-stack-independence",
+        },
+    ];
+
+    var outstaffPricesContext = {
+        minWage: "1 200",
+    }
+
++structure(
+    "Аутстаффинг Strapi разработчиков - аренда программистов | Компания «Work Solutions»",
+    description,
+    "Контакты, Work Solutions, Телефон, Адрес, Почта, Рабочие решения",
+    "",
+    {
+        footer: true
+    },
+    openGraphMeta
+)
+    +firstScreenOutstaffing(titleFirst)
+    +strapiOverview
+    +certificationDevelopers("Сертифика&shy;ция разработчиков")
+    +outstaffBenefits(
+        "Преимущес&shy;тва аутстаф&shy;финга Strapi разработ&shy;чиков в компании «Work solutions»",
+        benefitCardHeadlineTag
+    )
+    +reviews("Отзывы")
+    +outstaffServices("Наши услуги по Strapi разработке" , servicesItemsText)
+    +approachToWork(customServices)
+    +selectionOfSpecialists(customSelectionCards)
+    +uses("Преимущества Strapi", usesCards)
+    +ourPartners
+    +outstaffPrices("Strapi", outstaffPricesContext)
+    +outstaffSeeAlso(developmentTypes)

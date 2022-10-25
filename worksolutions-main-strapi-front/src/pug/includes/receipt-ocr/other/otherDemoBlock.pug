@@ -1,0 +1,11 @@
+include otherDemoCard
+
+mixin otherDemoBlock()
+    div.receipt-ocr_other-demo_title ДРУГИЕ ДЕМОНСТРАЦИИ
+    div.receipt-ocr_other-demo-block-wrapper
+        +otherDemoCard()
+        +otherDemoCard()
+        +otherDemoCard()
+        +otherDemoCard()
+    a(href='/blog/all-demo').receipt-ocr_other-demo-block_button
+        button.button КО ВСЕМ ДЕМО

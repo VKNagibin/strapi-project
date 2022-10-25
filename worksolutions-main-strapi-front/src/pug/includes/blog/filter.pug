@@ -1,0 +1,14 @@
+mixin filter
+  -
+    function getClass(value) {
+      const currentValue = +value;
+      if (selectedCategories.includes(currentValue)) return "active";
+      if (value === "all" && selectedCategories.length === 0) return "active";
+      return "";
+    }
+
+  +b.filter(data-cat=categories, data-selected-cat=selectedCategories)
+    +e.UL.list
+      each filterItem in categories
+        +e.LI.item
+          +e.BUTTON.btn.js-filter-btn(class=getClass(filterItem.value), type="button", data-filter=filterItem.value data-code=filterItem.code)=filterItem.text

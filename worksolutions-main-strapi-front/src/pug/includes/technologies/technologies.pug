@@ -1,0 +1,68 @@
+mixin technologies(attributes)
+  -
+    var technologies = [
+    {
+    area: 'Front-end',
+    items: [
+      {techs: [
+        {icon: '/i/technologies/react', techTitle: 'ReactJs'},
+        {icon: '/i/technologies/react_native', techTitle: 'React Native' },
+        {icon: '/i/technologies/angular', techTitle: 'AngularJS'},
+        {icon: '/i/technologies/vue', techTitle: 'Vue.js'},
+        {icon: '/i/technologies/svelte', techTitle: 'svelte'}
+      ]}
+    ]
+    },
+    {
+    area: 'Back-end',
+    items: [
+      {
+        title: 'Python',
+        techs: [
+          {icon: '/i/technologies/django', techTitle: 'Django'},
+          {icon: '/i/technologies/flask', techTitle: 'Flask'},
+          {icon: '/i/technologies/asyncio', techTitle: 'Asyncio'}
+        ]
+      },
+      {
+        title: 'PHP',
+        techs: [
+          {icon: '/i/technologies/symphony', techTitle: 'Symphony'},
+          {icon: '/i/technologies/laravel', techTitle: 'Laravel'},
+          {icon: '/i/technologies/zend', techTitle: 'Zend Framework'},
+          {icon: '/i/technologies/yii', techTitle: 'Yii Framework'}
+        ]
+      },
+      {
+        title: 'Node.js',
+        techs: [
+          {icon: '/i/technologies/nest', techTitle: 'Next'},
+          {icon: '/i/technologies/express', techTitle: 'Express'},
+          {icon: '/i/technologies/strapi', techTitle: 'Strapi'}
+        ]
+      }
+    ]
+    }
+    ]
+
+
+  +b.SECTION.technologies.section.section_light&attributes(attributes)
+    +e.in.section__in
+      +e.title-wrapper.section__title-wrapper
+        +e.H2.title.section__title.js-animate-title#technologies Что исполь&shy;зуем в работе
+        +e.P.title-desc.section__title-desc Технологии
+      +e.UL.list
+        each technology in technologies
+          +e.LI.item
+            +e.H3.item-title= technology.area
+            +e.UL.inner-list
+              each item in technology.items
+                +e.LI.inner-item
+                  if item.title
+                    +e.H4.item-subtitle= item.title
+                  +e.UL.inner-sublist
+                    each tech in item.techs
+                      +e.LI.inner-subitem
+                        picture
+                          source(type="image/webp", data-srcset=tech.icon + ".webp")
+                          img(class="lazyload", data-src=tech.icon + ".png", title=tech.techTitle, alt="")

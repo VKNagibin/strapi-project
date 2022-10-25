@@ -1,0 +1,19 @@
+mixin employment(attributes)
+  +b.SECTION.employment.section.section_dark&attributes(attributes)
+    +e.in.section__in
+      +e.info
+        +e.H2.title.section__title.js-animate-title#employment
+          | Стань частью команды
+          =" "
+          br
+          | Work Solutions
+        +e.P.desc Мы всегда рады принять в нашу семью людей с горящими глазами, как опытных, так и зеленых новичков
+        +e.btn-wrapper
+          +e.A.btn.button.button_link(href="http://career.worksolutions.ru/", target="_blank") Посмотреть вакансии
+          +e.A.btn.button.button_link.button_purple(href="https://junior.worksolutions.ru/", target="_blank") У меня мало опыта
+      +e.decor
+        +e.PICTURE.img
+          source(type='image/webp', data-srcset='i/employment/employment_mobile.webp', media='(max-width: 479px)')
+          source(type='image/png', data-srcset='i/employment/employment_mobile.png', media='(max-width: 479px)')
+          source(type='image/webp', data-srcset='i/employment/employment.webp')
+          +e.IMG.img(class="lazyload", data-src='i/employment/employment.png', alt='')

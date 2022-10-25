@@ -1,0 +1,199 @@
+@import "src/css/includes/breakpoints";
+@import "src/css/includes/fonts";
+@import "src/css/includes/theme";
+
+.footer {
+  color: $grayBlue5;
+  background: $grayBlue1;
+
+  &__in {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 64px;
+    padding-bottom: 42px;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    row-gap: 40px;
+    column-gap: 20px;
+    width: calc(100% - 153px);
+    margin-bottom: 60px;
+
+    @media #{$desktop-down} {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+    }
+
+    @media #{$desktop-tiny-down} {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+
+  &__logo {
+    width: 153px;
+  }
+
+  &__logo-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+  }
+
+  &__section-title {
+    margin-bottom: 16px;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  &__link {
+    font-family: $fontMedium;
+    font-size: 18px;
+    line-height: 1.45;
+    color: $grayBlue5;
+    text-decoration: none;
+    transition: all 0.2s ease-out;
+    outline: none;
+
+    &_mail {
+      margin-right: 40px;
+      border-bottom: 1px solid $grayBlue5;
+
+      &:hover,
+      &:focus {
+        border-bottom-color: $grayBlue6;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $grayBlue6;
+      transition: all 0.2s ease-out;
+    }
+  }
+
+  &__list {
+    display: grid;
+    column-gap: 52px;
+    row-gap: 16px;
+    grid-template-columns: auto;
+
+    &_nav {
+      grid-auto-flow: column;
+      grid-template-columns: repeat(2, max-content);
+      grid-template-rows: repeat(9, auto);
+
+      @media #{$desktop-tiny-down} {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, auto);
+      }
+
+      @media #{$tablet-down} {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, auto);
+      }
+
+      @media #{$tablet-mid-down} {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(14, auto);
+      }
+    }
+
+    &_outstaff {
+      grid-auto-flow: column;
+      grid-template-columns: repeat(2, max-content);
+      grid-template-rows: repeat(9, auto);
+
+      @media #{$desktop-tiny-down} {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: unset;
+      }
+
+      @media #{$tablet-down} {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media #{$tablet-mid-down} {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &_documents {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    font-size: 20px;
+    width: 100%;
+
+    .footer__link {
+      display: inline-block;
+      font-size: 20px;
+    }
+  }
+
+  &__bottom-logo {
+    display: none;
+  }
+
+  &__copyright {
+    display: inline-block;
+    margin-left: auto;
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: $grayBlue4;
+  }
+
+  @media #{$desktop-small-down} {
+    &__in {
+      padding-top: 48px;
+    }
+
+    &__logo {
+      display: none;
+    }
+
+    &__bottom-logo {
+      display: block;
+      width: 100%;
+
+      img {
+        margin: 48px 0 24px;
+        max-width: 96px;
+        height: auto;
+      }
+    }
+
+    &__info {
+      width: 100%;
+    }
+
+    &__bottom {
+      flex-wrap: wrap;
+    }
+
+    &__copyright {
+      margin-left: 0;
+    }
+  }
+
+  @media #{$mobile-down} {
+    &__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__link_mail {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+  }
+}

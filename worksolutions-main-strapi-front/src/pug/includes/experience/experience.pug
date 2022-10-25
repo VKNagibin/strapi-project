@@ -1,0 +1,51 @@
+mixin experience(attributes)
+  -
+    var items = [
+    {
+    title: 'Приложения сопровождения банковских услуг',
+    modal: 'bank',
+    modalPrev: 'loyality',
+    modalNext: 'social'
+    },
+    {
+    title: 'Социальные сети',
+    modal: 'social',
+    modalPrev: 'bank',
+    modalNext: 'hr'
+    },
+    {
+    title: 'Приложения по подбору персонала',
+    modal: 'hr',
+    modalPrev: 'social',
+    modalNext: 'mobile'
+    },
+    {
+    title: 'Сервисы для мобильных приложений',
+    modal: 'mobile',
+    modalPrev: 'pr',
+    modalNext: 'builder'
+    },
+    {
+    title: 'Конструкторы сайтов',
+    modal: 'builder',
+    modalPrev: 'mobile',
+    modalNext: 'loyality'
+    },
+    {
+    title: 'Программы лояльности и накопительные системы',
+    modal: 'loyality',
+    modalPrev: 'builder',
+    modalNext: 'bank'
+    }
+    ]
+
+
+  +b.SECTION.experience.section.section_dark&attributes(attributes)
+    +e.in.section__in
+      +e.title-wrapper.section__title-wrapper
+        +e.H2.title.section__title.section__title_single#experience Наши работы
+
+      +e.UL.list
+        each item in items
+          +e.LI.item
+            +e.A.link.js-modal-call(href="#", data-modal=item.modal, data-prev=item.modalPrev, data-next=item.modalNext)= item.title

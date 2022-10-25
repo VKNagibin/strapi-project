@@ -1,0 +1,29 @@
+.share {
+  display: flex;
+
+  .copy-address {
+    cursor: pointer;
+
+    &:hover {
+      svg path {
+        fill: $grayBlue8
+      }
+    }
+  }
+
+  svg path {
+    transition: 0.2s ease-in-out;
+  }
+
+  &_top {
+    display: flex;
+  }
+
+  &_bottom {
+    margin-top: 40px;
+
+    .ya-share2__link {
+      border-bottom: none;
+    }
+  }
+}

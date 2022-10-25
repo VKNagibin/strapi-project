@@ -1,0 +1,32 @@
+@import "includes/clear";
+@import "includes/breakpoints";
+@import "includes/blog/vars_blog";
+@import "includes/fonts";
+@import "includes/theme";
+@import "includes/buttons.scss";
+
+@import "includes/common-styles";
+
+@import "includes/blog/common-blog";
+@import "includes/blog/header_blog";
+@import "includes/blog/filter";
+@import "includes/blog/blog-articles";
+
+@import "includes/menu/menuList";
+@import "includes/menu/siteMenu";
+@import "includes/menu/socialMenu";
+
+@import "includes/forms/forms";
+@import "includes/forms/sign-form";
+@import "includes/forms/attachment";
+
+@import "includes/market/market";
+
+@import "includes/modals/modal";
+
+@import "includes/footer/footer";
+
+.hide-show-more {
+  display: none;
+}
+

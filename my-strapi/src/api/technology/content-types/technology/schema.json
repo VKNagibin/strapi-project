@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "technologies",
+  "info": {
+    "singularName": "technology",
+    "pluralName": "technologies",
+    "displayName": "technology",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_technologies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sub-technology.sub-technology",
+      "mappedBy": "technology"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+include ../icons/searchButton
+
+mixin searchInput(placeholder)
+    div.receipt-ocr_search-input_wrapper
+        input(placeholder=placeholder).receipt-ocr_search-input
+        button(type='submit').receipt-ocr_search-input_button
+            +searchButton()

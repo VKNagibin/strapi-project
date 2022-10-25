@@ -1,0 +1,8 @@
+mixin modal(modalType, modalClass)
+  +b.modal(class=modalClass, data-type=modalType)
+    +e.in
+      +e.close
+        +b.BUTTON.close-button.js-close-modal
+          include ../blocks/icons/close_button
+      +e.wrapper
+        block

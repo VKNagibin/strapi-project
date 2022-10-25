@@ -1,0 +1,43 @@
+mixin menuList(attributes)
+  -
+    var navLinks = [
+      [
+        {page: '/', anchor: "#services", text: 'Услуги', newWindow: !mainPage},
+        {page: '/', anchor: "#experience", text: 'Наши работы', newWindow: !mainPage},
+        {page: '/', anchor: "#about", text: 'Кто мы', newWindow: !mainPage},
+        {page: '/', anchor: "#features", text: 'Работа с нами', newWindow: !mainPage},
+        {page: '/', anchor: "#technologies", text: 'Технологии', newWindow: !mainPage}
+      ],
+      [
+        {page: '/', anchor: "#difference", text: 'Чем отличаемся от других', newWindow: !mainPage},
+        {page: '/', anchor: "#risks", text: 'Как управляем рисками', newWindow: !mainPage},
+        {page: '/', anchor: "#team", text: 'Кто реализует проекты', newWindow: !mainPage},
+        {page: '/', anchor: "#market", text: 'Что делаем на рынке', newWindow: !mainPage},
+        {page: '/blog/', anchor: "", text: 'Блог', newWindow: true},
+      ],
+      [
+        {page: '/', anchor: "#consultSection", text: 'Консультация', newWindow: !mainPage},
+        {page: '/contacts/', anchor: "", text: 'Контакты', newWindow: !contactPage},
+        {page: 'https://career.worksolutions.ru/', anchor: "", text: 'Вакансии', newWindow: true}
+      ]
+    ]
+
+  +b.menu-list(id="menuList")&attributes(attributes)
+    +e.close
+      +b.BUTTON.close-button(id="closeMenu")
+        include ../icons/close_button
+    +e.content(id="menuListContent")
+      +e.body
+        each col in navLinks
+          +e.col
+            each navLink in col
+              - var attributes = {};
+              - var url = navLink.anchor;
+              - var additionalClass = navLink.text === '' ? 'empty' : '';
+              if navLink.newWindow
+                - url = navLink.page + url;
+              +e.cell.js-link-animate(class=additionalClass)
+                if url.startsWith('#')
+                  +e.A.link.js-anchor-link(href=url)&attributes(attributes)= navLink.text
+                else
+                  +e.A.link(href=url)&attributes(attributes)= navLink.text

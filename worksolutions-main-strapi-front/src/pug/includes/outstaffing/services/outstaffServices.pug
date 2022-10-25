@@ -1,0 +1,10 @@
+include serivesItem
+
+mixin outstaffServices(title, servicesItemText)
+  +b.SECTION.outstaff-services.section.section_dark&attributes(attributes)
+    +e.in.section__in
+      +e.main-outstaff-services
+        +e.H2.title.section__title.js-animate-title#services=title
+        +e.services-wrapper
+          each servicesItemText in servicesItemsText
+            +serivesItem(servicesItemText)

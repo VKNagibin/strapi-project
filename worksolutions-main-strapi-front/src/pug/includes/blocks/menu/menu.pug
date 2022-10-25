@@ -1,0 +1,16 @@
+mixin siteMenu(attributes)
+    +b.siteMenu&attributes(attributes)
+        +e.in
+            +e.menu-logo
+                include menuLogo
+            +e.top-bar
+                a.js-modal-call(href="#", data-modal="estimate")
+                    include ../icons/calculator
+            +e.top-bar._mobile
+                +e.link.js-modal-call.A(href="#", data-modal="estimate") Смета
+            +e.middle-bar
+                +e.BUTTON.button(id="menuButton")
+                    +e.SPAN.button-text(id="menuButtonText")
+                        +e.SPAN.button-text-inner меню
+            +e.bottom-bar
+                include menuSocial

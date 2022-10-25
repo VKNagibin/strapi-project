@@ -1,0 +1,10 @@
+include outstaffSeeAlsoCard
+
+mixin outstaffSeeAlso(developmentTypes)
+  +b.SECTION.see-also.section.section_dark&attributes(attributes)
+    +e.in.section__in
+      +e.main
+        +e.H2.title.section__title.js-animate-title#see-also Смотрите также
+        +e.content
+          each developmentType in developmentTypes
+            +outstaffSeeAlsoCard(developmentType)

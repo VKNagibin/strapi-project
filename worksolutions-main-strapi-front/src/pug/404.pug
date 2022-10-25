@@ -1,0 +1,23 @@
+- var mainPage = false;
+- var contactPage = false;
+- var errorPage = true
+
+- var pathCss = "errorPage"
+- var pathJs = "errorPage"
+
+include includes/_
+
++structure('Страница не найдена', '', '', '', {footer: false})
+  +b.page404.SECTION.section.section_light
+    h1.visually-hidden Страница не найдена
+    +e.content.section__in
+      +e.wrapper
+        +e.ring-wrapper
+          +e.PICTURE.ring
+            source(type='image/webp', data-srcset='/i/404/404_ring.webp')
+            +e.IMG.ring(class="lazyload", data-src='/i/404/404_ring.png', alt='')
+          +e.text
+            +e.SPAN.code 404
+            +e.P.desc К сожалению, страница не найдена
+            +e.btn-wrapper
+              a.btn.button.button_link(href="/") Вернуться на главную

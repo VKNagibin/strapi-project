@@ -1,0 +1,20 @@
+mixin formGenerateCard()
+  +b.form-block
+    +b.form-block__form-container
+      +e.in
+        +e.FORM.form(
+            data-yandex-counter-id=(yandexCounterId )
+            data-metric-goal=('sendFormContract'),
+            data-generate
+          )
+          +e.form-text Кому открытка
+          .form__field
+            label.form__label(for=inputId)
+              span.visually-hidden Введите имя
+            input.form__input(type='text', placeholder="Введите имя", data-required, data-type="name-for-postcard")
+          .form__field
+            .form__btn-wrapper
+              button.form__submit-btn.button(type='submit', data-submit-button)
+                span.preloader
+                span.form__submit-text.form__submit-text_desktop Сгенерировать
+                span.form__submit-text.form__submit-text_mobile Сгенерировать

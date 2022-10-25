@@ -1,0 +1,40 @@
+$badgeBackground: rgba(255, 255, 255, 0.12);
+
+.outlineBadge_wrapper {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  background: $badgeBackground;
+  border: 2px solid $blue2;
+  box-sizing: border-box;
+  border-radius: 35px;
+
+  margin-bottom: 32px;
+
+  @media (max-width: 767px) {
+    padding: 8px 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.outlineBadge_text {
+  font-family: $fontDemi, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: $blue2;
+  text-align: center;
+
+  @media (max-width: 1151px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

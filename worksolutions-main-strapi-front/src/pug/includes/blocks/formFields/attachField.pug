@@ -1,0 +1,11 @@
+mixin attachField(btnText, btnComment)
+  .form__field
+    .form__btn-wrapper
+      button.form__attach-btn(type='button')
+        span.form__attach-icon
+          include ../icons/attachment
+        span.form__attach-text= btnText
+      if(btnComment)
+        .form__attach-comment= btnComment
+    .form__attach-container
+      input.form__file(type="file", name="file0", multiple="")

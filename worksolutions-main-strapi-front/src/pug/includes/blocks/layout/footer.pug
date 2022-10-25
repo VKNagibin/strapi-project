@@ -1,0 +1,99 @@
+mixin footer()
+  -
+    var copyrightText = "© " + new Date().getFullYear() + " Рабочие решения"
+
+    var footerNavLinks = [
+      { page: "/", anchor: "#services", text: "Услуги", newWindow: !mainPage },
+      { page: "/", anchor: "#experience", text: "Наши работы", newWindow: !mainPage },
+      { page: "/", anchor: "#about", text: "Кто мы", newWindow: !mainPage },
+      { page: "/", anchor: "#features", text: "Работа с нами", newWindow: !mainPage },
+      { page: "/", anchor: "#technologies", text: "Технологии", newWindow: !mainPage },
+      { page: "/", anchor: "#consultSection", text: "Консультация", newWindow: !mainPage },
+      { page: "/useful/", anchor: "", text: "Полезное", newWindow: true },
+      { page: "/contacts/", anchor: "", text: "Контакты", newWindow: !contactPage },
+      { page: "https://career.worksolutions.ru/", anchor: "", text: "Вакансии", newWindow: true },
+      { page: "/", anchor: "#difference", text: "Чем отличаемся от других", newWindow: !mainPage },
+      { page: "/", anchor: "#risks", text: "Как управляем рисками", newWindow: !mainPage },
+      { page: "/", anchor: "#team", text: "Кто реализует проекты", newWindow: !mainPage },
+      { page: "/", anchor: "#market", text: "Что делаем на рынке", newWindow: !mainPage },
+      { page: "/blog/", anchor: "", text: "Блог", newWindow: true },
+    ]
+
+    var documentLinks = [
+      {
+        url: "/documents/agreement.pdf",
+        text: "Пользовательское соглашение",
+        download: "agreement"
+      },
+      {
+        url: "/documents/rules_protection_worksolutions.ru.pdf",
+        text: "Политика обработки персональных данных",
+        download: "rules_protection_worksolutions"
+      }
+    ]
+
+    var outstaffLinks = [
+      { url: "/outstaffing-backend/", text: "Backend разработка" },
+      { url: "/outstaffing-frontend/", text: "Frontend разработка" },
+      { url: "/outstaffing-php/", text: "PHP разработка" },
+      { url: "/outstaffing-laravel/", text: "Laravel разработка" },
+      { url: "/outstaffing-react/", text: "React разработка" },
+      { url: "/outstaffing-python/", text: "Python разработка" },
+      { url: "/outstaffing-vue/", text: "Vue разработка" },
+      { url: "/outstaffing-symfony/", text: "Symfony разработка" },
+      { url: "/outstaffing-yii/ ", text: "Yii разработка" },
+      { url: "/outstaffing-django/", text: "Django разработка" },
+      { url: "/outstaffing-java/", text: "Java разработка" },
+      { url: "/outstaffing-nodejs/", text: "Node.js разработка" },
+      { url: "/outstaffing-flutter/", text: "Flutter разработка" },
+      { url: "/outstaffing-devops/", text: "DevOps разработка" },
+      { url: "/outstaffing-angular/", text: "Angular разработка" },
+      { url: "/outstaffing-strapi/", text: "Strapi разработка" },
+      { url: "/tehnicheskiy-audit-frontend/", text: "Аудит Front-end" },
+      { url: "/tehnicheskiy-audit-backend/", text: "Аудит Back-end" },
+    ]
+
+  +b.FOOTER.footer.section
+    +e.in.section__in
+      p.visually-hidden Навигация по разделам и дополнительная информация
+      +e.info
+        +e.nav
+          +e.P.section-title Разделы
+          +e.UL.list_nav
+            each footerNavLink in footerNavLinks
+              - var attributes = {};
+              - var url = footerNavLink.anchor;
+              if footerNavLink.newWindow
+                - url = footerNavLink.page + url;
+              +e.LI.item
+                if url.startsWith("#")
+                  +e.A.link.js-anchor-link(href=url)&attributes(attributes)= footerNavLink.text
+                else
+                  +e.A.link(href=url)&attributes(attributes)= footerNavLink.text
+        +e.outstaff
+          +e.P.section-title Аутстаффинг
+            +e.UL.list_outstaff
+              each outstaffLink in outstaffLinks
+                +e.LI.item
+                  +e.A.link(href=outstaffLink.url)&attributes(attributes)= outstaffLink.text
+        +e.documents
+          +e.P.section-title Документы
+          +e.UL.list_documents
+            each documentLink in documentLinks
+              +e.LI.item
+                if (!documentLink.download)
+                  +e.A.link(href=documentLink.url, target="_blank")= documentLink.text
+                else
+                  +e.A.link(href=documentLink.url, target="_blank", download=documentLink.download)= documentLink.text
+      +e.logo
+        if (!mainPage)
+          +e.A(href="/")
+            +e.IMG.logo-img(class="lazyload", data-src="/i/footer-logo.svg", alt="Work Solutions")
+        else
+          +e.IMG.logo-img(class="lazyload", data-src="/i/footer-logo.svg", alt="Work Solutions")
+      +e.bottom
+        +e.A.link_mail(href="mailto:hello@worksolutions.ru") hello@worksolutions.ru
+        //- +e.A.link(href="tel:+78632701644", onclick=(isProduction ? "gtag('event', 'clickPhone', {'event_category': 'conversion'}); return true;" : false)) 8(863)270-16-44
+        +e.bottom-logo
+          +e.IMG.logo-img(class="lazyload", data-src="/i/footer-logo.svg", alt="Work Solutions")
+        +e.SPAN.copyright=copyrightText

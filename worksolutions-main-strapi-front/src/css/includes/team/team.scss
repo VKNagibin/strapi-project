@@ -1,0 +1,36 @@
+@import "src/css/includes/breakpoints";
+@import "src/css/includes/theme";
+
+.team {
+  &__slider {
+    margin-bottom: 64px;
+  }
+
+  &__desc {
+    max-width: 440px;
+    margin: 0 auto 24px auto;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $grayBlue5;
+  }
+
+  &__btn-wrapper {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  @media #{$desktop-small-down} {
+    &__btn-wrapper {
+      max-width: 360px;
+    }
+  }
+
+  @media #{$tablet-down} {
+    &__desc {
+      max-width: 100%;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+  }
+}

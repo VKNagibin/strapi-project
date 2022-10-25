@@ -1,0 +1,11 @@
+mixin strapiOverview
+    +b.SECTION.tech-overview.section.section_dark&attributes(attributes)
+        +e.in.section__in
+            +e.main
+                +e.H2.title.section__title.js-animate-title#techOverview
+                    | Что такое Strapi
+                +e.P.text Strapi — это Headless CMS с открытым исходным кодом. Она предоставляет готовую административную панель, бэкенд и API для вашего фронтенд-приложения, что позволяет подключить систему управления контентом без привлечения бэкенд-специалистов.
+                +e.image-container
+                    picture
+                        source(type="image/webp", data-srcset="/i/outstaffing/strapi-admin-panel.webp")
+                        img(class="lazyload tech-overview__image", data-src="/i/outstaffing/strapi-admin-panel.jpg" alt="Панель администратора Strapi")

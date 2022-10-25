@@ -1,0 +1,122 @@
+mixin difference(attributes)
+    +b.section._dark&attributes(attributes)
+        +e.in.difference-section
+            +e.title-wrapper.section__title-wrapper.m_b_64
+                +e.H2.title._single.js-animate-title#difference Чем отли&shy;чаемся от других
+            +b.difference-mobile.dragscroll(id="differenceMobile")
+                +e.in
+                    +e.card.js-toggle-card(data-demo)
+                        +b.diffCard.js-diff-mobile-card(data-second-card)
+                            +e.image
+                                img(class="lazyload", data-src="i/diff_prod.svg")
+                            +e.title Фокусируемся на продукте
+                            +e.text Применяем в работе архитектурные паттерны и следуем лучшим практикам. Тимлиды проектов проводят ревью кода своих подчиненных
+                            +e.bar
+                                +b.BUTTON.button-line
+                                    +e.SPAN.icon
+                                        include ../blocks/icons/refresh
+                                    span Перевернуть
+                        +b.diffCard.with-border.js-diff-mobile-card(data-first-card)
+                            +e.image
+                                picture
+                                    source(type="image/webp", data-srcset="/i/diff_prod_1.webp")
+                                    img(class="lazyload", data-src="/i/diff_prod_1.png")
+                            +e.title «Работаем с проектами любой сложности!»
+                            +e.text Невозможно организовать эффективные процессы, которые позволят одновременно верстать лендинги и проектировать цифровые экосистемы
+                            +e.bar
+                                +b.BUTTON.button-line
+                                    +e.SPAN.icon
+                                        include ../blocks/icons/refresh
+                                    span Перевернуть
+                    +e.card.js-toggle-card
+                        +b.diffCard.js-diff-mobile-card(data-second-card)
+                            +e.image
+                                img(class="lazyload", data-src="i/diff_clients.svg")
+                            +e.title Не жалеем ресурсов на погружение в бизнес
+                            +e.text Устроим командировку, чтобы пообщаться лично и на месте разобраться, как у вас все работает
+                            +e.bar
+                                +b.BUTTON.button-line
+                                    +e.SPAN.icon
+                                        include ../blocks/icons/refresh
+                                    span Перевернуть
+                        +b.diffCard.with-border.js-diff-mobile-card(data-first-card)
+                            +e.image
+                                picture
+                                    source(type="image/webp", data-srcset="i/diff_clients_1.webp")
+                                    img(class="lazyload", data-src="/i/diff_clients_1.png")
+                            +e.title «Учтем все пожелания клиента!»
+                            +e.text Порой требования заказчика ставят проект под угрозу. Опытный подрядчик не боится на это указать
+                            +e.bar
+                                +b.BUTTON.button-line
+                                    +e.SPAN.icon
+                                        include ../blocks/icons/refresh
+                                    span Перевернуть
+                    +e.card.js-toggle-card
+                        +b.diffCard.js-diff-mobile-card(data-second-card)
+                            +e.image
+                                img(class="lazyload", data-src="i/diff_price.svg")
+                            +e.title Справедливая цена за важные задачи
+                            +e.text Беремся за проекты, которые действительно решают проблемы. Постоянно инвестируем в квалификацию специалистов и ищем достойное применение их талантам
+                            +e.bar
+                                +b.BUTTON.button-line
+                                    +e.SPAN.icon
+                                        include ../blocks/icons/refresh
+                                    span Перевернуть
+                        +b.diffCard.with-border.js-diff-mobile-card(data-first-card)
+                            +e.image
+                                picture
+                                    source(type="image/webp", data-srcset="i/diff_price_1.webp")
+                                    img(class="lazyload", data-src="i/diff_price_1.png")
+                            +e.title «Разумные цены!»
+                            +e.text Без комментариев
+                            +e.bar
+                                +b.BUTTON.button-line
+                                    +e.SPAN.icon
+                                        include ../blocks/icons/refresh
+                                    span Перевернуть
+
+            +b.difference(id="differenceBox")
+                +e.separator
+                    +e.touch(id="differenceDrag")
+                        +e.SPAN.arrows.icon-arrow_l_s
+                        +e.SPAN.arrows.icon-arrow_r_s
+                +e.content._top(id="differenceResize")
+                    +e.wrapper
+                        +b.diffCard.js-diff-card
+                            +e.image
+                                img(class="lazyload", data-src="/i/diff_prod.svg", title="Фокусируемся на продукте", alt="")
+                            +e.title Фокусируемся на продукте
+                            +e.text Применяем в работе архитектурные паттерны и следуем лучшим практикам. Тимлиды проектов проводят ревью кода своих подчиненных
+                        +b.diffCard.js-diff-card
+                            +e.image
+                                img(class="lazyload", data-src="/i/diff_clients.svg", title="Не жалеем ресурсов на погружение в бизнес", alt="")
+                            +e.title Не жалеем ресурсов на погружение в бизнес
+                            +e.text Устроим командировку, чтобы пообщаться лично и на месте разобраться, как у вас все работает
+                        +b.diffCard.js-diff-card
+                            +e.image
+                                img(class="lazyload", data-src="/i/diff_price.svg", title="Справедливая цена за важные задачи", alt="")
+                            +e.title Справедливая цена за важные задачи
+                            +e.text Беремся за проекты, которые действительно решают проблемы. Постоянно инвестируем в квалификацию специалистов и ищем достойное применение их талантам
+                +e.content._bottom
+                    +e.wrapper
+                        +b.diffCard.with-border.js-diff-card
+                            +e.image
+                                picture
+                                    source(type="image/webp", data-srcset="/i/diff_prod_1.webp")
+                                    img(class="lazyload", data-src="/i/diff_prod_1.png", title="Работаем с проектами любой сложности!", alt="")
+                            +e.title «Работаем с проектами любой сложности!»
+                            +e.text Невозможно организовать эффективные процессы, которые позволят одновременно верстать лендинги и проектировать цифровые экосистемы
+                        +b.diffCard.with-border.js-diff-card
+                            +e.image
+                                picture
+                                    source(type="image/webp", data-srcset="/i/diff_clients_1.webp")
+                                    img(class="lazyload", data-src="/i/diff_clients_1.png", title="Учтем все пожелания клиента!", alt="")
+                            +e.title «Учтем все пожелания клиента!»
+                            +e.text Порой требования заказчика ставят проект под угрозу. Опытный подрядчик не боится на это указать
+                        +b.diffCard.with-border.js-diff-card
+                            +e.image
+                                picture
+                                    source(type="image/webp", data-srcset="/i/diff_price_1.webp")
+                                    img(class="lazyload", data-src="/i/diff_price_1.png", title="Разумные цены!", alt="")
+                            +e.title «Разумные цены!»
+                            +e.text Без комментариев

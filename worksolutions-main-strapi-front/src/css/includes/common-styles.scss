@@ -1,0 +1,58 @@
+html, body {
+  position: relative;
+}
+
+html.modal-opened {
+  height: 100%;
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+  }
+}
+
+body {
+  font-family: $fontBook, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.hidden {
+    overflow: hidden;
+    padding-right: 17px;
+  }
+
+}
+
+.siteWrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+.siteContent {
+  position: relative;
+  z-index: 10;
+  overflow-x: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}

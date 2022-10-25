@@ -1,0 +1,86 @@
+@import "includes/clear";
+@import "includes/breakpoints";
+@import "includes/fonts";
+@import "includes/theme";
+@import "includes/buttons.scss";
+
+@import "includes/common-styles";
+
+@import "includes/outstaffing/first/first";
+@import "includes/outstaffing/certification/certification";
+@import "includes/outstaffing/benefits/outstaffBenefits";
+@import "includes/reviews/reviews";
+@import "includes/outstaffing/approachToWork/approachToWork";
+@import "includes/services/services";
+@import "includes/outstaffing/ourPartners/ourPartners";
+@import "includes/outstaffing/prices/outstaffPrices";
+@import "includes/outstaffing/seeAlso/outstaffSeeAlso";
+@import "includes/tehnicheskiy-audit-frontend/consult";
+
+@import "includes/technologies/technologies";
+@import "includes/outstaffing/technologies/backTechnologies";
+@import "includes/technologies/technologiesSeparateStack";
+
+@import "includes/team/team";
+@import "includes/team/teamSliderMobile";
+@import "includes/team/teamSliderDesc";
+
+@import "includes/menu/siteMenu";
+@import "includes/menu/socialMenu";
+@import "includes/menu/menuList";
+
+@import "includes/forms/forms";
+@import "includes/forms/attachment";
+
+@import "includes/modals/modal";
+@import "includes/blog/vars_blog";
+@import "includes/blog/article";
+
+@import "includes/footer/footer";
+
+.team,
+.technologies-back,
+.technologies-separate,
+.tech-stack,
+.uses,
+.devops-methodology,
+.footer {
+  &__in {
+    padding-top: 0;
+  }
+}
+
+.article {
+  width: 100%;
+  margin: 0;
+}
+
+.approach-work__in.section__in {
+  padding-top: 144px;
+}
+
+@media only screen and (max-width: 1151.98px) {
+  .approach-work__in.section__in {
+    padding-top: 96px;
+  }
+}
+
+.consult-header__title {
+  margin-bottom: 50px;
+}
+
+.consult-content {
+  margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 1399.98px) {
+  .m-d-none {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1399.98px) {
+  .consult-wrapper {
+    padding-bottom: 24px;
+  }
+}

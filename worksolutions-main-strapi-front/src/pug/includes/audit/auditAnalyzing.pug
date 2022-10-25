@@ -1,0 +1,21 @@
+mixin auditAnalyzing(header, list, article, title)
+    +b#consultSection.SECTION.section._dark.consult&attributes(attributes)
+        +e.in
+            +b.consult-wrapper
+                +b.consult-header
+                    +e.H3.title=header
+                +b.consult-content
+                    each col in list
+                        +e.col
+                            each cell in col
+                                +e.cell=cell
+                +b.consult-form
+                    +e.in
+                        if(title)
+                            +e.H4.title=title
+                        +articleBlock(article, true)
+
+                +e.consult-image.m-d-none
+                    picture
+                        source(type="image/webp", data-srcset="/i/consult/consult-image.webp")
+                        img(class="lazyload", data-src="/i/consult/consult-image.png", alt="")

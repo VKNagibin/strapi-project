@@ -1,0 +1,176 @@
+.specproject {
+  &__in {
+    padding-top: 0;
+  }
+
+  &__content {
+    position: relative;
+
+    &__background {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      z-index: 0;
+
+      @media #{$desktop-small-down} {
+        align-items: flex-end;
+      }
+
+      @media #{$screen} and (max-width: 844px) {
+        img {
+          position: absolute;
+          left: -166px;
+        }
+      }
+
+      @media #{$mobile-pre-mid-down} {
+        img {
+          position: static;
+          left: auto;
+        }
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    border: 1px solid #DBE3F0;
+    box-sizing: border-box;
+    border-radius: 20px;
+    height: 960px;
+
+    @media #{$desktop-small-down} {
+      max-height: 800px;
+
+      &__background {
+        align-items: flex-end;
+      }
+    }
+
+    @media #{$mobile-pre-mid-down} {
+      max-height: 552px;
+    }
+
+    &:before, &:after {
+      content: "";
+      width: 52px;
+      height: 52px;
+      position: absolute;
+    }
+
+    &:before {
+      top: 32px;
+      left: 32px;
+      background: url("../../../images/specproject/triangle-specproject-left.svg");
+      @media #{$screen} and (max-width: 844px) {
+        display: none;
+      }
+    }
+
+    &:after {
+      bottom: 32px;
+      right: 32px;
+      background: url("../../../images/specproject/triangle-specproject-rigth.svg");
+      @media #{$screen} and (max-width: 844px) {
+        display: none;
+      }
+    }
+  }
+
+  &__center-block {
+    background: #FFFFFF;
+    border: 1px solid #DBE3F0;
+    box-sizing: border-box;
+    box-shadow: 0 20px 64px rgba(99, 120, 153, 0.08);
+    border-radius: 20px;
+    max-width: 720px;
+    margin: 88px auto 0;
+    padding: 56px 40px 64px;
+    text-align: center;
+
+    @media #{$desktop-small-down} {
+      max-width: 560px;
+    }
+
+    @media #{$tablet-down} {
+      margin-right: 32px;
+      margin-left: 32px;
+    }
+
+    @media #{$mobile-pre-mid-down} {
+      max-height: 488px;
+      margin-right: 24px;
+      margin-left: 24px;
+      padding: 32px 20px 40px;
+      margin-top: calcDynamicRangeResponsive(32, 40, $mobile-small-native, $mobile-native);
+    }
+
+  }
+
+  &__title {
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $grayBlue5;
+    position: relative;
+
+    @media #{$desktop-small-down} {
+      font-size: 18px;
+      line-height: 1.45;
+    }
+  }
+
+  &__title-container {
+    max-width: 145px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__question {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-family: $fontCondMedium;
+    font-size: 72px;
+    text-transform: uppercase;
+    color: $gray5;
+
+    @media #{$desktop-small-down} {
+      font-size: 48px;
+    }
+
+    @media #{$mobile-pre-mid-down} {
+      font-size: 32px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    color: $grayBlue5;
+
+    @media #{$desktop-small-down} {
+      font-size: 18px;
+    }
+  }
+
+  &__button-container {
+    margin: 0 auto;
+    margin-top: 48px;
+    max-width: 400px;
+
+    @media #{$mobile-pre-mid-down} {
+      margin-top: 32px;
+    }
+  }
+}

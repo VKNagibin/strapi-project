@@ -1,0 +1,23 @@
+include ../forms/formPhoneNumberPrompt
+
+mixin formEstimate
+  +b.form
+    +e.in
+      +e.P.title Расчет сметы
+      +e.P.desc Рассчитаем детальную смету и расскажем о возможных рисках проекта
+      +e.FORM.form(
+        action="#",
+        method="POST",
+        data-yandex-counter-id=(isProduction ? yandexCounterId : false)
+        data-metric-goal=(isProduction ? "sendFormEstimate" : false))
+        +hiddenFormTitle("Расчет сметы")
+        +inputTextField("text", "requesterName", "estimate_name", "Как к вам обращаться")
+        .phone-wrapper
+          +inputTextField("tel", "requesterPhoneNumber", "estimate_phone", "Телефон", "phone", "off")
+          +formPromptAlert("Чтобы не беспокоить вас звонками, мы напишем в мессенджер для выбора удобного канала связи")
+        +inputTextField("email", "requesterEmail", "estimate_mail", "Электронная почта", "email")
+        +switcherField("purpose", "Новый проект", "Развитие проекта")
+        +textareaField("description", "Расскажите про свою задачу")
+        +attachField("Прикрепить бриф или тз")
+        +submitField("Получить расчет")
+        +agreementField("Получить расчет")

@@ -1,0 +1,142 @@
+.page404 {
+  overflow-x: hidden;
+
+  &__content {
+    position: relative;
+    padding: 96px 0 92px;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 792px;
+    height: 792px;
+    flex-shrink: 0;
+  }
+
+  &__ring-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 112px;
+      height: 112px;
+      background: url(../../../images/404/decor_plus.svg) no-repeat center center;
+    }
+
+    &::before {
+      top: 0;
+      right: -184px;
+    }
+
+    &::after {
+      left: -184px;
+      bottom: 0;
+    }
+  }
+
+  &__ring {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-filter: drop-shadow(40px 40px 40px rgba(0, 0, 0, 0.24));
+    filter: drop-shadow(40px 40px 40px rgba(0, 0, 0, 0.24));
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 320px;
+    text-align: center;
+  }
+
+  &__code {
+    display: block;
+    margin-bottom: 8px;
+    width: 100%;
+    text-align: center;
+    font-family: $fontCondMedium, "Arial Black", Helvetica, sans-serif;
+    font-size: 144px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $gray5;
+  }
+
+  &__desc {
+    margin-bottom: 32px;
+    font-family: $fontBook, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    color: $grayBlue5;
+  }
+
+  @media #{$desktop-middle-down} {
+    &__ring-wrapper {
+      &::before {
+        right: -112px;
+      }
+
+      &::after {
+        left: -112px;
+      }
+    }
+  }
+
+  @media #{$desktop-small-down} {
+    &__content {
+      padding-top: 56px;
+      padding-bottom: 52px;
+    }
+
+    &__wrapper {
+      width: 872px;
+      height: 872px;
+    }
+
+    &__ring-wrapper {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &__text {
+      width: 256px;
+    }
+
+    &__code {
+      font-size: 96px;
+    }
+
+    &__desc {
+      font-size: 18px;
+      line-height: 1.45;
+      margin-bottom: 24px;
+    }
+  }
+
+  @media #{$mobile-down} {
+    &__wrapper {
+      width: 464px;
+      height: 464px;
+    }
+
+    &__ring {
+      -webkit-filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.24));
+      filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.24));
+    }
+  }
+}

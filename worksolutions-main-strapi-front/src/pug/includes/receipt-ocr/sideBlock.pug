@@ -1,0 +1,12 @@
+include icons/spinner
+include components/tab
+
+mixin sideBlock()
+    div.receipt-ocr_side-block_wrapper
+        div.receipt-ocr_side-block_header
+            +tab("Результаты", 'receipt-ocr_tab-result')
+            +tab("JSON", 'receipt-ocr_tab-json')
+        div.receipt-ocr_side-block_recognizing
+            +spinner()
+            div.receipt-ocr_side-block_status-text
+        div.receipt-ocr_side-block_results

@@ -1,0 +1,351 @@
+@import "../../../../node_modules/slick-carousel/slick/slick.scss";
+@import "src/css/includes/breakpoints";
+@import "src/css/includes/fonts";
+@import "src/css/includes/theme";
+
+.teamSlider {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  height: 720px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-bottom: 64px;
+  box-shadow: 0 20px 40px rgba($gray5, 0.06),
+              0 2px 6px rgba($gray5, 0.04);
+
+  @media #{$tablet-down} {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  @media #{$desktop-middle-down} {
+    height: 560px;
+  }
+
+  @media #{$desktop-small-down} {
+    height: auto;
+  }
+
+  .slick-list {
+    height: 100%;
+  }
+
+  &__images {
+    height: 100%;
+    position: relative;
+    margin-right: 544px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+
+    @media #{$desktop-middle-down} {
+      margin-right: 50%;
+    }
+
+    @media #{$desktop-small-down} {
+      margin: 0;
+      width: 100%;
+      height: 640px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      height: 0;
+      padding: 100% 0 0 0;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: 125%;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    height: 100%;
+    width: 544px;
+    top: 0;
+    right: 0;
+    padding: 32px 32px 32px 54px;
+    border: 1px solid $grayBlue3;
+    border-top: none;
+
+    @media #{$desktop-middle-down} {
+      width: 50%;
+    }
+
+    @media #{$desktop-small-down} {
+      position: relative;
+      width: 100%;
+      padding: 24px;
+    }
+  }
+}
+
+.b-slider-team-main {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  @media #{$tablet-down} {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__slide {
+    position: relative;
+    height: 638px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+.b-slider-team-nav__track {
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.b-slider-team-nav {
+  position: absolute;
+  bottom: 16px;
+  padding: 0 24px;
+  width: 100%;
+  overflow: hidden;
+
+  @media #{$desktop-small-down} {
+    padding: 0 16px;
+    bottom: 8px;
+  }
+
+  @media #{$tablet-down} {
+    padding: 0 10px;
+    bottom: 10px;
+  }
+
+  &__track {
+    display: flex;
+    cursor: grab;
+    box-sizing: border-box;
+  }
+
+  &__slide {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 6px;
+    transition: all .2s ease-out;
+
+    &:last-of-type {
+      width: 144px;
+      min-width: 144px;
+      padding-right: 36px;
+    }
+
+    @media #{$desktop-small-down} {
+      width: 100px !important;
+      min-width: 100px !important;
+      height: 100px !important;
+
+      &:last-of-type {
+        width: 112px !important;
+        min-width: 112px !important;
+        padding-right: 24px;
+      }
+    }
+
+    @media #{$mobile-down} {
+      width: 76px !important;
+      min-width: 76px !important;
+      height: 76px !important;
+
+      &:last-of-type {
+        width: 92px !important;
+        min-width: 92px !important;
+      }
+    }
+
+    &.current {
+      opacity: .25;
+
+      img {
+        cursor: default;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: all .2s ease-out;
+    border-radius: 12px;
+    object-fit: cover;
+
+    @media #{$desktop-small-up} {
+      &:hover {
+        transform: translateY(-12px);
+      }
+    }
+  }
+}
+
+.sliderCardsNav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  &__nav {
+    position: relative;
+    display: flex;
+
+    button:first-of-type {
+      margin-right: 16px;
+    }
+  }
+
+  &__count {
+    font-family: $fontDemi;
+    font-size: 18px;
+    line-height: 26px;
+    color: $grayBlue5;
+  }
+}
+
+.mobile .personalCard__comment,
+.tablet .personalCard__comment {
+  font-size: 24px;
+  line-height: 32px;
+
+  @media #{$desktop-middle-down} {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+.personalCard {
+  position: relative;
+
+  &__name {
+    display: block;
+    font-family: $fontDemi;
+    font-size: 40px;
+    line-height: 52px;
+    color: $gray5;
+    margin-bottom: 4px;
+
+    @media #{$desktop-small-down} {
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+
+  &__employment {
+    display: block;
+    font-size: 24px;
+    line-height: 36px;
+    color: $grayBlue5;
+    margin-bottom: 24px;
+
+    @media #{$desktop-small-down} {
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__experience {
+    display: block;
+    position: relative;
+    margin-bottom: 24px;
+
+    @media #{$desktop-small-down} {
+      margin-bottom: 16px;
+    }
+
+    p {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 24px;
+      line-height: 32px;
+      color: $gray5;
+
+      @media #{$tablet-down} {
+        display: inline;
+
+        &:first-child {
+          margin-right: 12px;
+        }
+      }
+
+      @media #{$desktop-small-down} {
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      strong {
+        font-family: $fontDemi;
+        margin-right: 8px;
+      }
+
+      span + span {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &__comment {
+    display: block;
+    font-size: 24px;
+    line-height: 36px;
+    color: $gray5;
+
+    @media #{$desktop-middle-down} {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    @media #{$desktop-small-down} {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}
+
+.js-card-animate {
+  position: relative;
+  transition: all .3s ease-out;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+
+  &.hidden {
+    transition: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+  }
+}

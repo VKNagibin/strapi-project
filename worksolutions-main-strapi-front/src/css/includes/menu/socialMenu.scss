@@ -1,0 +1,82 @@
+.social-menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+
+  &__element {
+    position: relative;
+    margin: 8px auto 8px;
+
+    @media #{$mobile-down} {
+      margin: 7px auto 7px;
+    }
+
+    &_fb {
+      height: 20px;
+    }
+
+    &_inst {
+      height: 38px;
+    }
+
+    &_git {
+      height: 62px;
+    }
+
+    &_habr {
+      height: 42px;
+    }
+
+    &_vc {
+      height: 24px;
+    }
+
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    outline: none;
+
+    .icon-block {
+      margin: 0 auto;
+    }
+
+    &:hover,
+    &:focus {
+      .icon-block {
+        fill: #a3b3cc;
+      }
+    }
+  }
+
+  &__text-link {
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 0 8px;
+    font-family: $fontHeavy, Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    color: $grayBlue5;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    backface-visibility: hidden;
+    transition: color 0.2s ease-out;
+    line-height: 32px;
+
+    &:focus {
+      color: $grayBlue6;
+      transition: color 0.2s ease-out;
+    }
+  }
+
+}

@@ -1,0 +1,11 @@
+include imageRecognitionBlock
+include other/article
+include other/otherDemoBlock
+
+mixin mainReceiptOcr()
+    +b.SECTION.section.section_light.receipt-ocr-main-wrapper
+        div.receipt-ocr-content-wrapper
+            h1.receipt-ocr_main-title Распознавание чеков
+            +imageRecognitionBlock()
+            +article()
+            +otherDemoBlock()

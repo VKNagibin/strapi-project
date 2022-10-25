@@ -1,0 +1,18 @@
+mixin mainNeuroMarch()
+  +b.SECTION.main-neuro-march.section.section_light&attributes()
+    +e.in.section__in
+      +e.main-approach-work
+        +e.content
+          +e.A.logo(data-first-fade, href="/")
+            +e.IMG.logo(src="/i/logo_ws.svg")
+          +e.image-container
+            picture
+              source(type="image/webp", data-srcset="/i/neuroMarch/promo-postcard.webp")
+              +e.IMG.image(class="lazyload", data-src="/i/neuroMarch/promo-postcard.png")
+          +e.content-wrapper
+            +e.text-container
+              +e.H3.title
+                | !{"Генератор открыток <br /> с <span class='main-neuro-march__title-highlight'> 8 Марта </span>"}
+              +e.P.text Мы обучили нейросеть на тысячах фотографий с цветочками, а также научили ее генерировать поздравительный текст. Теперь она может создавать новые уникальные нейро-открытки!
+            +formGenerateCard
+

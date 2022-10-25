@@ -1,0 +1,170 @@
+.employment {
+  &__in {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 92px;
+      height: 92px;
+      background: url(../../../images/decor_plus.svg) no-repeat center center;
+      background-size: contain;
+    }
+
+    &::before {
+      top: 144px;
+      left: 128px;
+    }
+
+    &::after {
+      top: auto;
+      bottom: 144px;
+      left: 47%;
+    }
+  }
+
+  &__title {
+    margin-top: 104px;
+    margin-bottom: 24px;
+  }
+
+  &__info {
+    width: 37%;
+    min-width: 562px;
+  }
+
+  &__desc {
+    margin-bottom: 48px;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $grayBlue5;
+  }
+
+  &__btn-wrapper {
+    max-width: 360px;
+  }
+
+  &__btn {
+    margin-bottom: 16px;
+    background: transparent;
+    letter-spacing: 0.05em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::after {
+      min-height: 52px;
+    }
+  }
+
+  &__decor {
+    position: relative;
+    margin-top: 50px;
+    width: 42%;
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    -webkit-filter: drop-shadow(40px 40px 40px rgba(0, 0, 0, 0.15));
+    filter:         drop-shadow(40px 40px 40px rgba(0, 0, 0, 0.15));
+  }
+
+  @media #{$desktop-middle-down} {
+    &__in {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &__title {
+      margin-top: 0;
+    }
+
+    &__decor {
+      left: 3%;
+      width: 49.6%;
+      flex-shrink: 0;
+    }
+
+    &__img {
+      -webkit-filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.15));
+      filter:         drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.15));
+    }
+  }
+
+  @media #{$desktop-small-down} {
+    &__info {
+      width: 70%;
+      min-width: 424px;
+    }
+
+    &__desc {
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    &__btn {
+      line-height: 44px;
+
+      &::after {
+        min-height: 44px;
+      }
+    }
+
+    &__decor {
+      left: 8%;
+    }
+  }
+
+  @media #{$tablet-down} {
+    &__in {
+      flex-wrap: wrap;
+    }
+
+    &__info,
+    &__decor {
+      width: 100%;
+      min-width: 1px;
+    }
+
+    &__decor {
+      top: 0;
+      left: 0;
+      margin-top: 32px;
+    }
+
+    &__desc {
+      margin-bottom: 40px;
+    }
+
+    &__btn-wrapper {
+      margin: 0 auto;
+    }
+  }
+}
+
+.ios {
+  .employment {
+    @media #{$mobile-down} {
+      &__in {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &__info,
+      &__decor {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+  }
+}

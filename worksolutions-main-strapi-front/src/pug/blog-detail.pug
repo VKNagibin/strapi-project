@@ -1,0 +1,14 @@
+- var mainPage = false;
+- var detail_page = true, full_pic = !!background;
+- var pathJs = "blog_detail"
+- var pathCss = "blog_detail"
+
+include includes/_
+
++structure(tagTitle || title, tagDescription || announce, tagKeywords, '', {footer: true, shareButtons: true}, openGraphMeta)
+  main.main.page-detail
+    +articleDetail()
+  +otherArticles()
+  .article-detail-container.section
+    .article-detail-container__in.section__in.article-detail-container_bottom
+      +formSign()

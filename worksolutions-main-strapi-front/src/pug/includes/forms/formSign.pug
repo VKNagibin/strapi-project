@@ -1,0 +1,30 @@
+mixin formSign
+    +b.form._blue._top.sign-form
+        picture.sign-form__image
+            source(type="image/webp", data-srcset="/i/sign-form/sign-form-bg.webp")
+            img(class="lazyload", data-src="/i/sign-form/sign-form-bg.png", alt="")
+        +e.in.sign-form__in
+            div.sign-form__inner.visible-block
+                +e.P.title.sign-form__title Интересные статьи и кейсы
+                    br
+                    | от Work Solutions
+                .sign-form__inner-wrapper
+                    +e.FORM.form.js-form(
+                        action="#",
+                        method="POST",
+                        data-type="subscription"
+                        data-yandex-counter-id=yandexCounterId
+                        data-metric-goal="sendFormToSign"
+                    )
+                        +hiddenFormTitle("Запрос на подписку")
+                        +inputTextField("email", "requesterEmail", "sign-email", "Электронная почта", "email", "", "sign-form__mobile-input")
+                        +submitField("Подписаться", null, true)
+                        +agreementField("Подписаться")
+            .sign-form__block-with-thanks.block-with-thanks
+                +e.P.title.sign-form__title Спасибо за подписку!
+        .sign-form__market-decor-wrapper
+            .market__decor
+                picture.market__img
+                    source(type="image/webp", data-srcset="/i/market/market-decor.webp")
+                    img.market__img(class="lazyload", data-src="/i/market/market-decor.png", alt="")
+                .market__ring

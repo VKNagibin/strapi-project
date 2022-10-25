@@ -1,0 +1,54 @@
+include reviewCard
+
+-
+  var reviewCards = [
+    {
+      src: "/i/reviews/review-1",
+      fullname: "Петр Клименко",
+      text: "Полтора года проработали вместе, и команда Work Solutions деливерила в разы лучше внутренней команды разработки! Я всегда скептически относился к outsource-разработчикам, считал, что лучше иметь своих в офисе, особенно если это стартап. Но ваша компания доказала, что я сильно ошибался. Быстро решались даже задачи, которые, казалось, решить нельзя, либо придется потратить кучу времени. Спасибо за сотрудничество!",
+      position: {
+        link: "",
+        text: "Технический директор"
+      },
+      project: {
+        link: "",
+        text: "YaYa"
+      },
+      isBigCard: true
+    },
+    {
+      src: "/i/reviews/review-4",
+      fullname: "Наталья Порошина",
+      text: "Взаимодействие с Work Solutions доказало, что аутсорс может принести ощутимо лучшие результаты, чем инхаус. Начав с масштабного аудита кода и инфраструктуры, команда до мелочей погрузилась в специфику отрасли и уже год успешно поддерживает продукт, ежемесячно наращивая обороты. Благодарю каждого разработчика за ответственное и внимательное отношение к делу и качественную работу!",
+      position: {
+        link: "",
+        text: "Head of Digital Projects"
+      },
+      project: {
+        link: "",
+        text: "Випсервис"
+      },
+    },
+    {
+      src: "/i/reviews/review-5",
+      fullname: "Алевтина Петрикова",
+      text: "Хочу от всей души поблагодарить команду Work Solutions за сотрудничество! Мне было очень приятно с вами работать: вы крутые инженеры, меня восхищает ваша проактивная позиция, благодаря которой всегда получалось договориться, найти решение и разрулить кросс-командные кейсы.",
+      position: {
+        link: "",
+        text: "Product Manager"
+      },
+      project: {
+        link: "",
+        text: "RU-Center"
+      },
+    },
+  ];
+
+mixin reviews(title)
+  +b.SECTION.reviews-main.section.section_light
+    +e.in.section__in
+      +e.title-wrapper.section__title-wrapper
+        +e.H2.title.section__title.section__title_single.title-center.js-animate-title#reviews= title
+      +b.reviewsCarousel
+        +e.in.dragscroll#reviewsCarouselWrapper
+          +reviewCardsContainer(reviewCards)

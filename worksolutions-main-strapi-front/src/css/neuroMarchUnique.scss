@@ -1,0 +1,34 @@
+$pink: #f63c8a;
+
+@import "includes/neuroMarch/eightNeuroFonts";
+
+@import "includes/clear";
+@import "includes/breakpoints";
+
+@import "includes/fonts";
+
+@import "includes/theme";
+@import "includes/buttons.scss";
+
+@import "includes/common-styles";
+@import "includes/menu/siteMenu";
+@import "includes/menu/socialMenu";
+@import "includes/menu/menuList";
+
+@import "includes/neuroMarch/mainNeuroMarchUnique";
+
+@import "includes/forms/forms";
+
+@import "includes/modals/modal";
+
+@import "includes/footer/footer";
+
+@import "includes/yaShare/yaShare.scss";
+
+.form__btn-wrapper {
+  margin-top: 0;
+}
+
+.siteContent {
+  z-index: 1;
+}

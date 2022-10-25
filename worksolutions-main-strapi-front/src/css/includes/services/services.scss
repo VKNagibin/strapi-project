@@ -1,0 +1,124 @@
+.services {
+  &__list {
+    display: flex;
+    margin: -20px;
+  }
+
+  &__item {
+    position: relative;
+    margin: 20px;
+    padding: 56px 32px 168px 32px;
+    width: calc((100% - 121px) / 3);
+    border: 1px solid $grayBlue3;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background: $grayBlue1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 32px;
+      right: 32px;
+      width: 72px;
+      height: 72px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+
+      @media #{$tablet-down} {
+        width: 48px;
+        height: 48px;
+        bottom: 24px;
+        right: 24px;
+      }
+    }
+
+    &:first-child::after {
+      background-image: url(../../../images/decor_bottom-right_color_1.svg)
+    }
+
+    &:nth-child(2)::after {
+      background-image: url(../../../images/decor_bottom-right_color_2.svg)
+    }
+
+    &:last-child::after {
+      background-image: url("../../../images/decor_bottom-right_color_3.svg")
+    }
+  }
+
+  &__item-title {
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    text-align: center;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 1.3;
+    color: $gray5;
+  }
+
+  &__item-desc {
+    text-align: center;
+    font-family: $fontBook, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $grayBlue5;
+  }
+
+  @media screen and (max-width: 1300px) {
+    &__list {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: calc((100% - 81px) / 2);
+    }
+  }
+
+  @media #{$desktop-small-down} {
+    &__list {
+      display: block;
+      margin: 0;
+    }
+
+    &__item {
+      margin: 0 0 24px 0;
+      padding: 40px;
+      padding-bottom: 96px;
+      width: 100%;
+      min-height: 200px;
+
+      &::after {
+        bottom: 24px;
+        right: 24px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__item-title {
+      font-size: 24px;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    &__item-desc {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  }
+
+  @media #{$mobile-down} {
+    &__item {
+      min-height: 296px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+}
+.white-background {
+  background: #ffffff;
+}

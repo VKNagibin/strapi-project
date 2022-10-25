@@ -1,0 +1,54 @@
+$grayDark: #252525;
+
+.receipt-ocr_other_wrapper{
+  margin: 144px 0;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  max-width: 752px;
+  color: $grayDark;
+
+  @media (max-width: 1266px) {
+    margin: 96px 0;
+  }
+}
+
+.receipt-ocr_other_p{
+  font-family: $fontPTSerifRegular;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: $grayDark;
+  margin-bottom: 40px;
+}
+
+.receipt-ocr_other_p-italic{
+  font-family: $fontPTSerifItalic;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: $grayDark;
+  margin-bottom: 40px;
+}
+
+.receipt-ocr_other_h2{
+  font-family: $fontDemi;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: $grayDark;
+  margin-bottom: 16px;
+}
+
+.receipt-ocr_other_h3{
+  font-family: $fontDemi;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  color: $grayDark;
+  margin-bottom: 16px;
+}
+
+.noMargin {
+  margin: 0;
+}

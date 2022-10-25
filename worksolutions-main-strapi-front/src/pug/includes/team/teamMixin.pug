@@ -1,0 +1,13 @@
+mixin teamMixin(title)
+  +b.SECTION.team.section.section_light
+    +e.in.section__in
+      +e.title-wrapper.section__title-wrapper
+        +e.H2.title.section__title.js-animate-title#team=title
+        +e.P.title-desc.section__title-desc Команда
+      +teamSlider()
+      +teamCarousel()
+      +e.P.desc Получите подробные резюме и ставки наших специалистов
+      +e.btn-wrapper
+        +e.BUTTON.btn.button.js-modal-call(data-modal="resume", type="button")
+          span.button__text.button__text_desktop Получить резюме и ставки
+          span.button__text.button__text_mobile Получить резюме

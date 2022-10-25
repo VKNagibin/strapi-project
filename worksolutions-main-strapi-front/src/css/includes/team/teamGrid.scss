@@ -1,0 +1,270 @@
+@import 'src/css/includes/theme';
+@import 'src/css/includes/fonts';
+@import 'src/css/includes/breakpoints';
+
+.team-grid-container {
+  margin-bottom: 40px;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.team-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-family: $fontDemi;
+  color: $gray5;
+
+  @media #{$desktop-small-down} {
+    flex-flow: column nowrap;
+  }
+
+  > * {
+    margin-bottom: 24px;
+
+    @media #{$tablet-down} {
+      margin-bottom: 16px;
+    }
+  }
+
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid $grayBlue3;
+    overflow: hidden;
+
+    &_text {
+      flex: 0 1 40%;
+      background: $lightBlue;
+
+      @media #{$desktop-small-down} {
+        flex-basis: 100%;
+        border-radius: 56px 56px 20px 20px;
+      }
+
+      &_top {
+        border-radius: 56px 20px 20px 20px;
+
+        @media #{$desktop-small-down} {
+          border-radius: 56px 56px 20px 20px;
+        }
+
+        @media #{$tablet-down} {
+          border-radius: 40px 40px 20px 20px;
+        }
+
+        .team-grid__icon-wrapper {
+          padding-top: 32px;
+          padding-left: 32px;
+          margin-bottom: 38px;
+
+          @media #{$desktop-small-down} {
+            padding-top: 24px;
+            padding-left: 24px;
+            margin-bottom: 16px;
+          }
+
+          @media #{$tablet-down} {
+            padding-top: 16px;
+            padding-left: 16px;
+            margin-bottom: 16px;
+          }
+        }
+
+        .team-grid__text {
+          padding: 0 32px 32px;
+
+          @media #{$tablet-down} {
+            padding: 0 24px 24px;
+          }
+        }
+      }
+
+      &_bottom {
+        margin-left: 24px;
+        border-radius: 20px 20px 56px 20px;
+
+        @media #{$desktop-small-down} {
+          flex-direction: column-reverse;
+          margin-left: 0;
+          border-radius: 56px 56px 20px 20px;
+        }
+
+        @media #{$tablet-down} {
+          border-radius: 40px 40px 20px 20px;
+        }
+
+        .team-grid__text {
+          padding: 32px 32px 0;
+          margin-bottom: 8px;
+
+          @media #{$desktop-small-down} {
+            padding: 0 32px 32px;
+            margin-bottom: 0;
+          }
+
+          @media #{$tablet-down} {
+            padding: 0 24px 24px;
+          }
+        }
+
+        .team-grid__icon-wrapper {
+          align-self: flex-end;
+          padding: 0 32px 32px 0;
+
+          @media #{$desktop-small-down} {
+            align-self: flex-start;
+            padding: 24px 0 0 24px;
+            margin: 0 0 16px 0;
+          }
+
+          @media #{$tablet-down} {
+            padding: 16px 0 0 16px;
+          }
+        }
+      }
+    }
+
+    &_staff {
+      flex: 0 1 calc(60% - 24px);
+      font-size: 40px;
+      line-height: 52px;
+      box-shadow: 0 2px 6px 0 rgba($blue6, 0.04),
+                  0 20px 40px 0 rgba($blue6, 0.06);
+
+      @media #{$desktop-small-down} {
+        flex-basis: 100%;
+      }
+
+      &_top {
+        border-radius: 20px 56px 20px 20px;
+
+        @media #{$desktop-small-down} {
+          border-radius: 20px 20px 56px 56px;
+        }
+
+        @media #{$tablet-down} {
+          border-radius: 20px 20px 40px 40px;
+        }
+      }
+
+      &_bottom {
+        border-radius: 20px 20px 20px 56px;
+
+        @media #{$desktop-small-down} {
+          border-radius: 20px 20px 56px 56px;
+          order: 5;
+        }
+
+        @media #{$tablet-down} {
+          border-radius: 20px 20px 40px 40px;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: $blue2 url("../../../images/arrow_right_short_white.svg") no-repeat center center;
+    background-size: 57%;
+
+    @media #{$tablet-down} {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 35px;
+
+    @media #{$tablet-down} {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  &__headline {
+    padding: 24px 32px;
+
+    @media #{$desktop-small-down} {
+      font-size: 32px;
+      line-height: 38px;
+    }
+
+    @media #{$tablet-down} {
+      padding: 16px 24px;
+    }
+  }
+
+  &__images-block {
+    position: relative;
+    display: flex;
+    padding: 0 0 24px 24px;
+    overflow: hidden;
+
+    @media #{$tablet-down} {
+      padding: 0 0 16px 16px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 100%;
+      background: linear-gradient(
+                      270deg,
+                      $white 0%,
+                      rgba($white, 0.991615) 11.79%,
+                      rgba($white, 0.967585) 21.38%,
+                      rgba($white, 0.9296) 29.12%,
+                      rgba($white, 0.879348) 35.34%,
+                      rgba($white, 0.818519) 40.37%,
+                      rgba($white, 0.7488) 44.56%,
+                      rgba($white, 0.671881) 48.24%,
+                      rgba($white, 0.589452) 51.76%,
+                      rgba($white, 0.5032) 55.44%,
+                      rgba($white, 0.414815) 59.63%,
+                      rgba($white, 0.325985) 64.66%,
+                      rgba($white, 0.2384) 70.88%,
+                      rgba($white, 0.153748) 78.62%,
+                      rgba($white, 0.0737185) 88.21%,
+                      rgba($white, 0) 100%);
+    }
+  }
+
+  &__image-wrapper {
+    border: 3px solid $white;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 123px;
+    height: 123px;
+    min-width: 123px;
+    min-height: 123px;
+    margin-left: -24px;
+
+    @media #{$tablet-down} {
+      width: 75px;
+      height: 75px;
+      min-width: 75px;
+      min-height: 75px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+}

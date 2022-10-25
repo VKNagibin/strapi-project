@@ -1,0 +1,17 @@
++b.form.contacts__form-container
+  +e.in
+    +e.H2.title Оформите с нами договор
+    +e.FORM.form(
+      action="#",
+      method="POST",
+      data-yandex-counter-id=(isProduction ? yandexCounterId : false)
+      data-metric-goal=(isProduction ? "sendFormContract" : false))
+      +hiddenFormTitle("Запрос договора")
+      +inputTextField("text", "requesterName", "name", "Как к вам обращаться")
+      .phone-wrapper
+        +inputTextField("tel", "requesterPhoneNumber", "phone", "Телефон", "phone", "off")
+        +formPromptAlert("Чтобы не беспокоить вас звонками, мы напишем в мессенджер для выбора удобного канала связи")
+      +inputTextField("email", "requesterEmail", "email", "Электронная почта", "email")
+      +attachField("Прикрепить ваши реквизиты")
+      +submitField("Отправить запрос", "Отправить")
+      +agreementField("Отправить запрос")

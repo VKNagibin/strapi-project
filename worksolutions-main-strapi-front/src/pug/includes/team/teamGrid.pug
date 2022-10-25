@@ -1,0 +1,55 @@
+-
+    const frontendTeamPhotosPath = '/i/team/thumbnails/frontend';
+    const backendTeamPhotosPath = '/i/team/thumbnails/backend';
+
+    var frontendTeamPhotos = [
+        `${frontendTeamPhotosPath}/_dsc1464`,
+        `${frontendTeamPhotosPath}/_dsc2744`,
+        `${frontendTeamPhotosPath}/_dsc1352`,
+        `${frontendTeamPhotosPath}/23`,
+        `${frontendTeamPhotosPath}/_dsc1700`,
+        `${frontendTeamPhotosPath}/_dsc3067`,
+        `${frontendTeamPhotosPath}/_dsc2720`,
+        `${frontendTeamPhotosPath}/_dsc2003`,
+        `${frontendTeamPhotosPath}/25`,
+    ];
+
+    var backendTeamPhotos = [
+        `${backendTeamPhotosPath}/27`,
+        `${backendTeamPhotosPath}/22`,
+        `${backendTeamPhotosPath}/_dsc2273`,
+        `${backendTeamPhotosPath}/24`,
+        `${backendTeamPhotosPath}/_dsc1385`,
+        `${backendTeamPhotosPath}/_dsc2201`,
+        `${backendTeamPhotosPath}/_dsc2523`,
+        `${backendTeamPhotosPath}/_dsc1647`,
+        `${backendTeamPhotosPath}/_dsc2624`,
+    ];
+
+mixin teamGrid(attributes)
+    .team-grid-container
+        .team-grid
+            .team-grid__block.team-grid__block_text.team-grid__block_text_top
+                .team-grid__icon-wrapper
+                    .team-grid__icon
+                .team-grid__text Два отдела разработки со&nbsp;специалистами разных грейдов
+            .team-grid__block.team-grid__block_staff.team-grid__block_staff_top
+                h3.team-grid__headline Frontend
+                .team-grid__images-block
+                    each url in frontendTeamPhotos
+                        .team-grid__image-wrapper
+                            picture
+                                source(type="image/webp", data-srcset=url + ".webp")
+                                img.team-grid__image(class="lazyload", data-src=url + ".jpg", alt="")
+            .team-grid__block.team-grid__block_staff.team-grid__block_staff_bottom
+                h3.team-grid__headline Backend
+                .team-grid__images-block
+                    each url in backendTeamPhotos
+                        .team-grid__image-wrapper
+                            picture
+                                source(type="image/webp", data-srcset=url + ".webp")
+                                img.team-grid__image(class="lazyload", data-src=url + ".jpg", alt="")
+            .team-grid__block.team-grid__block_text.team-grid__block_text_bottom
+                .team-grid__text Мы не используем ГПХ, ИП и&nbsp;режим самозанятого. Всех оформляем в&nbsp;штат на&nbsp;полный день по ТК РФ
+                .team-grid__icon-wrapper
+                    .team-grid__icon

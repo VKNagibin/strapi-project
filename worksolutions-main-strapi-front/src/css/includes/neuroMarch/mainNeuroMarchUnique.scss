@@ -1,0 +1,168 @@
+$breakpointForPostcard: 960;
+$resultImageHeight: 580;
+
+.main-neuro-march {
+  &__in {
+    padding-top: 96px;
+    padding-bottom: 96px;
+
+    @media #{$desktop-small-down} {
+      padding-top: 64px;
+    }
+
+    @media #{$tablet-down} {
+      padding-top: 16px;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @media #{$desktop-small-down} {
+      position: relative;
+      width: 96px;
+    }
+  }
+
+  &__result-image-container {
+    @media #{$desktop-small-down} {
+      margin-top: 40px;
+    }
+  }
+
+  &__result-image {
+    width: 100%;
+  }
+
+  &__result-image-wrapper {
+    margin: 48px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: #{$resultImageHeight}px;
+    font-family: $fontBook, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $grayBlue5;
+    width: 812px;
+
+    @media #{$desktop-small-down} {
+      margin-top: 40px;
+    }
+
+    @media #{$screen and (max-width: #{$breakpointForPostcard}px)} {
+      width: 100%;
+      height: calcDynamicRangeResponsive(175, $resultImageHeight, $mobile-small-native, $breakpointForPostcard);
+    }
+
+    @media #{$tablet-down} {
+      margin-top: 32px;
+    }
+  }
+
+  &__content-wrapper {
+    max-width: 530px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 1.3;
+    color: $gray5;
+    text-align: center;
+
+    @media #{$desktop-small-down} {
+      font-size: 32px;
+      line-height: 1.2;
+    }
+  }
+
+  &__title-highlight {
+    color: $pink;
+  }
+
+  &__share-title {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    color: $gray5;
+    margin-top: 24px;
+    margin-bottom: 16px;
+
+    @media #{$desktop-small-down} {
+      font-size: 18px;
+      line-height: 1.45;
+    }
+  }
+
+  &__generate-new {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 1.3;
+    text-align: center;
+    color: $gray5;
+    margin-bottom: 48px;
+
+    @media #{$desktop-small-down} {
+      font-size: 32px;
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.form-block {
+  padding: 32px 40px 40px;
+  background: $white;
+  border: 1px solid $grayBlue3;
+  box-sizing: border-box;
+  box-shadow: 0 20px 64px rgba(99, 120, 153, 0.08);
+  border-radius: 20px;
+
+  @media #{$tablet-down} {
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  &__form-text {
+    font-family: $fontDemi;
+    font-size: 18px;
+    line-height: 1.45;
+    color: $grayBlue5;
+    margin-bottom: 8px;
+  }
+}
+
+//TODO нужен для того, чтобы примениились шрифты на canvas
+.text-for-connect-fonts {
+  position: absolute;
+  left: -1000px;
+  font-family: "Caveat", cursive;
+  z-index: -1;
+}
+
+.load-image {
+  border: calcDynamicRangeResponsive(2, 4, $mobile-small-native, $breakpointForPostcard) solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    243.09deg,
+    rgba(207, 34, 107, 0.8) 0%,
+    rgba(0, 0, 192, 0.8) 47.4%,
+    rgba(208, 19, 180, 0.8) 100%
+  );
+}
+
+.preloader-result-image {
+  display: none;
+  margin-right: 0;
+}

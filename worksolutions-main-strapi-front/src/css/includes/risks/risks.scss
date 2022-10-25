@@ -1,0 +1,173 @@
+.risks {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px;
+  }
+
+  &__item {
+    position: relative;
+    margin: 20px;
+    width: calc((100% - 121px) / 3);
+    padding: 120px 32px 40px 32px;
+    border: 1px solid $grayBlue3;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+
+    &::before {
+       content: "";
+       position: absolute;
+       top: 36px;
+       left: 32px;
+       width: 56px;
+       height: 56px;
+       background: url(../../../images/risks/risk-item.svg) no-repeat top center;
+       background-size: contain;
+     }
+
+    &:last-child {
+      &::before {
+        background: url(../../../images/risks/risk-resume.png) no-repeat top center;
+        background-size: contain;
+      }
+
+      .risks__item-title {
+        color: $blue2;
+      }
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 32px;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 1.3;
+    color: $gray5;
+  }
+
+  &__item-desc {
+    margin-bottom: 32px;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $grayBlue5;
+  }
+
+  &__resume {
+    margin-top: 32px;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $gray5;
+  }
+
+  &__actions-item {
+    position: relative;
+    margin-bottom: 32px;
+    padding-left: 36px;
+    box-sizing: border-box;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $gray5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: $blue2 url("../../../images/arrow_right_short_white.svg") no-repeat center center;
+    }
+  }
+
+  @media #{$desktop-down} {
+    &__item {
+      padding-top: calcDynamicRangeResponsive(80,120,$desktop-small-native,$desktop-native);
+      padding-bottom: calcDynamicRangeResponsive(32,40,$desktop-small-native,$desktop-native);
+      padding-left: calcDynamicRangeResponsive(24,32,$desktop-small-native,$desktop-native);
+      padding-right: calcDynamicRangeResponsive(24,32,$desktop-small-native,$desktop-native);
+
+      &::before {
+        top: calcDynamicRangeResponsive(28,36,$desktop-small-native,$desktop-native);
+        left: calcDynamicRangeResponsive(24,32,$desktop-small-native,$desktop-native);
+      }
+    }
+
+    &__item-title {
+      font-size: calcDynamicRangeResponsive(24,32,$desktop-small-native,$desktop-native);
+    }
+    &__actions-item {
+      font-size: calcDynamicRangeResponsive(18,24,$desktop-small-native,$desktop-native);
+    }
+  }
+
+  @media #{$desktop-middle-down} {
+    &__item {
+      width: calc((100% - 81px) / 2);
+    }
+  }
+
+  @media #{$desktop-small-down} {
+    &__list {
+      margin: 0;
+    }
+
+    &__item {
+      margin: 0 0 24px 0;
+      padding: 80px 24px 32px 24px;
+      width: 100%;
+
+      &::before {
+        left: 24px;
+        top: 27px;
+        width: 40px;
+        height: 34px;
+      }
+
+      &:last-child {
+        padding-top: 96px;
+        margin-bottom: 0;
+
+        &::before {
+          width: 56px;
+          height: 56px;
+        }
+      }
+    }
+
+    &__item-title {
+      margin-bottom: 24px;
+      font-size: 24px;
+      line-height: 1.32;
+    }
+
+    &__item-desc {
+      margin-bottom: 24px;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    &__resume {
+      margin-top: 24px;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    &__actions-item {
+      margin-bottom: 24px;
+      font-size: 18px;
+      line-height: 1.45;
+
+      &::before {
+        top: 2px;
+      }
+    }
+  }
+}

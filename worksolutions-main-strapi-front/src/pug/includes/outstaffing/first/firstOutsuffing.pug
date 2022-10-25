@@ -1,0 +1,39 @@
+include firstBlockCard
+
+-
+  var cardsText = [
+    'Возможность привлечь узкого специалиста',
+    'Не нужно обеспечивать рабочее место',
+    'Сокращение затрат на персонал',
+    'Быстрое закрытие производственных потребностей'
+  ]
+
+mixin firstScreenOutstaffing(title)
+  +b.first.section.outstaffing&attributes(attributes)
+    +e.PICTURE.background__image
+      source(type="image/webp", srcset="/i/outstaffing/first_image_pre_middle.webp", media="(max-width: 1265px)")
+      source(type="image/png", srcset="/i/outstaffing/first_image_pre_middle.png", media="(max-width: 1265px)")
+      source(type="image/webp", srcset="/i/outstaffing/first_image.webp")
+      img(src="/i/outstaffing/first_image.png", alt="")
+    +e.in.section__in
+      +e.main-first
+        +e.slogan-block
+          +b.A.site-logo(data-first-fade, href="/")
+            +e.IMG.image(src="/i/logo_ws.svg")
+          +b.slogan(data-first-fade)
+            +e.H1.title
+              each titleWord in title
+                if titleWord.highlighted
+                  +e.SPAN.span-title-highlighted= " " + titleWord.text
+                else
+                  +e.SPAN.span-title= " " + titleWord.text
+          .submit-application(data-first-fade)
+            a.button.button-first.js-anchor-link(href="#prices", type="button")
+              span.button__text Оставить заявку
+        +e.cards-first
+          each cardText in cardsText
+            +firstBlockCard(cardText)
+      +e.cards-under
+        each cardText in cardsText
+          +firstBlockCard(cardText)
+

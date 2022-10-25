@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partners_collectons",
+  "info": {
+    "singularName": "partners-collecton",
+    "pluralName": "partners-collectons",
+    "displayName": "partnersCollection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "partnerLogo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "partnerName": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+mixin about(attributes)
+  -
+    var items = [
+      {
+        title: '12 лет',
+        desc: 'на рынке веб-разработки'
+      },
+      {
+        title: '4,3 года',
+        desc: 'средний цикл развития проекта'
+      },
+      {
+        title: '1',
+        desc: 'основная услуга'
+      },
+    ]
+
+
+  +b.SECTION.about.section.section_light&attributes(attributes)
+    +e.in.section__in
+      +e.title-wrapper.section__title-wrapper
+        +e.H2.title.section__title.js-animate-title#about Кто мы?
+        +e.P.title-desc.section__title-desc О компании
+      +e.UL.list
+        each item in items
+          +e.LI.item
+            +e.item-title= item.title
+            +e.item-desc= item.desc

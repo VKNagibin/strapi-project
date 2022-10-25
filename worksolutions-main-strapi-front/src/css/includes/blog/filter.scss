@@ -1,0 +1,88 @@
+@import "vars_blog";
+
+.filter {
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 12px;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media #{$mobile-down} {
+    &__item {
+      margin-right: 8px;
+      margin-bottom: 8px
+    }
+  }
+
+  &__btn {
+    display: block;
+    padding: 6px 16px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: $fontMedium, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.45;
+    color: $mainTextColor;
+    background: $grayBlue2;
+    -webkit-appearance: none;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    @media #{$mobile-down} {
+      font-size: 16px;
+      padding: 4px 12px;
+    }
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    &:hover,
+    &:focus {
+      background: $grayBlue3;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &.active {
+      color: #fff;
+      background: $mainDecorColor;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:disabled {
+      color: $secondaryTextColor;
+      background: $mainBgColor;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}
+
+.main .filter {
+  margin-bottom: 40px;
+
+  @media #{$mobile-down} {
+    margin-bottom: 24px;
+  }
+}
+
+/*Ie 10/11*/
+@media #{$only-ie} {
+  .filter {
+    margin-top: 48px;
+  }
+}

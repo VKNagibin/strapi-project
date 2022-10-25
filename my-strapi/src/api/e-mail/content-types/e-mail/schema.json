@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "e_mails",
+  "info": {
+    "singularName": "e-mail",
+    "pluralName": "e-mails",
+    "displayName": "eMail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "eMailDisplay": {
+      "type": "string"
+    },
+    "eMailHref": {
+      "type": "string"
+    }
+  }
+}

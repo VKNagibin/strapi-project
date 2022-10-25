@@ -1,0 +1,15 @@
+mixin articles_blog(attributes)
+  +b.SECTION.articles
+    h2.visually-hidden Статьи
+    +e.UL.list.list-articles.blog-list
+      each article, index in articles
+        if index === 0
+          +articleBlock(article, true)
+        else
+          +articleBlock(article)
+
+    +e.btn-wrapper
+      if hasNextPage
+        button.button.articles__btn.js-show-more-articles Больше статей
+      else
+        button.button.articles__btn.hide-show-more.js-show-more-articles Больше статей

@@ -1,0 +1,8 @@
+.see-also
+    a.see-also__link(href=url, target="_blank")
+        if (image)
+            .see-also__img-wrapper
+                picture
+                    img.see-also__img(class="lazyload", data-src=image, alt="")
+        span.see-also__text Читать также
+        span.see-also__title=title

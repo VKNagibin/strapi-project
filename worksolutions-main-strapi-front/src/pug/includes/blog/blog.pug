@@ -1,0 +1,12 @@
+include ../../../../node_modules/bemto.pug/bemto
+
+mixin blog(attributes)
+  +b.SECTION.blog.section.section_light&attributes(attributes)
+    +e.in.section__in
+      +e.title-wrapper.section__title-wrapper
+        +e.H2.title.section__title.js-animate-title#blog Блог
+        +e.P.title-desc.section__title-desc Пишем
+      +e.slider-blog.dragscroll#blogCarouselWrapper
+        +e.UL.list.hidden#blogList(data-loaded="false")
+      +e.btn-wrapper
+        +e.A.button.button(href="/blog/", target="_blank") Открыть блог

@@ -1,0 +1,35 @@
+mixin features(attributes)
+  -
+    var features = [
+    {
+    title: 'Тикетная система историй',
+    icon: 'ticket',
+    desc: 'Используем трекер задач для хранения требований к развитию проекта в виде историй. Проводим ревизию актуальности историй вместе с заказчиком'
+    },
+    {
+    title: 'Гибкая поставка функционала в релиз',
+    icon: 'release',
+    desc: 'Настраиваем окружение для быстрой поставки изменений на рабочий сервер проекта вне зависимости от объема задач в релизе'
+    },
+    {
+    title: 'Развитие проекта по регламенту',
+    icon: 'regulation',
+    desc: 'Работаем над проектом по индивидуальному регламенту. Регламент включает в себя правила постановки задач и требования к процессу выполнения работ'
+    },
+    {
+    title: 'Коммуникация команды с клиентом',
+    icon: 'communications',
+    desc: 'Консультируем клиента по техническим вопросам. В общение вовлечена вся команда в групповом чате проекта'
+    }
+    ]
+
+  +b.SECTION.features.section.section_dark&attributes(attributes)
+    +e.in.section__in
+      +e.title-wrapper.section__title-wrapper
+        +e.H2.title.section__title.section__title_single.js-animate-title#features Работа с нами это
+      +e.UL.list
+        each feature in features
+          +e.LI.item
+            +e.div.item__ticket
+            +e.H3.item-title= feature.title
+            +e.P.item-desc= feature.desc

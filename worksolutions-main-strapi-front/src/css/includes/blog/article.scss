@@ -1,0 +1,185 @@
+.list-articles {
+  display: flex;
+  flex-flow: row wrap;
+  margin: -21px;
+  list-style: none;
+
+  @media #{$desktop-pre-mid-down} {
+    margin: -20px;
+  }
+
+  @media #{$desktop-small-down} {
+    margin: -12px;
+  }
+
+  @media #{$tablet-down} {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.article {
+  margin: 12px;
+  width: calc((100% - 75px) / 3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  border: 1px solid $grayBlue3;
+  overflow: hidden;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: $fontBook, Arial, sans-serif;
+    color: $mainTextColor;
+    text-decoration: none;
+    outline: none;
+  }
+
+  &__img-wrapper {
+    position: relative;
+    border-radius: 19px 19px 0 0;
+    border-bottom: 1px solid $grayBlue3;
+    height: 0;
+    padding-top: 62.5%;
+    overflow: hidden;
+    z-index: 0;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: auto;
+      height: 100%;
+      min-width: 100%;
+      transform: translate(-50%, -50%) scale(1);
+      -webkit-backface-visibility: hidden;
+      transition: all 0.2s ease-in-out;
+    }
+
+  }
+
+  &:hover,
+  &:focus {
+    .article {
+      &__img-wrapper img {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+
+      &__title {
+        color: $mainDecorColor;
+        transition: color 0.1s ease-in-out;
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 24px 32px 32px 32px;
+  }
+
+  &__category {
+    display: inline-block;
+    padding: 6px 16px;
+    align-self: flex-end;
+    margin-top: auto;
+    font-family: $fontMedium, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 132%;
+    color: $secondaryTextColor;
+    background: $grayBlue2;
+    border-radius: 8px;
+
+    @media #{$mobile-down} {
+      font-size: 16px;
+      padding: 4px 12px;
+    }
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    &.hidden {
+      visibility: hidden;
+      height: 40px;
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-family: $fontDemi, Arial, sans-serif;
+    font-size: 26px;
+    line-height: 130%;
+    color: $mainTextColor;
+    transition: color 0.1s ease-in-out;
+
+    @media #{$mobile-down} {
+      font-size: 20px;
+    }
+
+    &.mb0 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 18px;
+    font-size: 20px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+
+    &.mb0 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    font-size: 0;
+    color: $secondaryTextColor;
+  }
+
+  &__author,
+  &__date {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left
+  }
+
+  &__author {
+    position: relative;
+    font-weight: 600;
+    margin-right: 28px;
+    margin-bottom: 12px;
+  }
+
+  &__date {
+    margin-bottom: 12px;
+  }
+
+  @media #{$desktop-pre-mid-down} {
+    margin: 12px;
+    width: calc((100% - 50px) / 2);
+  }
+
+  @media #{$desktop-small-down} {
+    margin: 12px;
+    width: calc((100% - 50px) / 2);
+  }
+
+  @media #{$tablet-down} {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+
+    &__text {
+      padding: 24px;
+    }
+  }
+}

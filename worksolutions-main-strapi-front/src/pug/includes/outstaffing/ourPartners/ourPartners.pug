@@ -1,0 +1,30 @@
+-
+  var partners = [
+    { name: '/i/partners/alpha', link: '' },
+    { name: '/i/partners/carprice', link: '' },
+    { name: '/i/partners/nic', link: '' },
+    { name: '/i/partners/gosgarant', link: '' },
+    { name: '/i/partners/yaya', link: '' },
+    { name: '/i/partners/vipservice', link: ''}
+  ]
+mixin ourPartners
+  +b.SECTION.our-partners.section.section_dark&attributes(attributes)
+    +e.in.section__in
+      +e.main
+        +e.H2.title.section__title.js-animate-title#our-partners наши партнеры
+        +e.P.text Умеем работать с продуктовыми компаниями и стартапами из разных секторов экономики: финтех, e-commerce, автозапчасти, HR-tech и т.д.
+        +e.content
+          +e.UL.partners-wrapper
+            each partner in partners
+              +e.LI.card
+                if (!!partner.link)
+                  +e.A.link(href=partner.link target="_blank" rel='nofollow')
+                    picture
+                      img(class="lazyload", src=partner.src alt="")
+                else
+                  picture
+                    source(type="image/webp", data-srcset= partner.name + ".webp")
+                    img(class="lazyload", data-src=partner.name + ".png" alt="")
+    +e.background
+      +e.item
+        +e.IMG.image(class="lazyload", data-src="/i/outstaffing/ellipse.svg")

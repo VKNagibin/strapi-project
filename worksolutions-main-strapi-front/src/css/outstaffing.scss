@@ -1,0 +1,54 @@
+@import "includes/clear";
+@import "includes/breakpoints";
+@import "includes/fonts";
+@import "includes/theme";
+@import "includes/buttons.scss";
+
+@import "includes/common-styles";
+
+@import "includes/outstaffing/first/first";
+@import "includes/outstaffing/techOverview/techOverview";
+@import "includes/outstaffing/certification/certification";
+@import "includes/outstaffing/benefits/outstaffBenefits";
+@import "includes/reviews/reviews";
+@import "includes/outstaffing/selectionOfSpecialists/selectionOfSpecialists";
+@import "includes/outstaffing/services/outstaffServices";
+@import "includes/outstaffing/tech-stack/tech-stack";
+@import "includes/outstaffing/uses/uses";
+@import "includes/outstaffing/devopsMethodology/devopsMethodology";
+@import "includes/outstaffing/approachToWork/approachToWork";
+@import "includes/outstaffing/ourPartners/ourPartners";
+@import "includes/outstaffing/prices/outstaffPrices";
+@import "includes/outstaffing/seeAlso/outstaffSeeAlso";
+
+@import "includes/services/services";
+@import "includes/technologies/technologies";
+@import "includes/outstaffing/technologies/backTechnologies";
+@import "includes/technologies/technologiesSeparateStack";
+
+@import "includes/team/team";
+@import "includes/team/teamSliderMobile";
+@import "includes/team/teamSliderDesc";
+
+@import "includes/menu/siteMenu";
+@import "includes/menu/socialMenu";
+@import "includes/menu/menuList";
+
+@import "includes/forms/forms";
+@import "includes/forms/attachment";
+
+@import "includes/modals/modal";
+
+@import "includes/footer/footer";
+
+.team,
+.technologies-back,
+.technologies-separate,
+.tech-stack,
+.uses,
+.devops-methodology,
+.footer {
+  &__in {
+    padding-top: 0;
+  }
+}

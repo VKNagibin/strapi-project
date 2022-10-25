@@ -1,0 +1,156 @@
+-
+    var mainPage = false;
+    var outstaffingPage = true;
+    var pathJs = "outstaffing"
+    var pathCss = "outstaffing"
+    var ogUrlSite = process.env.OG_URL;
+
+    var openGraphMeta = {
+        title: "Аутстаффинг разработки на django",
+        type: "article",
+        locale: "ru_RU",
+        description: "Аутстаффинг django разработчиков - аренда программистов | Компания «Work Solutions»",
+        image: ogUrlSite + "/i/og/og-image.png",
+        url: ogUrlSite + "/outstaffing-django/",
+        siteName: "Work Solutions"
+    }
+
+    var servicesItemsText = [
+        "Подготовка технического решения",
+        "Разработка бизнес-логики",
+        "Перевод легаси-кода, глубокий рефакторинг",
+        "Оптимизация продуктов",
+        "Создание и реализация различных API",
+        "Поддержка и развитие инфраструктурных продуктов",
+        "Кэширование",
+        "Экспорт/импорт данных",
+        "Автоматизация бизнес-процессов",
+    ]
+
+    var titleFirst = [
+        {text: "аутстаффинг", highlighted: false},
+        {text: "разработчиков", highlighted: false},
+        {text: "на Django", highlighted: false}
+    ]
+
+    var developmentTypes = [
+        {name: "Vue.js разработка", link: "/outstaffing-vue/"},
+        {name: "Python разработка", link: "/outstaffing-python/"},
+        {name: "PHP разработка", link: "/outstaffing-php/"},
+        {name: "Laravel разработка", link: "/outstaffing-laravel/"},
+    ]
+
+    var customServices = [
+        {
+            title: "Усиливаем вашу команду",
+            desc: "Войдем в проект командой или одним разработчиком, интегрируемся с вашими менеджерами, разработчиками и другими специалистами."
+        },
+        {
+            title: "Разрабатываем нетиповые проекты на Django",
+            desc: "Справимся со сложным разворотом. Разберемся в инфраструктуре и предметной области."
+        },
+        {
+            title: "Используем подход Time & Materials",
+            desc: "Вы оплачиваете только фактически затраченное время специалистов над проектом. Оплата производится ежемесячно по факту выполненных работ."
+        }
+    ]
+
+    var techStackLists = [
+        {
+            title: "Базы данных",
+            technologies: [
+                "SQL Server",
+                "MySQL",
+                "PostgreSQL",
+                "SQLite",
+                "Firebase",
+                "Redis",
+                "RabbitMQ",
+                "MongoDB",
+            ],
+        },
+        {
+            title: "Фреймворки и библиотеки",
+            technologies: [
+                "Django REST Framework",
+                "Graphene",
+                "FastAPI",
+                "Asyncio",
+                "UnitTests",
+                "PyTest",
+            ],
+        },
+        {
+            title: "Прочие инструменты",
+            technologies: [
+                "Git",
+                "Docker",
+                "Kubernetes",
+                "Elasticsearch",
+                "Nginx",
+                "Apache",
+                "Jenkins",
+                "Ansible",
+                "PyCharm",
+                "Celery",
+                "Swagger",
+            ],
+        },
+    ]
+
+    var customSelectionCards = [{
+        title: "Анали&shy;зируем сложность задач",
+        position: "1",
+        isLast: false
+    }, {
+        title: "Подбираем специалистов на Django по стеку и опыту",
+        position: "2",
+        isLast: false
+    }, {
+        title: "Назначаем дату собеседования",
+        position: "3",
+        isLast: false
+    }, {
+        title: "Согласо&shy;вываем детали сотрудничества",
+        position: "4",
+        isLast: false
+    }, {
+        title: "Вводим специалиста на проект",
+        position: "5",
+        isLast: true
+    }]
+
+    var benefitCardHeadlineTag = "h3";
+
+    var outstaffPricesContext = {
+        minWage: "1 800",
+    }
+    var description = "Вам нужен аутстаффинг Django? Можете смело доверить свой проект нам. 32 сотрудника! 12 лет на рынке! Узкая специализация!";
+    //- var description = "Вам нужен аутстаффинг Django? Можете смело доверить свой проект нам. 32 сотрудника! 12 лет на рынке! Узкая специализация! Звоните 8(863)270-16-44";
+
+include includes/_
+
++structure(
+    "Аутстаффинг Django разработчиков - аренда программистов | Компания «Work Solutions»",
+    description,
+    "Контакты, Work Solutions, Телефон, Адрес, Почта, Рабочие решения",
+    "",
+    {
+        footer: true
+    },
+    openGraphMeta
+)
+    +firstScreenOutstaffing(titleFirst)
+    +certificationDevelopers("Сертифика&shy;ция разработчиков")
+    +outstaffBenefits(
+        "Преимущес&shy;тва аутстаф&shy;финга Django разработ&shy;чиков в компании «Work solutions»",
+        benefitCardHeadlineTag
+    )
+    +reviews("Отзывы")
+    +outstaffServices("Наши услуги по Django разработке" , servicesItemsText)
+    +approachToWork(customServices)
+    +selectionOfSpecialists(customSelectionCards)
+    +techStack("Какие технологии используем вместе с&nbsp;Django", techStackLists)
+    +ourPartners
+    +outstaffPrices("Django", outstaffPricesContext)
+    +outstaffSeeAlso(developmentTypes)

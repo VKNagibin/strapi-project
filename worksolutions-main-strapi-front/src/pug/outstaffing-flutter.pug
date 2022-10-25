@@ -1,0 +1,139 @@
+include includes/_
+
+-
+    var mainPage = false;
+    var outstaffingPage = true;
+    var pathJs = "outstaffing";
+    var pathCss = "outstaffing";
+    var ogUrlSite = process.env.OG_URL;
+    var description = "Вам нужен аутстаффинг Flutter? Можете смело доверить свой проект нам. 32 сотрудника! 12 лет на рынке! Узкая специализация!";
+    //- var description = "Вам нужен аутстаффинг Flutter? Можете смело доверить свой проект нам. 32 сотрудника! 12 лет на рынке! Узкая специализация! Звоните 8(863)270-16-44";
+
+    var openGraphMeta = {
+        title: "Аутстаффинг Flutter разработчиков - аренда программистов | Компания «Work Solutions»",
+        type: "article",
+        locale: "ru_RU",
+        description: description,
+        image: ogUrlSite + "/i/og/og-image.png",
+        url: ogUrlSite + "/outstaffing-flutter/",
+        siteName: "Work Solutions"
+    };
+
+    var titleFirst = [
+        {text: "аутстаффинг", highlighted: false},
+        {text: "разработчиков", highlighted: false},
+        {text: "на Flutter", highlighted: false}
+    ];
+
+    var benefitCardHeadlineTag = "h3";
+
+    var servicesItemsText = [
+        "Подготовка технического решения",
+        "Автоматизация бизнес-процессов",
+        "Проектирование приложения, исходя из бизнес логики",
+        "Разработка сложных адаптивных элементов",
+        "Подключение нативных функций устройств",
+        "Отображение аналитических данных",
+        "Создание и реализация различных API",
+        "Верстка сложных анимаций",
+    ];
+
+    var customServices = [
+        {
+            title: "Усиливаем вашу команду",
+            desc: "Войдем в проект командой или одним разработчиком, интегрируемся с вашими менеджерами, разработчиками и другими специалистами."
+        },
+        {
+            title: "Разрабатываем нетиповые проекты на Flutter",
+            desc: "Разберемся в инфраструктуре и предметной области. Учитываем особенности и требования бизнеса."
+        },
+        {
+            title: "Используем подход Time & Materials",
+            desc: "Вы оплачиваете только фактически затраченное время специалистов над проектом. Оплата производится ежемесячно по факту выполненных работ."
+        }
+    ];
+
+    var customSelectionCards = [{
+        title: "Анали&shy;зируем сложность задач",
+        position: "1",
+        isLast: false
+    }, {
+        title: "Подбираем специалистов на Flutter по стеку и опыту",
+        position: "2",
+        isLast: false
+    }, {
+        title: "Назначаем дату собеседования",
+        position: "3",
+        isLast: false
+    }, {
+        title: "Согласо&shy;вываем детали сотрудничества",
+        position: "4",
+        isLast: false
+    }, {
+        title: "Вводим специалиста на проект",
+        position: "5",
+        isLast: true
+    }];
+
+    var developmentTypes = [
+        {name: "Vue.js разработка", link: "/outstaffing-vue/"},
+        {name: "Django разработка", link: "/outstaffing-django/"},
+        {name: "Symfony разработка", link: "/outstaffing-symfony/"},
+        {name: "Yii разработка", link: "/outstaffing-yii/"},
+    ];
+
+    var usesCards = [
+        {
+            text: 'Кроссплатформенная разработка для Android и iOS',
+            iconFileName: 'cross-platform',
+        },
+        {
+            text: 'Производительность как у нативных приложений',
+            iconFileName: 'performance',
+        },
+        {
+            text: 'Широкие настройки пользовательского интерфейса',
+            iconFileName: 'settings',
+        },
+        {
+            text: 'Большое количество специалистов',
+            iconFileName: 'specialists',
+        },
+        {
+            text: 'Сокращение времени разработки кода',
+            iconFileName: 'time_reduction',
+        },
+        {
+            text: 'Одинаковый интерфейс для разных платформ',
+            iconFileName: 'interface',
+        },
+    ];
+
+    var outstaffPricesContext = {
+        minWage: "1 800",
+    }
+
++structure(
+    "Аутстаффинг Flutter разработчиков - аренда программистов | Компания «Work Solutions»",
+    description,
+    "Контакты, Work Solutions, Телефон, Адрес, Почта, Рабочие решения",
+    "",
+    {
+        footer: true
+    },
+    openGraphMeta
+)
+    +firstScreenOutstaffing(titleFirst)
+    +certificationDevelopers("Сертифика&shy;ция разработчиков")
+    +outstaffBenefits(
+        "Преимущес&shy;тва аутстаф&shy;финга Flutter разработ&shy;чиков в компании «Work solutions»",
+        benefitCardHeadlineTag
+    )
+    +reviews("Отзывы")
+    +outstaffServices("Наши услуги по Flutter разработке" , servicesItemsText)
+    +approachToWork(customServices)
+    +selectionOfSpecialists(customSelectionCards)
+    +uses("Почему Flutter идеален для создания MVP", usesCards)
+    +ourPartners
+    +outstaffPrices("Flutter", outstaffPricesContext)
+    +outstaffSeeAlso(developmentTypes)

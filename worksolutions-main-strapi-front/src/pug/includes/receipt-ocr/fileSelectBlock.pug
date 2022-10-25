@@ -1,0 +1,9 @@
+include components/selectFileButton
+include components/searchInput
+
+mixin fileSelectBlock()
+    div.receipt-ocr_file-select-block_wrapper
+        div.receipt-ocr_file-select-block_photos
+        form.receipt-ocr_file-select-block_inputs
+            +selectFileButton('выберите файл')
+            +searchInput('Или введите URL-адрес изображения')

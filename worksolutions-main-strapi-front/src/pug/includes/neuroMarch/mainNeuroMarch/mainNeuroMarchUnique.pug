@@ -1,0 +1,26 @@
+-
+  var ogImage = process.env.OG_URL + "/i/neuroMarch/og-image.png";
+
+mixin mainNeuroMarchUnique()
+  +b.SECTION.main-neuro-march.section.section_light&attributes()
+    +e.in.section__in
+      +e.main-approach-work
+        +e.content
+          +e.A.logo(data-first-fade, href="/")
+            +e.IMG.logo(src="/i/logo_ws.svg")
+          +e.result-image-container(data-result-image-container)
+            +e.H3.title
+              | !{"Ваша уникальная открытка <br /> с <span class='main-neuro-march__title-highlight'> 8 Марта </span>"}
+            .text-for-connect-fonts Открытка для
+            +e.result-image-wrapper.load-image(data-result-image-wrapper)
+              span.preloader.preloader-result-image(data-preloader-result-image)
+              +e.IMG.result-image(data-type-postcard)
+          +e.content-wrapper
+            +e.share-container(data-share-container)
+              +e.share-title Поделитесь ею в соцсетях
+              .share.share_top
+                .ya-share2(data-services='vkontakte,whatsapp,telegram', data-size="l" data-image=ogImage)
+            +e.generate-new Сгенерируйте новую открытку
+
+            +formGenerateCard
+

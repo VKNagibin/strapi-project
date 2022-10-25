@@ -1,0 +1,27 @@
+mixin articleBlock(article, isBigPicture)
+  - article = article || {}
+  +b.LI.article
+    +e.A.link(href=article.url+='/', data-category=article.categoryId)
+      if isBigPicture
+        - var background = 'background-image: url(' + article.announceImage + ')';
+        +e.DIV.img-wrapper.first-item
+          picture
+            +e.IMG.img(class="lazyload", data-src=article.announceImage, alt='')
+      else
+        +e.DIV.img-wrapper
+          picture
+            +e.IMG.img(class="lazyload", data-src=article.announceImage, alt='')
+      +e.DIV.text
+        +e.H3.title= article.title
+        if(article.author || article.date)
+          +e.DIV.info
+            if(article.author)
+              +e.SPAN.author= article.author
+            if(article.date)
+              +e.SPAN.date= article.date
+        - if(article.announce)
+          +e.P.desc= article.announce
+        - if(!article.categoryText || article.categoryText === "")
+          +e.SPAN.category.hidden= article.categoryText
+        -else
+          +e.SPAN.category= article.categoryText

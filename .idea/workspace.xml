@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1463e2af-4d75-492d-877b-ca94d2953c5e" name="Changes" comment="add worksolutions-main-strapi-front">
+      <change afterPath="$PROJECT_DIR$/my-strapi/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/config/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/config/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/config/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/config/middlewares.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/config/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/database/migrations/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/public/uploads/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/admin/app.example.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/admin/webpack.config.example.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/e-mail/content-types/e-mail/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/e-mail/controllers/e-mail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/e-mail/routes/e-mail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/e-mail/services/e-mail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/logo/content-types/logo/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/logo/controllers/logo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/logo/routes/logo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/logo/services/logo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/partners-collecton/content-types/partners-collecton/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/partners-collecton/controllers/partners-collecton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/partners-collecton/routes/partners-collecton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/partners-collecton/services/partners-collecton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/slogan/content-types/slogan/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/slogan/controllers/slogan.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/slogan/routes/slogan.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/slogan/services/slogan.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/statistic/content-types/statistic/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/statistic/controllers/statistic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/statistic/routes/statistic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/statistic/services/statistic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/sub-technology/content-types/sub-technology/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/sub-technology/controllers/sub-technology.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/sub-technology/routes/sub-technology.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/sub-technology/services/sub-technology.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/technology/content-types/technology/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/technology/controllers/technology.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/technology/routes/technology.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/technology/services/technology.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/working-with-us/content-types/working-with-us/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/working-with-us/controllers/working-with-us.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/working-with-us/routes/working-with-us.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/api/working-with-us/services/working-with-us.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/extensions/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-strapi/src/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/worksolutions-main-strapi-front" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2FvrTdTEhBkmz3xVyNkSwJsOion" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nagibin/proj/project-confession&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1463e2af-4d75-492d-877b-ca94d2953c5e" name="Changes" comment="" />
+      <created>1665383407633</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665383407633</updated>
+      <workItem from="1665383408832" duration="9244000" />
+      <workItem from="1666341326571" duration="4248000" />
+      <workItem from="1666592967336" duration="3241000" />
+      <workItem from="1666597741802" duration="19930000" />
+      <workItem from="1666679492084" duration="17052000" />
+    </task>
+    <task id="LOCAL-00001" summary="create basic structure of strapi admin panel">
+      <created>1666699450872</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666699450872</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add worksolutions-main-strapi-front">
+      <created>1666699603323</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666699603323</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add worksolutions-main-strapi-front">
+      <created>1666700096099</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666700096099</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add worksolutions-main-strapi-front">
+      <created>1666700107852</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666700107852</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create basic structure of strapi admin panel" />
+    <MESSAGE value="add worksolutions-main-strapi-front" />
+    <option name="LAST_COMMIT_MESSAGE" value="add worksolutions-main-strapi-front" />
+  </component>
+</project>

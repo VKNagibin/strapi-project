@@ -1,0 +1,38 @@
+include selectionCard
+
+-
+  var selectionCards = [{
+    title: "Анали&shy;зируем сложность задач",
+    position: "1",
+    isLast: false
+  }, {
+    title: "Подбираем специалиста по стеку и опыту",
+    position: "2",
+    isLast: false
+  }, {
+    title: "Назначаем дату собеседования",
+    position: "3",
+    isLast: false
+  }, {
+    title: "Согласо&shy;вываем детали сотрудничества",
+    position: "4",
+    isLast: false
+  }, {
+    title: "Вводим специалиста на проект",
+    position: "5",
+    isLast: true
+  }]
+
+mixin selectionOfSpecialists(customSelectionCards)
+  +b.SECTION.selection.section.section_light
+    +e.background
+      +e.item
+        +e.IMG.image(class="lazyload", data-src="/i/outstaffing/ring_big_outstaff.svg")
+    +e.in.section__in
+      +e.main-selection
+        h2.section__title.js-animate-title#selection-specialist  Как подбираем и вводим специали&shy;стов
+        +b.selection-cards
+          each selectionData in customSelectionCards || selectionCards
+            +selectionCard(selectionData)
+          +e.dash-line-wrapper
+            +e.IMG.center-line-mobile(class="lazyload", data-src="/i/outstaffing/dash-line-mobile.svg")

@@ -1,0 +1,135 @@
+.form-sign-section {
+  &__in {
+    padding: 0 16px 0 16px;
+  }
+}
+
+.sign-form {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    img {
+      width: 30%;
+
+      @media #{$desktop-down} {
+        width: 34%;
+      }
+
+      @media #{$desktop-middle-down} {
+        width: 26%;
+      }
+
+      @media #{$desktop-small-down} {
+        display: none;
+      }
+    }
+  }
+
+  .form__btn-wrapper {
+    margin-top: 0;
+  }
+
+  &__in {
+    @media #{$tablet-down} {
+      padding: 0 24px;
+    }
+  }
+
+  &__market-decor-wrapper {
+    margin-top: 32px;
+    position: relative;
+    overflow: hidden;
+    display: none;
+
+    @media #{$desktop-small-down} {
+      display: block;
+    }
+
+    @media #{$mobile-down} {
+      width: 90%;
+      margin: 32px auto 0 auto;
+
+      .market__decor {
+        width: initial;
+        transform: initial;
+        position: static;
+      }
+    }
+  }
+
+  .market__img {
+    filter: none;
+  }
+
+  &__inner {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s opacity, .3s visibility;
+  }
+
+  &__block-with-thanks {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s opacity, .3s visibility;
+  }
+
+  .visible-block {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transition: .3s opacity, .3s visibility;
+  }
+
+  .block-with-thanks {
+    text-align: center;
+    padding: 160px 0;
+
+    @media #{$desktop-small-down} {
+      padding-top: 140px;
+      padding-bottom: 0;
+    }
+
+    @media #{$tablet-down} {
+      padding-top: 140px;
+      padding-bottom: 100px;
+    }
+  }
+
+  &__inner-wrapper {
+    width: 100%;
+  }
+
+  &__mobile-input {
+    padding-left: 20px;
+  }
+
+  @media #{$desktop-small-down} {
+    padding-bottom: 0;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 40px;
+    text-transform: inherit;
+    text-align: center;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+
+    @media #{$desktop-small-down} {
+      font-size: 24px;
+    }
+  }
+}

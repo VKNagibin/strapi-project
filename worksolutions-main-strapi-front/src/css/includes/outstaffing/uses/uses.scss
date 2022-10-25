@@ -1,0 +1,133 @@
+@import "../../breakpoints";
+@import "../../flex-layout-mixins";
+@import "../../fonts";
+@import "../../theme";
+
+.uses {
+  $large-gap: 40px;
+  $small-gap: 24px;
+
+  &__content {
+    position: relative;
+    margin-top: 96px;
+
+    @media #{$desktop-small-down} {
+      margin-top: 56px;
+    }
+  }
+
+  &__card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media #{$screen} and (min-width: #{$desktop-pre-mid}) {
+      @include n-flex-items-by-row(3, $large-gap);
+    }
+
+    @media #{$screen}
+           and (min-width: #{$desktop-small})
+           and (max-width: #{upper-bound($desktop-pre-mid-range)}) {
+      @include n-flex-items-by-row(2, $large-gap);
+    }
+
+    @media #{$screen}
+           and (min-width: #{$tablet-mid})
+           and (max-width: #{upper-bound($desktop-small-range)}) {
+      @include n-flex-items-by-row(2, $small-gap);
+    }
+
+    @media #{$tablet-mid-down} {
+      @include n-flex-items-by-row(1, $small-gap);
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 32px;
+    border: 1px solid $grayBlue3;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba($black, 0.06);
+    background: $white;
+
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(3) {
+      &::after {
+        content: "";
+        position: absolute;
+        right: -96px;
+        bottom: -98px;
+        width: 152px;
+        height: 152px;
+        background: url("/i/decor_plus_gray_big.svg") no-repeat center center;
+        background-size: contain;
+        opacity: 0.8;
+        z-index: 0;
+      }
+    }
+
+    &:nth-child(3)::after {
+      display: none;
+    }
+
+    @media #{$desktop-pre-mid-down} {
+      &:nth-child(2)::after {
+        display: none;
+      }
+
+      &:nth-child(3)::after {
+        display: block;
+      }
+    }
+
+    @media #{$desktop-small-down} {
+      padding: 32px 24px;
+
+      &:first-child,
+      &:nth-child(3) {
+        &::after {
+          right: -88px;
+          bottom: -90px;
+          background: url("/i/decor_plus_thin_big.svg") no-repeat center center;
+        }
+      }
+    }
+
+    @media #{$tablet-mid-down} {
+      &:first-child,
+      &:nth-child(3) {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__card-icon {
+    margin-bottom: 34px;
+
+    img {
+      width: 45%;
+      height: 45%;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &__card-text {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    color: $gray5;
+
+    @media #{$desktop-small-down} {
+      font-size: 18px;
+      line-height: 1.45;
+    }
+  }
+}

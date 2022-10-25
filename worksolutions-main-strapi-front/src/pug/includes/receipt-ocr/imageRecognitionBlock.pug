@@ -1,0 +1,12 @@
+include mainImage
+include sideBlock
+include fileSelectBlock
+include jointBlock
+
+mixin imageRecognitionBlock()
+    div.receipt-ocr_image-recognition-block_wrapper
+        div.receipt-ocr_image-and-select-file_wrapper
+            +mainImage()
+            +fileSelectBlock()
+        +sideBlock()
+        +jointBlock()

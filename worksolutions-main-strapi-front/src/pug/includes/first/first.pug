@@ -1,0 +1,33 @@
+mixin firstScreen(attributes)
+    +b.section.first&attributes(attributes)
+        +b.firstBackground
+            +e.item.points-double(data-first-animate)
+                +e.IMG.image(src="i/first/points_double.svg")
+            +e.item.points-single(data-first-animate)
+                +e.IMG.image(src="i/first/points_single.svg")
+            +e.item.points-angle(data-first-animate)
+                +e.IMG.image.desktop-image(src="i/first/points_angle.svg")
+                +e.IMG.image.mobile-image(src="i/first/points_angle_small.svg")
+            +e.item.ring-big(data-first-animate)
+                .ring-big__in
+                picture.ring-big__image
+                    source(type='image/webp', srcset='/i/first/ring_big.mobile.webp', media='(max-width: 479px)')
+                    source(type='image/png', srcset='/i/first/ring_big.mobile.png', media='(max-width: 479px)')
+                    source(type='image/webp', srcset='/i/first/ring_big.webp')
+                    img(src='/i/first/ring_big.png', alt='')
+            +e.item.ring-small(data-first-animate)
+                +e.IMG.image(src="i/first/ring_small.svg")
+        +e.in
+            +b.top-contacts
+                +e.item
+                    +e.A.link.e_mail(href="#")
+            +b.site-logo(data-first-fade)
+                +e.IMG.image(src="i/logo_ws.svg")
+            +b.slogan(data-first-fade)
+                +e.H1.title Что то пошло не так...
+                +e.subtitle
+            .calc-button-content(data-first-fade)
+                button.button.js-modal-call(type='button', data-modal="estimate")
+                    include ../blocks/icons/calculator
+                    span.button__text Рассчитать смету
+            +partners(data-first-fade="data-first-fade")

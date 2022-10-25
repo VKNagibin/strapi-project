@@ -1,0 +1,82 @@
+include includes/_
+
+-
+    var mainPage = false;
+    var outstaffingPage = false;
+    var pathJs = "tehnicheskiy-audit-frontend";
+    var pathCss = "tehnicheskiy-audit-frontend";
+    var ogUrlSite = process.env.OG_URL;
+    var description = "Вам нужен профессиональный технический аудит в области Front-end? Можете смело доверить свой проект нам. 32 сотрудника! 12 лет на рынке! Узкая специализация!";
+    //- var description = "Вам нужен профессиональный технический аудит в области Front-end? Можете смело доверить свой проект нам. 32 сотрудника! 12 лет на рынке! Узкая специализация! Звоните 8(863)270-16-44";
+    var title = "Заказать технический аудит в области Front-end | Компания «Work Solutions»";
+
+    var openGraphMeta = {
+        title: title,
+        type: "article",
+        locale: "ru_RU",
+        description: description,
+        image: ogUrlSite + "/i/og/og-image.png",
+        url: ogUrlSite + "/tehnicheskiy-audit-frontend/",
+        siteName: "Work Solutions"
+    };
+
+
+    var titleFirst = [
+        {text: "Технический", highlighted: false},
+        {text: "аудит", highlighted: false},
+        {text: "Frontend", highlighted: false}
+    ];
+
+    var benefitCardHeadlineTag = "h3";
+    var benefitHeadTitle = "Преимущества компании «Work Solutions»";
+
+    var customServices = [
+        {
+            title: "Подключаем старших специалистов",
+            desc: "Умения писать код недостаточно, нужно уметь его оптимизировать."
+        },
+        {
+            title: "Проводим аудит в несколько этапов",
+            desc: "Отмечаем не только проблемы, но и возможные риски при масштабировании проекта."
+        },
+        {
+            title: "Предоставляем документ с результатами аудита",
+            desc: "Документ содержит результаты исследований и рекомендации по оптимизации приложения."
+        }
+    ];
+
+    var developmentTypes = [
+        {name: "Angular разработка", link: "/outstaffing-angular/"},
+        {name: "React разработка", link: "/outstaffing-react/"},
+        {name: "Vue.js разработка", link: "/outstaffing-vue/"},
+        {name: "Strapi разработка", link: "/outstaffing-strapi/"},
+    ];
+
+
+    var outstaffPricesContext = {
+        minWage: "3 000",
+        type: 'Frontend',
+    };
+
++structure(
+    title,
+    description,
+    "Контакты, Work Solutions, Телефон, Адрес, Почта, Рабочие решения",
+    "",
+    {
+        footer: true
+    },
+    openGraphMeta
+)
+    +firstScreenOutstaffing(titleFirst)
+    +analyzing
+    +certificationDevelopers("Сертифика&shy;ция разработчиков")
+    +outstaffBenefits(
+        benefitHeadTitle,
+        benefitCardHeadlineTag
+    )
+    +reviews("Отзывы")
+    +approachToWork(customServices)
+    +ourPartners
+    +formPriceAudit(outstaffPricesContext)
+    +outstaffSeeAlso(developmentTypes)

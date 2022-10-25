@@ -1,0 +1,33 @@
+mixin teamSlider(attributes)
+    +b.teamSlider&attributes(attributes)
+        +e.images
+            +b.b-slider-team-main.js-team-full-slider
+                each person in teamPeople
+                    +e.slide
+                        if (person.image === "i/team/06")
+                            picture
+                                source(type="image/webp", srcset=person.image + ".webp")
+                                img.b-slider-team-main__image(src=person.image + ".jpg", title=person.name)
+                        else
+                            picture
+                                source(type="image/webp", data-srcset=person.image + ".webp")
+                                img.b-slider-team-main__image(class="lazyload", data-src=person.image + ".jpg", title=person.name)
+            +b.b-slider-team-nav
+                +e.track.dragscroll.js-team-nav-slider
+                    each person in teamPeople
+                        +e.slide
+                            picture
+                                source(type="image/webp", data-srcset=person.imagePrev + ".webp")
+                                img.b-slider-team-nav__image(class="lazyload", data-src=person.imagePrev + ".jpg", title=person.name)
+        +e.content
+            +b.personalCard#personalCard
+                .js-card-animate
+                    +e.name#personalCardName
+                    +e.employment#personalCardEmployment
+                +e.experience.js-card-animate.hidden
+                    p
+                        strong Опыт:
+                        span#personalCardExp
+                    p
+                        strong#personalCardProjects
+                +e.comment.js-card-animate#personalCardComment

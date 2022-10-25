@@ -1,0 +1,18 @@
+include sideBlock
+include fileSelectBlock
+
+mixin jointBlock()
+    div.receipt-ocr_joint-block_container
+        div.receipt-ocr_joint-block_wrapper
+            div.receipt-ocr_joint-block_header
+                +tab('Изображение', 'receipt-ocr_tab-image_joint')
+                +tab('Результаты', 'receipt-ocr_tab-result_joint')
+                +tab('JSON', 'receipt-ocr_tab-json_joint')
+            div.receipt-ocr_joint-block_image-wrapper
+                    img.receipt-ocr_joint-block_image
+            div.receipt-ocr_joint-block_content
+                div.receipt-ocr_joint-block_recognizing
+                    +spinner()
+                    div.receipt-ocr_joint-block_status-text
+                div.receipt-ocr_joint-block_results
+        +fileSelectBlock()

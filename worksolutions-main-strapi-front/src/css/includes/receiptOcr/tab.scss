@@ -1,0 +1,47 @@
+.receipt-ocr_tab_wrapper{
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 6px 20px;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+  transition: $transition;
+  border-radius: 12px;
+  background: #bdc9db;
+
+  &:hover {
+    background: #919fb6;
+  }
+}
+
+.receipt-ocr_tab_wrapper__active {
+  background: $blue2;
+
+  &:hover {
+    background: $blue2;
+  }
+}
+
+.receipt-ocr_tab_text{
+  font-family: $fontDemi  ;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  transition: $transition;
+}
+
+#receipt-ocr_tab-result{
+  margin-right: 8px;
+}
+
+.receipt-ocr_tab_text__compact {
+  font-family: $fontDemi;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+}

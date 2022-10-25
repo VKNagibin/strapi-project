@@ -1,0 +1,249 @@
+@import "vars_blog";
+
+.article-detail {
+  padding-top: 96px;
+  font-family: $fontPTSerifRegular, "Times New Roman", serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: $mainTextColor;
+
+  &.full {
+    padding-bottom: 56px;
+    padding-left: 64px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    margin-left: -64px;
+    width: calc(100% + 64px);
+
+    @media #{$desktop-small-down} {
+      margin-left: -48px;
+      padding-left: 48px;
+      width: calc(100% + 48px);
+    }
+
+    .container {
+      padding-top: 32px;
+      background: #fff;
+      border-radius: 8px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 1.2;
+
+    @media #{$mobile-down} {
+      font-size: 28px;
+      line-height: 115%;
+    }
+  }
+
+  &__main-img-wrapper {
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid $grayBlue3;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 62.5%;
+    margin: 0 auto 64px;
+    z-index: 0;
+
+    @media #{$mobile-down} {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__main-img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    height: 100%;
+    max-width: 120%;
+  }
+
+  &__news-type {
+    color: $grayBlue5;
+    font-size: 24px;
+    line-height: 1.5;
+    font-family: $fontMedium, sans-serif;
+    margin-bottom: 16px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__category,
+  &__date {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1.45;
+    color: $secondaryTextColor;
+    padding: 6px 0;
+    white-space: nowrap;
+
+    @media #{$mobile-down} {
+      font-size: 16px;
+      padding: 4px 0;
+    }
+  }
+
+  &__category {
+    position: relative;
+    display: inline-block;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-family: $fontMedium, Arial, sans-serif;
+    background: $grayBlue2;
+    border-radius: 8px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @media #{$mobile-down} {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    &.hidden {
+      visibility: hidden;
+      height: 40px;
+    }
+
+  }
+
+  &__date {
+    font-family: $fontBook, Arial, sans-serif;
+    margin-left: 20px;
+  }
+
+  &__breadcrumb-list {
+    margin-bottom: 16px;
+  }
+
+  &__breadcrumb-list__element {
+    position: relative;
+    margin-right: 24px;
+
+    font-family: "FuturaPT_Medium", sans-serif;
+    font-size: 18px;
+    line-height: 145%;
+    color: $grayBlue4;
+
+    & > a,
+    & > a:active,
+    & > a:visited {
+      text-decoration: none;
+      font-style: normal;
+      color: $grayBlue6;
+      transition: all .2s ease-out;
+    }
+
+    & > a:hover {
+      color: $grayBlue5;
+    }
+  }
+
+  &__breadcrumb-list__element:not(:last-child)::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      right: -16.5px;
+      width: 7.5px;
+      height: 7.5px;
+      border-bottom: 2px solid #9BA8BB;
+      border-right: 2px solid #9BA8BB;
+      transform: rotate(-45deg) translateY(-50%);
+  }
+
+  @media #{$desktop-small-down} {
+    padding-top: 56px;
+  }
+}
+
+.author {
+  display: flex;
+  font-family: $fontBook, Arial, Helvetica, sans-serif;
+
+  &__photo-wrapper {
+    margin-right: 16px;
+    width: 52px;
+    min-width: 52px;
+    height: 52px;
+    min-height: 52px;
+    border-radius: 50%;
+  }
+
+  &__photo {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    overflow: hidden;
+    z-index: 0;
+
+    picture {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__name,
+  &__position {
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__position {
+    margin-top: 8px;
+    color: $secondaryTextColor;
+  }
+
+  @media #{$desktop-small-down} {
+    margin-bottom: 21px;
+  }
+}
+
+@media #{$only-ie} {
+  html{
+    overflow: hidden;
+    height: 100%;
+  }
+  body{
+    overflow: auto;
+    height: 100%;
+  }
+}

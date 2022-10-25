@@ -1,0 +1,8 @@
+mixin switcherField(inputName, text1, text2)
+  .form__field.form__field_radiogroup
+    label.form__label-radio
+      input.form__radio(type="radio", name=inputName, value=text1, checked)
+      span.form__text-radio= text1
+    label.form__label-radio
+      input.form__radio(type="radio", name=inputName, value=text2)
+      span.form__text-radio= text2

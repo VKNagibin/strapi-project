@@ -1,0 +1,84 @@
+$cardShadow: "0px 20px 40px rgba(17, 62, 149, 0.06), 0px 2px 6px rgba(17, 62, 148, 0.04)";
+
+.receipt-ocr_file-select-block_wrapper{
+  display: flex;
+  width: 100%;
+  margin-top: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid $grayBlue3;
+  padding: 16px;
+  box-shadow: $cardShadow;
+  backdrop-filter: blur(56px);
+  border-radius: 20px;
+  flex-grow: 0;
+}
+
+.receipt-ocr_file-select-block_photos{
+  margin: 0 0 10px 0;
+  overflow: auto;
+  width: 100%;
+}
+
+.receipt-ocr_file-select-block_inputs{
+  display: flex;
+  width: 100%;
+
+  @media (max-width: 833px){
+    flex-direction: column;
+  }
+}
+
+.receipt-ocr_file-select-block_photos{
+  display: flex;
+  overflow-x: auto;
+  flex-grow: 0;
+  scrollbar-width: thin;
+  scrollbar-color: $grayBlue4 rgba(219, 227, 240, 0.5);
+}
+
+.receipt-ocr_file-select-block_photos::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+
+  background: rgba(219, 227, 240, 0.5);
+  border-radius: 12px;
+}
+
+.receipt-ocr_file-select-block_photos::-webkit-scrollbar-thumb {
+  display: flex;
+  width: 8px;
+  border-radius: 8px;
+  background: $grayBlue4;
+}
+
+.receipt-ocr_file-select_image{
+  display: flex;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.11s ease-in-out;
+  margin-right: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}
+
+.receipt-ocr_file-select_image__active{
+  opacity: 0.2;
+}
+
+.receipt-ocr_file-select_image__disabled {
+ cursor: not-allowed;
+}

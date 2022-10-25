@@ -1,0 +1,29 @@
+- var neuroMarchUniquePage = true;
+- var neuroMarch = true
+
+- var pathJs = "neuroMarchUnique"
+- var pathCss = "neuroMarchUnique"
+
+include ../includes/_
+
+-
+  var openGraphMeta = {
+    image: ogUrlSite + "/i/neuroMarch/og-image.png",
+    url: ogUrlSite + "/neuro-march",
+    title: "Генератор нейро-открыток с 8 марта",
+    locale: "ru_RU",
+    description: "Не знаете, что пожелать близким на 8 марта? Нейросеть все сделает за вас!"
+  }
+
+
++structure(
+    'Генератор нейро-открыток с 8 марта',
+    'Не знаете, что пожелать близким на 8 марта? Нейросеть все сделает за вас!',
+    '',
+    '',
+    {
+        footer: true
+    },
+    openGraphMeta
+)
+  +mainNeuroMarchUnique()

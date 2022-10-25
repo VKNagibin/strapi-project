@@ -1,0 +1,15 @@
+mixin certificationDevelopers(title)
+  +b.SECTION.certification.section.section_dark&attributes(attributes)
+    +e.in.section__in
+      +e.main-certification
+        +e.H2.title.section__title.js-animate-title#sertification
+          | !{title}
+        +e.P.text Все разработчики уровня Middle прошли внутренний курс обучения и аттестацию, а Senior-программисты постоянно повышают квалификацию, проходя продвинутые курсы на образовательной платформе <span class="sertification__text-span">OTUS</span>
+        +e.certification
+          +e.PICTURE.image
+            source(type="image/webp", data-srcset="/i/outstaffing/certificates_small.webp", media="(max-width: 1265px)")
+            source(type="image/png", data-srcset="/i/outstaffing/certificates_small.png", media="(max-width: 1265px)")
+            source(type="image/webp", data-srcset="/i/outstaffing/certificates_mid.webp", media="(max-width: 1543px)")
+            source(type="image/png", data-srcset="/i/outstaffing/certificates_mid.png", media="(max-width: 1543px)")
+            source(type="image/webp", data-srcset="/i/outstaffing/certificates_large.webp")
+            img(class="lazyload", data-src="/i/outstaffing/certificates_large.png", alt="")

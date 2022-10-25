@@ -1,0 +1,5 @@
+mixin reviewCardsContainer(cards)
+  .main-reviews-cards.reviewsCarousel__line#reviewsCarouselLine(data-loaded='false')
+    each reviewCard in cards
+      div.reviews-card-container.hidden
+        +reviewCard(reviewCard)

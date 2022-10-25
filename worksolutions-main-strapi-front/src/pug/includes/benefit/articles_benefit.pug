@@ -1,0 +1,9 @@
+mixin articles_benefit(attributes)
+  +b.SECTION.articles
+    h2.visually-hidden Статьи
+    +e.UL.list.list-articles#benefitList
+      each article, index in articles
+        +benefitBlock(article)
+    if hasNextPage
+      +e.btn-wrapper
+        button.button.articles__btn#showMoreBenefit Больше статей

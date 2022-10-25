@@ -1,0 +1,7 @@
+include ../icons/clip
+
+mixin selectFileButton(text)
+    input(type='file' accept='.png, .jpg, .jpeg').receipt-ocr_invisible-input
+    div.select-file-button_wrapper
+        +clip()
+        span.select-file-button_text= text

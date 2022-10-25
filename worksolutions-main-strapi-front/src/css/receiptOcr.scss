@@ -1,0 +1,35 @@
+@import "includes/clear";
+@import "includes/breakpoints";
+
+@import "includes/fonts";
+@import "includes/fonts_blog-detail";
+
+@import "includes/theme";
+@import "includes/buttons.scss";
+
+@import "includes/common-styles";
+@import "includes/menu/siteMenu";
+@import "includes/menu/socialMenu";
+@import "includes/menu/menuList";
+
+@import "includes/forms/forms";
+
+@import "includes/modals/modal";
+
+@import "includes/footer/footer";
+
+@import "includes/yaShare/yaShare.scss";
+
+@import "includes/receiptOcr/image-block";
+@import "includes/receiptOcr/wrapper";
+@import "includes/receiptOcr/selectFileBlock/selectFileButton";
+@import "includes/receiptOcr/selectFileBlock/search-input";
+@import "includes/receiptOcr/selectFileBlock/selectFileBlock";
+@import "includes/receiptOcr/side-block";
+@import "includes/receiptOcr/other/article";
+@import "includes/receiptOcr/other/otherDemo";
+@import "includes/receiptOcr/jointBlock";
+@import "includes/receiptOcr/tab";
+
+@import 'includes/receiptOcr/simplebar';
+/*@import '~simplebar/dist/simplebar.css';*/

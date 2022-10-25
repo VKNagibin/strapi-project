@@ -1,0 +1,32 @@
+include ../blocks/formFields/inputTextField
+include ../blocks/formFields/attachField
+include ../blocks/formFields/submitField
+include ../blocks/formFields/agreementField
+include ../forms/formPhoneNumberPrompt
+include ../forms/inputLocationPage
+
+mixin feedbackForm
+  .feedback-form-wrapper
+    .feedback-form
+      .in
+        p.title Получите консультацию
+        form.form.js-form.feedback-form-container(
+          action="#",
+          method="POST",
+          data-yandex-counter-id=(isProduction ? yandexCounterId : false)
+          data-metric-goal=(isProduction ? "sendFormOrder" : false))
+          +hiddenFormTitle("Запрос персональной консультации")
+          +inputTextField("text", "requesterName", "name", "Как к вам обращаться")
+          .phone-wrapper
+            +inputTextField("tel", "requesterPhoneNumber", "phone", "Телефон", "phone", "off")
+            +formPromptAlert("Чтобы не беспокоить вас звонками, мы напишем в мессенджер для выбора удобного канала связи")
+          +attachField("Прикрепить бриф или тз", "Чтобы мы лучше подготовились к беседе.")
+          +inputLocationPage
+          +submitField("Отправить заявку", "Отправить")
+          +agreementField("Отправить заявку")
+
+
+
+
+
+

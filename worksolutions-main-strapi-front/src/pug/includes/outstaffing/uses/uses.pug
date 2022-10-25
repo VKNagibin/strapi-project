@@ -1,0 +1,17 @@
+-
+mixin uses(title, cards)
+    +b.SECTION.uses.section.section_light
+        +e.in.section__in
+            +e.main
+                +e.H2.title.section__title.js-animate-title#uses
+                    | !{title}
+                +e.content
+                    +e.UL.card-list
+                        each card in cards
+                            +e.LI.card
+                                +e.card-icon.circled-icon
+                                    img(class="lazyload",
+                                        data-src=`/i/outstaffing/use-icons/${card.iconFileName}.svg`,
+                                        alt=card.text)
+                                +e.H3.card-text
+                                    | !{card.text}

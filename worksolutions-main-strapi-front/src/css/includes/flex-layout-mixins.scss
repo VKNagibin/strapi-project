@@ -1,0 +1,13 @@
+@mixin n-flex-items-by-row($item-count-per-row, $gap) {
+  margin-bottom: -$gap;
+
+  > * {
+    margin-right: $gap;
+    margin-bottom: $gap;
+    width: calc((100% - #{$gap * ($item-count-per-row - 1)}) / #{$item-count-per-row});
+
+    &:nth-child(#{$item-count-per-row}n) {
+      margin-right: 0;
+    }
+  }
+}

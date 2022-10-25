@@ -1,0 +1,7 @@
+mixin outstaffBenefitsCard(title, text, headlineTag)
+  .outstaff-benefits__card
+    +b({tag: headlineTag || 'h4'}).outstaff-benefits__title-card
+      | !{title}
+    .outstaff-benefits__text
+      | !{text}
+

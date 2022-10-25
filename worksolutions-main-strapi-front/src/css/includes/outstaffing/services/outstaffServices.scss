@@ -1,0 +1,58 @@
+.outstaff-services {
+  background: $grayBlue1;
+
+  &__services-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 96px;
+
+    @media #{$desktop-small-down} {
+      margin-top: 56px;
+    }
+  }
+}
+
+.services-item {
+  width: calc((100% - 120px) * 0.5);
+  font-family: $fontBook, Arial, Helvetica, sans-serif;
+  position: relative;
+  margin-bottom: 32px;
+  padding-left: 42px;
+  box-sizing: border-box;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #252525;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:nth-last-child(2) {
+    margin-bottom: 0;
+  }
+
+  @media #{$desktop-small-down} {
+    font-size: 18px;
+  }
+
+  @media #{$tablet-down} {
+    width: 100%;
+
+    &:nth-last-child(2) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $blue2 url("../../../../images/arrow_right_short_white.svg") no-repeat center center;
+  }
+}
+

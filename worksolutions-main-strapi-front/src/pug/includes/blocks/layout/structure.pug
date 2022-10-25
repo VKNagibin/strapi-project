@@ -1,0 +1,45 @@
+- var isProduction = process.env.IS_PRODUCTION === 'TRUE';
+- var yandexCounterId = 20160082;
+
+mixin structure(pageTitle, description, keywords, contentClassModifier, options, openGraphMeta)
+  - options = options || {};
+  doctype html
+  html(prefix="og: http://ogp.me/ns#")
+    +head(pageTitle, description, keywords, openGraphMeta)
+    body
+      if (isProduction)
+        noscript {{bodyStartIntegrationArea}}
+        noscript
+          div
+            img(src='https://mc.yandex.ru/watch/' + yandexCounterId, style="position:absolute; left:-9999px;", alt="")
+      .siteWrapper
+        .siteContent(class=contentClassModifier)
+          block
+          if options.footer
+            +footer
+        +menuList
+        +siteMenu
+      +modalResult
+      +modalEstimate
+      if mainPage
+        +modalResume
+        +modalCaseBank
+        +modalCaseSocial
+        +modalCaseHr
+        +modalCaseMobile
+        +modalCaseBuilder
+        +modalCaseLoyality
+      if outstaffingPage
+        +modalResume
+      script(src="/js/vendor.min.js", type="text/javascript")
+      if options.map
+        script(
+          src=`https://maps.google.com/maps/api/js?key=${isProduction ? process.env.MAPS_API_KEY_PROD : process.env.MAPS_API_KEY_DEV}`,
+          type="text/javascript"
+        )
+      if options.shareButtons
+        script(src="https://yastatic.net/share2/share.js", async="async")
+
+      script(src=`/js/${pathJs}.min.js`, type="text/javascript")
+      if (isProduction)
+        noscript {{bodyEndIntegrationArea}}

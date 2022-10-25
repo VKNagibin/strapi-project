@@ -1,0 +1,130 @@
+@import "vars_blog";
+
+.articles {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -21px;
+    margin-bottom: 72px;
+    padding: 0;
+    list-style: none;
+
+    &.blog-list li:first-child {
+      @media #{$desktop-pre-mid-up} {
+        margin: 12px;
+        width: calc((100% - 50px) / 2);;
+      }
+    }
+
+    &.blog-list li:first-child {
+      @media #{$desktop-pre-mid-down} {
+        width: 100%;
+      }
+    }
+
+    &.blog-list li:nth-child(2) {
+      @media only screen and (min-width: 1266px) {
+        margin: 12px;
+        width: calc((100% - 50px) / 2);
+      }
+    }
+  }
+
+
+  &__btn-wrapper {
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__btn {
+    margin: 0 auto;
+    text-align: center;
+
+    @media (hover: none) {
+      &:hover {
+        background: #fff;
+        color: $mainDecorColor;
+      }
+
+      &:focus {
+        background: $mainDecorColor;
+        color: #fff;
+      }
+
+      &.hover {
+        background: $mainDecorColor;
+        color: #fff;
+
+        &:disabled {
+          color: #EEEEEE;
+          background-color: transparent;
+          border-color: #EEEEEE;
+        }
+      }
+    }
+  }
+}
+
+
+@media #{$desktop-small-down} {
+  .articles {
+    &__list {
+      &.blog-list li:first-child {
+        .article {
+          &__link {
+            display: block;
+          }
+
+          &__img-wrapper {
+            width: 100%;
+            padding-top: 56.55%;
+            border-radius: 19px 19px 0 0;
+            border-right: none;
+            border-bottom: 1px solid $grayBlue3;
+            height: 0;
+            background: none !important;
+          }
+
+          &__text {
+            margin-left: 0;
+            width: 100%;
+            padding: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$tablet-down} {
+  .articles {
+    &__list {
+      margin: 0 0 40px 0;
+
+      li:first-child {
+        margin-top: 0;
+      }
+
+      &.blog-list li:first-child {
+        .article__img-wrapper {
+          border-radius: 19px 19px 0 0;
+        }
+      }
+    }
+  }
+}
+
+@media #{$mobile-down} {
+  .articles__btn {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media #{$only-ie} {
+  .articles__btn-wrapper {
+    margin-bottom: 140px;
+  }
+}

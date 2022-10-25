@@ -1,0 +1,27 @@
+-
+  var services = [
+    {
+      title: 'Усиливаем вашу команду',
+      desc: 'Войдем в проект командой или одним разработчиком, интегрируемся с вашими менеджерами, разработчиками и другими специалистами.'
+    },
+    {
+      title: 'Разрабатываем нетиповые проекты',
+      desc: 'Справимся со сложным разворотом. Разберемся в инфраструктуре и предметной области.'
+    },
+    {
+      title: 'Используем подход Time & Materials',
+      desc: 'Вы оплачиваете только фактически затраченное время специалистов над проектом. Оплата производится ежемесячно по факту выполненных работ.'
+    }
+  ]
+
+mixin approachToWork(customServices)
+  +b.SECTION.approach-work.section.section_dark&attributes()
+    +e.in.section__in
+      +e.main-approach-work
+        +e.H2.title.section__title.js-animate-title#approach-work Наш подход к работе
+        +e.content
+          ul.services__list
+            each service in customServices || services
+              li.services__item.white-background
+                +e.H3.item-title.services__item-title= service.title
+                +e.P.item-desc.services__item-desc= service.desc

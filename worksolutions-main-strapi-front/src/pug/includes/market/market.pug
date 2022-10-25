@@ -1,0 +1,20 @@
+include outlineBadge
+include bottomCard
+
+mixin market(attributes)
+  +b.SECTION.market.section.section_light.js-animate-title#market&attributes(attributes)
+    +b.whatWeDoInWebMarket_mainWrapper
+      +b.whatWeDoInWebMarket_wrapper
+        picture
+          source(type="image/webp", data-srcset="/i/market/background-img.webp")
+          img.whatWeDoInWebMarket_image(class="lazyload", data-src="/i/market/background-img.png", alt="")
+        +b.whatWeDoInWebMarket_headerWrapper
+          +b.whatWeDoInWebMarket_header
+            +outlineBadge('Что мы делаем на рынке веб-разработки?')
+            +b.whatWeDoInWebMarket_mainText Повышаем прозрачность<br/> и контролируемость<br/> процессов
+          +b.whatWeDoInWebMarket_dotsCornerWrapper
+            +b.IMG.img(class="lazyload", data-src='i/market/dotsCorner.svg', alt='')
+        +b.whatWeDoInWebMarket_footer
+          +b.whatWeDoInWebMarket_dotsPlusWrapper
+            +e.IMG.img(class="lazyload", data-src='i/market/dotsPlus.svg', alt='')
+          +bottomCard()

@@ -1,0 +1,34 @@
+mixin reviewCard(reviewData)
+  .reviews-main__card.reviews-card.js-reviewsCarousel-card
+    .reviews-main__top
+      if !!reviewData.socialLink
+        a.reviews-main__social-link(href=reviewData.socialLink target="_blank" rel='nofollow')
+          picture
+            source(type="image/webp", data-srcset=reviewData.src + ".webp")
+            img.reviews-main__avatar(class="lazyload", data-src=reviewData.src + ".png" alt="avatar")
+      else
+        picture
+          source(type="image/webp", data-srcset=reviewData.src + ".webp")
+          img.reviews-main__avatar(class="lazyload", data-src=reviewData.src + ".png" alt="avatar")
+
+      .reviews-main__reviewer-info
+        if !!reviewData.socialLink
+          a(href=reviewData.socialLink target="_blank" rel='nofollow').reviews-main__fullname=reviewData.fullname
+        else
+          .reviews-main__fullname=reviewData.fullname
+        .wrapp-specialty
+          if !!reviewData.position.link
+            a.reviews-main__specialty.reviews-main__specialty-link(href=reviewData.position.link)
+              | !{reviewData.position.text}
+          else
+            .reviews-main__specialty=reviewData.position.text
+          =' , '
+          if !!reviewData.project.link
+            a.reviews-main__specialty.reviews-main__specialty-link(href=reviewData.project.link)
+              | !{reviewData.project.text}
+          else
+            .reviews-main__specialty=reviewData.project.text
+    .reviews-main__content
+      .reviews-main__text
+        | !{reviewData.text}
+    img.reviews-main__quotes(class="lazyload", data-src="/i/quotes.svg" alt="quotes")

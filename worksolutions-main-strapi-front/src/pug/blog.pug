@@ -1,0 +1,14 @@
+- var mainPage = false;
+- var blogPage = true;
+- var pathJs = "blog";
+- var pathCss = "blog";
+
+include includes/_
+
++structure(metaTags.title, metaTags.description, "разработка веб-приложений, work solutions, рабочие решения,управление проектами, выбор подрядчика, машинное обучение", "", {footer: true}, openGraphMeta)
+  +header_blog
+  main.main
+    .container
+      +filter
+      +articles_blog
+      +formSign

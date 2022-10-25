@@ -1,0 +1,159 @@
+@import "vars_blog";
+
+html.modal-opened {
+  height: 100%;
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.hidden {
+    overflow: hidden;
+    padding-right: 17px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  max-width: 1736px;
+  margin: 0 auto;
+  padding: 0 96px;
+  box-sizing: border-box;
+
+  @media #{$desktop-middle-down} {
+    padding: 0 96px;
+  }
+
+  @media #{$desktop-small-down} {
+    padding: 0 32px;
+  }
+
+  @media #{$mobile-down} {
+    padding: 0 16px;
+  }
+}
+
+.section {
+  position: relative;
+  margin-left: 64px;
+
+  @media #{$desktop-small-down} {
+    margin-left: 48px;
+  }
+
+  @media #{$mobile-down} {
+    margin-left: 32px;
+  }
+
+  &__in {
+    position: relative;
+    max-width: 1736px;
+    margin: 0 auto;
+    padding: 110px 96px 144px;
+    box-sizing: border-box;
+
+    @media #{$desktop-middle-down} {
+      padding: 110px 96px 144px;
+    }
+
+    @media #{$desktop-small-down} {
+      padding: 58px 32px 96px;
+    }
+
+    @media #{$mobile-down} {
+      padding: 58px 24px 96px;
+    }
+  }
+}
+
+.main {
+  position: relative;
+  margin-left: 64px;
+  padding-bottom: 96px;
+
+  @media #{$desktop-small-down} {
+    margin-left: 48px;
+  }
+
+  @media #{$desktop-small-down} {
+    padding-bottom: 96px;
+  }
+
+  @media #{$mobile-down} {
+    margin-left: 32px;
+    padding-bottom: 56px;
+  }
+
+  &.page-detail {
+    padding-bottom: 0;
+
+    .container {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+
+      & > * {
+        max-width: 832px;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media #{$desktop-small-down} {
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+
+        @media #{$mobile-down} {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+    }
+
+    .full {
+      .container {
+        padding-bottom: 32px;
+      }
+
+      @media screen and (max-width: 900px) {
+        padding-bottom: 0;
+
+        .container {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.button {
+  &:disabled {
+    color: $disabledColor;
+    background-color: transparent;
+    border-color: $disabledColor;
+    cursor: default;
+  }
+}
+
+
+@import "article";

@@ -1,0 +1,10 @@
+mixin techStackList(list, index)
+    +b.tech-stack-list&attributes(attributes)
+        +e.H3.title
+            | !{list.title}
+        +e.UL.items-container
+            each item in list.technologies
+                +e.LI.item
+                    | !{item}
+        .decor-bottom-right
+            img(class="lazyload", data-src=`/i/decor_bottom-right_color_${index + 1}.svg`, alt="")

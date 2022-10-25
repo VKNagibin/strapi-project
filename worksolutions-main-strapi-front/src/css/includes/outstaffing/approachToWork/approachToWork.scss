@@ -1,0 +1,16 @@
+.approach-work {
+  background: $grayBlue1;
+  z-index: 1;
+
+  &__in.section__in {
+    padding-top: 0;
+  }
+
+  &__content {
+   margin-top: 96px;
+
+    @media #{$desktop-small-down} {
+      margin-top: 56px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+- var mainPage = false;
+- var benefitPage = true;
+- var pathJs = "benefit"
+- var pathCss = "blog"
+
+-
+  var ogUrlSite = process.env.OG_URL
+-
+  var openGraphMeta = {
+    title: "Work Solutions - Полезное",
+    type: "article",
+    locale: "ru_RU",
+    description: "Статьи об инструментках разработки веб-приложений",
+    image: ogUrlSite + "/i/og/og-image.png",
+    url: ogUrlSite + "/useful/",
+    siteName: "Work Solutions"
+  }
+
+include includes/_
+
++structure('Полезное', 'description', 'keywords', '', {footer: true}, openGraphMeta)
+  +header_benefit()
+  main.main
+    .container
+      +articles_benefit()

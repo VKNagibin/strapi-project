@@ -1,0 +1,358 @@
+.first {
+  .section__in {
+    padding-bottom: 0;
+    padding-top: 90px;
+    z-index: 2;
+
+    @media #{$desktop-pre-mid-down} {
+      padding-top: 64px;
+    }
+
+    @media #{$mobile-down} {
+      padding-top: 24px;
+    }
+  }
+}
+
+.firstBackground {
+  position: absolute;
+  max-width: 1800px;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  @media #{$tablet-down} {
+    overflow: hidden;
+  }
+
+  &__item {
+    position: absolute;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    &.mobile-image {
+      display: none;
+
+      @media #{$desktop-small-down} {
+        display: block;
+      }
+    }
+
+    &.desktop-image {
+
+      @media #{$desktop-small-down} {
+        display: none;
+      }
+    }
+  }
+
+  [data-first-animate] {
+    opacity: 0;
+    visibility: hidden;
+
+    &.showed {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0, 0);
+      transition: all .3s ease-out;
+    }
+  }
+
+  .ring-small {
+    width: 326px;
+    height: 326px;
+    top: 16%;
+    left: 58%;
+    z-index: 1;
+    transform: translate(25%, 25%);
+
+    @media #{$desktop-middle-down} {
+      width: 186px;
+      height: 186px;
+    }
+
+    @media #{$desktop-small-down} {
+      width: 140px;
+      height: 140px;
+      top: 18%;
+      left: 52%;
+    }
+
+    @media #{$tablet-down} {
+      display: none;
+    }
+  }
+
+  .ring-big {
+    position: relative;
+    border-radius: 100%;
+    width: 980px;
+    height: 980px;
+    top: 16%;
+    left: 58%;
+    z-index: 2;
+    transform: translate(10%, 10%);
+
+    @media #{$desktop-middle-down} {
+      width: 560px;
+      height: 560px;
+    }
+
+    @media #{$desktop-small-down} {
+      width: 420px;
+      height: 420px;
+      top: 18%;
+      left: 52%;
+    }
+
+    @media #{$tablet-down} {
+      top: -27%;
+      left: 50%;
+    }
+
+    @media #{$mobile-down} {
+      width: 320px;
+      height: 320px;
+      top: -19%;
+      left: 50%;
+    }
+
+    &__in {
+      z-index: 1;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      border: 190px solid black;
+      border-radius: 100%;
+      box-sizing: border-box;
+      box-shadow: 40px 40px 80px rgba(0, 0, 0, 0.24), inset 40px 40px 80px rgba(0, 0, 0, 0.24);
+
+      @media #{$desktop-middle-down} {
+        border-width: 110px;
+      }
+
+      @media #{$desktop-small-down} {
+        border-width: 80px;
+        box-shadow: 40px 40px 80px rgba(0, 0, 0, 0.24), inset 20px 20px 40px rgba(0, 0, 0, 0.24);
+      }
+
+      @media #{$mobile-down} {
+        border-width: 60px;
+      }
+    }
+
+    &__image {
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .points-double {
+    width: 152px;
+    height: 152px;
+    top: 65%;
+    left: 43%;
+    z-index: 3;
+    transform: translate(-15%, 15%);
+
+    @media #{$desktop-middle-down} {
+      top: 60%;
+    }
+
+    @media #{$desktop-small-down} {
+      display: none;
+    }
+  }
+
+  .points-single {
+    width: 92px;
+    height: 92px;
+    top: 17%;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-15%, 15%);
+
+    @media #{$desktop-middle-down} {
+      left: 39%;
+    }
+
+    @media #{$desktop-small-down} {
+      display: none;
+    }
+  }
+
+  .points-angle {
+    width: 112px;
+    height: 112px;
+    top: 10%;
+    right: 80px;
+    z-index: 5;
+    transform: translate(15%, -15%);
+
+    @media #{$desktop-small-down} {
+      width: 72px;
+      height: 72px;
+    }
+
+    @media #{$tablet-down} {
+      display: none;
+    }
+  }
+}
+
+[data-first-fade] {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(80px);
+
+  &.showed {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all .3s ease-out;
+  }
+}
+
+.top-contacts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 0;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+  @media #{$tablet-down} {
+    display: none;
+  }
+
+  &__item {
+    position: relative;
+    margin: 0 32px;
+  }
+
+  &__link {
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.45;
+    color: $grayBlue4;
+    text-decoration: none;
+    transition: all 0.2s ease-out;
+    outline: none;
+
+    &_mail {
+      border-bottom: 1px solid $grayBlue4;
+
+      &:hover,
+      &:focus {
+        border-bottom-color: $grayBlue5;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $grayBlue5;
+      transition: all 0.2s ease-out;
+    }
+  }
+}
+
+.site-logo {
+  position: relative;
+  display: block;
+  width: 132px;
+  height: 96px;
+  margin-bottom: 64px;
+
+
+  @media #{$desktop-small-down} {
+    width: 96px;
+    height: 70px;
+    margin-bottom: 48px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+}
+
+.calc-button-content {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 72px;
+
+  @media #{$desktop-small-down} {
+    max-width: 296px;
+    margin-bottom: 64px;
+  }
+}
+
+.slogan {
+  position: relative;
+  margin-bottom: 48px;
+
+  @media #{$desktop-small-down} {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    max-width: 50%;
+    font-family: $fontCondMedium;
+    font-size: 96px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: $gray5;
+
+    @media #{$desktop-middle-down} {
+      font-size: 80px;
+    }
+
+    @media #{$desktop-small-down} {
+      font-size: 64px;
+    }
+
+    @media #{$mobile-down} {
+      font-size: 44px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 360px;
+    font-size: 24px;
+    line-height: 36px;
+    color: $grayBlue5;
+
+    @media #{$desktop-small-down} {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}

@@ -1,0 +1,137 @@
+@import "../../breakpoints";
+@import "../../fonts";
+@import "../../theme";
+
+$row-layout-breakpoint: $desktop-tiny-down;
+
+.devops-methodology {
+  &__content {
+    position: relative;
+    margin-top: 96px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: stretch;
+
+    @media #{$desktop-small-down} {
+      margin-top: 56px;
+    }
+
+    @media #{$row-layout-breakpoint} {
+      flex-direction: column;
+
+    }
+  }
+
+  &__banner-container {
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @media #{$row-layout-breakpoint} {
+      width: 100%;
+      margin-top: -34px;
+      margin-bottom: 20px;
+
+      img {
+        max-width: 720px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__method-blocks {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 580px;
+    padding: 56px 40px;
+    overflow: hidden;
+    border: 1px solid $grayBlue3;
+    border-radius: 20px 29px 20px 20px;
+    box-shadow: 0 20px 64px rgba($grayBlue5, 0.08),
+                0 20px 40px rgba($black, 0.06);
+    background: transparent;
+    font-size: 24px;
+
+    @media #{$row-layout-breakpoint} {
+      max-width: 100%;
+      padding: 24px 32px;
+    }
+
+    @media #{$mobile-pre-mid-down} {
+      padding: 24px 24px;
+    }
+  }
+
+  &__method-block {
+    margin-bottom: 40px;
+    width: 100%;
+    font-family: $fontBook, Arial, Helvetica, sans-serif;
+    position: relative;
+    padding-left: 42px;
+    font-size: 24px;
+    color: $gray7;
+
+    @media #{$desktop-small-down} {
+      font-size: 18px;
+    }
+
+    @media #{$row-layout-breakpoint} {
+      margin-bottom: 24px;
+      width: 100%;
+    }
+
+    @media #{$mobile-pre-mid-down} {
+      margin-bottom: 16px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .circled-arrow-bullet {
+      position: absolute;
+      top: 2px;
+      left: 0;
+    }
+  }
+
+  &__background-image-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+
+    @media #{$row-layout-breakpoint} {
+      width: auto;
+    }
+  }
+
+  &__background-image {
+    display: block;
+    width: 100%;
+    opacity: .2;
+
+    @media #{$row-layout-breakpoint} {
+      opacity: .1;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    width: 100%;
+    line-height: 1.5;
+
+    @media #{$mobile-small-down} {
+      line-height: 1.45;
+    }
+  }
+}

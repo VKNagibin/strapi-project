@@ -1,0 +1,91 @@
+@import "../../breakpoints";
+@import "../../flex-layout-mixins";
+@import "../../fonts";
+@import "../../theme";
+
+.tech-stack {
+  &__content {
+    $large-gap: 20px;
+    $small-gap: 16px;
+
+    margin-top: 96px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+
+    @media #{$screen} and (min-width: #{$desktop-pre-mid}) {
+      @include n-flex-items-by-row(3, $large-gap);
+    }
+
+    @media #{$screen}
+           and (min-width: #{$desktop-small})
+           and (max-width: #{upper-bound($desktop-pre-mid-range)}) {
+      @include n-flex-items-by-row(2, $large-gap);
+    }
+
+    @media #{$screen}
+           and (min-width: #{$desktop-tiny})
+           and (max-width: #{upper-bound($desktop-small-range)}) {
+      margin-top: 56px;
+      @include n-flex-items-by-row(3, $small-gap);
+    }
+
+    @media #{$screen}
+           and (min-width: #{$tablet-mid})
+           and (max-width: #{upper-bound($desktop-tiny-range)}) {
+      @include n-flex-items-by-row(2, $small-gap);
+    }
+
+    @media #{$tablet-mid-down} {
+      @include n-flex-items-by-row(1, $small-gap);
+    }
+  }
+}
+
+.tech-stack-list {
+  position: relative;
+  padding: 32px 40px 130px;
+  border: 1px solid $grayBlue3;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba($black, 0.06);
+  background: $white;
+
+  @media #{$tablet-down} {
+    padding-bottom: 56px;
+  }
+
+  @media #{$mobile-down} {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 1.3;
+    color: $gray5;
+
+    @media #{$desktop-small-down} {
+      font-size: 24px;
+    }
+
+    @media #{$desktop-small-down} {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__item {
+    margin-left: 1em;
+    text-indent: -1em;
+    font-family: $fontBook, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $grayBlue5;
+
+    @media #{$desktop-small-down} {
+      font-size: 18px;
+    }
+  }
+}

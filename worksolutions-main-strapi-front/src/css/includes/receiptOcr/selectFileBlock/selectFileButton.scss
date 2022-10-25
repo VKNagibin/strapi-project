@@ -1,0 +1,71 @@
+$transition: "0.2s ease";
+
+.select-file-button_wrapper {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background: none;
+  border: 2px solid $blue2;
+  box-sizing: border-box;
+  border-radius: 12px;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    background: $blue2;
+    border: 2px solid $blue2;
+
+    & > span {
+      color: white;
+    }
+    & > svg > path {
+      fill: white;
+      color: white;
+    }
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.select-file-button_text{
+  height: 20px;
+  margin-left: 10px;
+  font-family: $fontHeavy;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $blue2;
+
+  transition: $transition;
+}
+
+.receipt-ocr_invisible-input {
+  display: none;
+}
+
+.select-file-button_wrapper_disabled {
+  cursor: default;
+  opacity: 0.4;
+  &:hover {
+    background: none;
+
+    & > span {
+      color: $blue2;
+    }
+    & > svg > path {
+      fill: $blue2;
+    }
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}

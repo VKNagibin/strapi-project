@@ -1,0 +1,29 @@
+-
+    var devopsHeroTitle = "Как устроена методология DevOps";
+    var bannerImageAbsoluteFilename = "/i/outstaffing/devops/devops-banner"
+
+    var devopsMethodologyTexts = [
+        "Инфраструктура и платформа как сервис",
+        "Автоматизация сборки и других процессов",
+        "Доставка функционала, развертывание, тестирование и мониторинг осуществляются непрерывно",
+    ];
+
+mixin devopsMethodology
+    +b.SECTION.devops-methodology.section.section_light
+        +e.in.section__in
+            +e.main
+                +e.H2.title.section__title.js-animate-title#devopsHero
+                    | !{devopsHeroTitle}
+                +e.content
+                    +e.banner-container
+                        picture
+                            source(type="image/webp", data-srcset=`${bannerImageAbsoluteFilename}.webp`)
+                            img(class="lazyload", data-src=`${bannerImageAbsoluteFilename}.png`, alt="Иллюстрация DevOps")
+                    +e.method-blocks
+                        +e.method-list
+                            each text in devopsMethodologyTexts
+                                +e.method-block
+                                    +circledArrowBullet
+                                    +e.P.text !{text}
+                        +e.background-image-container
+                            +e.IMG.background-image(class="lazyload", data-src="/i/outstaffing/ellipse.svg")

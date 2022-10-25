@@ -1,0 +1,240 @@
+@import "src/css/includes/breakpoints";
+@import "src/css/includes/fonts";
+@import "src/css/includes/theme";
+
+.mobile .teamCarousel__in,
+.tablet .teamCarousel__in {
+  overflow: auto;
+}
+
+.teamCarousel {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: -64px -96px 0;
+
+  @media #{$tablet-down} {
+    display: none !important;
+  }
+
+  * {
+    cursor: grab;
+  }
+
+  *:active {
+    cursor: grabbing;
+  }
+
+  &__in {
+    position: relative;
+    overflow: auto;
+    padding: 64px 76px;
+    margin: 0 0 -20px;
+
+    @media #{$desktop-small-down} {
+      padding: 56px 88px 76px;
+    }
+  }
+
+  &__line {
+    position: relative;
+    display: flex;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 96px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba($white, 0) 0%, $white 100%);
+  }
+
+}
+
+.teamCard {
+  position: relative;
+  min-width: 488px;
+  width: 488px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 20px;
+  box-shadow: 0 20px 40px rgba($gray5, 0.06),
+              0 2px 6px rgba($gray5, 0.04);
+  cursor: default;
+  transition: all .3s ease-out;
+  top: 0;
+  opacity: 1;
+  user-select: none;
+
+  &.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  @media #{$desktop-middle-down} {
+    width: 436px;
+    min-width: 436px;
+  }
+
+  @media #{$desktop-small-down} {
+    width: 396px;
+    min-width: 396px;
+    margin: 0 12px;
+  }
+
+  &__view {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    transition: all .4s ease-out;
+    overflow: hidden;
+    border-radius: 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 20px;
+      border: 1px solid rgba($black, 0.08);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    transition: all .4s ease-out;
+  }
+
+  &__name-wrapper {
+    position: absolute;
+    bottom: 32px;
+    right: 16px;
+    height: 132px;
+    width: 0;
+    z-index: 1;
+    transition: all .3s ease-out;
+
+    @media #{$desktop-small-down} {
+      bottom: 24px;
+      right: 8px;
+      height: 96px;
+    }
+  }
+
+  &__name {
+    display: block;
+    font-size: 132px;
+    line-height: 1;
+    font-family: $fontCondMedium;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0 0 24px rgba($black, 0.08), 0 0 4px rgba($black, 0.12);
+    transform: rotate(270deg);
+    transform-origin: 0 100%;
+
+    @media #{$desktop-small-down} {
+      font-size: 96px;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    background: $white;
+    border: 1px solid $grayBlue3;
+    border-radius: 20px;
+
+    @media #{$desktop-small-down} {
+      padding: 32px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      width: 72px;
+      height: 72px;
+      background: url(../../../images/team_block_decor.svg) no-repeat 50% 50%;
+      background-size: contain;
+      transform: rotate(270deg);
+
+      @media #{$desktop-small-down} {
+        top: 24px;
+        right: 24px;
+        width: 48px;
+        height: 48px;
+      }
+
+      @media #{$tablet-down} {
+        display: none;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .teamCard__view {
+      opacity: 0;
+    }
+
+    .teamCard__name-wrapper {
+      right: -24px;
+      opacity: 0;
+    }
+
+    .teamCard__image {
+      transform: scale(1.1);
+    }
+
+    .js-personalCard-animate {
+      animation-timing-function: ease-out;
+      animation-name: showCard;
+      animation-duration: .2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.js-personalCard-animate {
+  position: relative;
+  left: 40px;
+  opacity: 0;
+
+  &:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+}
+
+@keyframes showCard {
+  0% {
+    left: 40px;
+    opacity: 0;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}

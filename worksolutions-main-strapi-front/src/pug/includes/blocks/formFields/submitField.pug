@@ -1,0 +1,14 @@
+mixin submitField(btnText, btnTextMobile, isWrapSendIcon)
+  if !btnTextMobile
+    - btnTextMobile = btnText
+  .form__field
+    .form__btn-wrapper
+      button.form__submit-btn.js-submit-btn.button(type='submit')
+        if isWrapSendIcon
+          span.form__send-icon-wrapper
+            include ../icons/submit
+        else
+          include ../icons/submit
+        span.preloader
+        span.form__submit-text.form__submit-text_desktop= btnText
+        span.form__submit-text.form__submit-text_mobile= btnTextMobile

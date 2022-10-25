@@ -1,0 +1,16 @@
+mixin benefitBlock(article, isBlogMode)
+  - article = article || {}
+  +b.LI.article
+    +e.A.link(href=article.url+='/')
+      +e.DIV.img-wrapper
+        picture
+          +e.IMG.img(class="lazyload", data-src=article.announceImage, alt='')
+      +e.DIV.text
+        +e.P.title(class=article.announce ? '' : 'mb0')=article.title
+        - if (isBlogMode)
+          +e.DIV.info
+            +e.SPAN.author= article.author
+            +e.SPAN.date= article.date
+        +e.P.desc= article.announce
+        - if(isBlogMode && article.categoryText)
+          +e.SPAN.category= article.categoryText

@@ -1,0 +1,132 @@
+// Points
+
+$full-hd-native: 1920;
+$desktop-native: 1544;
+$desktop-middle-native: 1400;
+$desktop-pre-mid-native: 1266;
+$desktop-small-native: 1152;
+$tablet-native: 768;
+$mobile-native: 480;
+$mobile-small-native: 320;
+
+$desktop: 1544px;
+$desktop-middle: 1400px;
+$desktop-pre-mid: 1266px;
+$desktop-small: 1152px;
+$desktop-tiny: 992px;
+$tablet: 768px;
+$tablet-mid: 650px;
+$tablet-low: 500px;
+$mobile: 480px;
+$mobile-mid: 420px;
+$mobile-low: 350px;
+$mobile-small: 320px;
+
+$mobile-pre-native: 512;
+$mobile-pre-mid: 512px;
+
+// Functions
+
+@function lower-bound($range) {
+  @if length($range) <= 0 {
+    @return 0;
+  }
+  @return nth($range, 1);
+}
+
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+  @return nth($range, 2);
+}
+
+// Ranges
+
+$breakpoint-offset: 0.02px;
+
+$mobile-small-range: (0, $mobile-small - $breakpoint-offset);
+$mobile-pre-mid-range: (0, $mobile-pre-mid - $breakpoint-offset);
+$mobile-range: ($mobile-small, $mobile - $breakpoint-offset);
+$tablet-mid-range: ($mobile, $tablet-mid - $breakpoint-offset);
+$tablet-range: ($mobile, $tablet - $breakpoint-offset);
+$desktop-tiny-range: ($tablet, $desktop-tiny - $breakpoint-offset);
+$desktop-small-range: ($tablet, $desktop-small - $breakpoint-offset);
+$desktop-pre-mid-range: ($tablet, $desktop-pre-mid - $breakpoint-offset);
+$desktop-middle-range: ($desktop-small, $desktop-middle - $breakpoint-offset);
+$desktop-range: ($desktop-middle, $desktop - $breakpoint-offset);
+
+$screen: "only screen";
+
+// Orientation
+
+$landscape: "#{$screen} and (orientation: landscape)";
+$portrait: "#{$screen} and (orientation: portrait)";
+
+// MOBILE (0 - 320)
+
+$mobile-small-up: $screen;
+$mobile-small-down: "#{$screen} and (max-width:#{upper-bound($mobile-small-range)})";
+$mobile-small-only: "#{$screen} and (min-width:#{lower-bound($mobile-small-range)}) and (max-width:#{upper-bound($mobile-small-range)})";
+
+// MOBILE (320 - 480)
+
+$mobile-up: "#{$screen} and (min-width:#{lower-bound($mobile-range)})";
+$mobile-down: "#{$screen} and (max-width:#{upper-bound($mobile-range)})";
+$mobile-only: "#{$screen} and (min-width:#{lower-bound($mobile-range)}) and (max-width:#{upper-bound($mobile-range)})";
+
+// MOBILE PRE MID (0 - 512)
+
+$mobile-pre-mid-up: "#{$screen} and (min-width:#{lower-bound($mobile-pre-mid-range)})";
+$mobile-pre-mid-down: "#{$screen} and (max-width:#{upper-bound($mobile-pre-mid-range)})";
+$mobile-pre-mid-only: "#{$screen} and (min-width:#{lower-bound($mobile-pre-mid-range)}) and (max-width:#{upper-bound($mobile-pre-mid-range)})";
+
+// TABLET MID (480 - 650)
+
+$tablet-mid-up: "#{$screen} and (min-width:#{lower-bound($tablet-mid-range)})";
+$tablet-mid-down: "#{$screen} and (max-width:#{upper-bound($tablet-mid-range)})";
+$tablet-mid-only: "#{$screen} and (min-width:#{lower-bound($tablet-mid-range)}) and (max-width:#{upper-bound($tablet-mid-range)})";
+
+// TABLET (480 - 768)
+
+$tablet-up: "#{$screen} and (min-width:#{lower-bound($tablet-range)})";
+$tablet-down: "#{$screen} and (max-width:#{upper-bound($tablet-range)})";
+$tablet-only: "#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (max-width:#{upper-bound($tablet-range)})";
+
+// DESKTOP TINY (768 - 992)
+
+$desktop-tiny-up: "#{$screen} and (min-width:#{lower-bound($desktop-tiny-range)})";
+$desktop-tiny-down: "#{$screen} and (max-width:#{upper-bound($desktop-tiny-range)})";
+$desktop-tiny-only: "#{$screen} and (min-width:#{lower-bound($desktop-tiny-range)}) and (max-width:#{upper-bound($desktop-tiny-range)})";
+
+// DESKTOP SMALL (768 - 1152)
+
+$desktop-small-up: "#{$screen} and (min-width:#{lower-bound($desktop-small-range)})";
+$desktop-small-down: "#{$screen} and (max-width:#{upper-bound($desktop-small-range)})";
+$desktop-small-only: "#{$screen} and (min-width:#{lower-bound($desktop-small-range)}) and (max-width:#{upper-bound($desktop-small-range)})";
+
+// DESKTOP PRE MID (768 - 1266)
+
+$desktop-pre-mid-up: "#{$screen} and (min-width:#{lower-bound($desktop-pre-mid-range)})";
+$desktop-pre-mid-down: "#{$screen} and (max-width:#{upper-bound($desktop-pre-mid-range)})";
+$desktop-pre-mid-only: "#{$screen} and (min-width:#{lower-bound($desktop-pre-mid-range)}) and (max-width:#{upper-bound($desktop-pre-mid-range)})";
+
+// DESKTOP MID (1152 - 1400)
+
+$desktop-middle-up: "#{$screen} and (min-width:#{lower-bound($desktop-middle-range)})";
+$desktop-middle-down: "#{$screen} and (max-width:#{upper-bound($desktop-middle-range)})";
+$desktop-middle-only: "#{$screen} and (min-width:#{lower-bound($desktop-middle-range)}) and (max-width:#{upper-bound($desktop-middle-range)})";
+
+// DESKTOP BIG (1400 - 1544)
+
+$desktop-up: "#{$screen} and (min-width:#{lower-bound($desktop-range)})";
+$desktop-down: "#{$screen} and (max-width:#{upper-bound($desktop-range)})";
+$desktop-only: "#{$screen} and (min-width:#{lower-bound($desktop-range)}) and (max-width:#{upper-bound($desktop-range)})";
+
+// FULL HD (1920)
+
+$full-hd: "#{$screen} and (max-width:1920px)";
+
+// Стили только для IE10+
+
+$only-ie: "all and (-ms-high-contrast: none), (-ms-high-contrast: active)";

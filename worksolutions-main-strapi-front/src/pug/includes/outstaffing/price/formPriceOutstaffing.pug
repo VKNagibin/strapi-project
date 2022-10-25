@@ -1,0 +1,19 @@
+mixin formPriceOutstaffing(type, outstaffSpelling)
+  +b.outstaff-prices.outstaff-prices__form-container
+    +e.H2.title-form Оставьте заявку на !{outstaffSpelling || "аутстаффинг"} !{type} разработки
+
+    +e.FORM.form.form__form(
+        action="#",
+        method="POST",
+        data-yandex-counter-id=(yandexCounterId),
+        data-metric-goal="sendFormPriceOutstaff"
+      )
+      +hiddenFormTitle(`Запрос ${type} аутстаффа`)
+      +inputTextField("text", "requesterName", "name", "Как к вам обращаться")
+      .phone-wrapper
+        +inputTextField("tel", "requesterPhoneNumber", "phone", "Телефон", "phone", "off")
+        +formPromptAlert("Чтобы не беспокоить вас звонками, мы напишем в мессенджер для выбора удобного канала связи")
+      +inputTextField("email", "requesterEmail", "email", "Электронная почта", "email")
+      +hiddenField("outstaff_type", "outstaff_type", `${type} аутстафф`, "outstaff_type")
+      +submitField("Отправить заявку", "Отправить")
+      +agreementField("Отправить заявку")

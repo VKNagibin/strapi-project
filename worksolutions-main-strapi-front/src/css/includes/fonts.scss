@@ -1,0 +1,26 @@
+//===fonts
+@mixin font-face($name, $filename, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $name;
+    src: url('../../fonts/' + $filename + '.eot');
+    src: url('../../fonts/' + $filename + '.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/' + $filename + '.woff2') format('woff2'),
+    url('../../fonts/' + $filename + '.woff') format('woff'),
+    url('../../fonts/' + $filename + '.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+$fontCondMedium: 'FuturaPT_Cond_Medium' !global;
+$fontMedium: 'FuturaPT_Medium' !global;
+$fontHeavy: 'FuturaPT_Heavy' !global;
+$fontDemi: 'FuturaPT_Demi' !global;
+$fontBook: 'FuturaPT_Book' !global;
+
+@include font-face($fontCondMedium, $fontCondMedium);
+@include font-face($fontMedium, $fontMedium);
+@include font-face($fontHeavy, $fontHeavy);
+@include font-face($fontDemi, $fontDemi);
+@include font-face($fontBook, $fontBook);

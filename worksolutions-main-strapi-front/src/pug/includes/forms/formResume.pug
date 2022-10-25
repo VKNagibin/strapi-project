@@ -1,0 +1,20 @@
+include ../forms/formPhoneNumberPrompt
+  
+mixin formResume
+  +b.form
+    +e.in
+      +e.H2.title Резюме и ставки
+      +e.P.desc Вышлем вам подробные резюме и ставки наших специалистов
+      +e.FORM.form(
+        action="#",
+        method="POST",
+        data-yandex-counter-id=(isProduction ? yandexCounterId : false)
+        data-metric-goal=(isProduction ? "sendFormResume" : false))
+        +hiddenFormTitle("Заявка на резюме")
+        +inputTextField("text", "requesterName", "resume_name", "Как к вам обращаться")
+        .phone-wrapper
+          +inputTextField("tel", "requesterPhoneNumber", "resume_phone", "Телефон", "phone", "off")
+          +formPromptAlert("Чтобы не беспокоить вас звонками, мы напишем в мессенджер для выбора удобного канала связи")
+        +inputTextField("email", "requesterEmail", "resume_email", "Электронная почта", "email")
+        +submitField("Отправить заявку")
+        +agreementField("Отправить заявку")

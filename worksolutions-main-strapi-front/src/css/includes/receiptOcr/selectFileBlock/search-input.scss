@@ -1,0 +1,126 @@
+$transition: "0.2s easy";
+$cardShadow: "0px 20px 40px rgba(17, 62, 149, 0.06), 0px 2px 6px rgba(17, 62, 148, 0.04)";
+
+.receipt-ocr_search-input_wrapper {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  margin-left: 10px;
+
+  @media (max-width: 833px){
+    margin: 10px 0 0 0;
+  }
+}
+
+.receipt-ocr_search-input{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 53px 6px 20px;
+  height: 48px;
+  outline: none;
+  position: relative;
+  border: 2px solid $grayBlue3;
+  box-sizing: border-box;
+  border-radius: 12px;
+  font-family: $fontBook;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 20px;
+  color: $grayBlue6;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &::placeholder {
+    color: $grayBlue4;
+  }
+
+  &:hover,
+  &:focus {
+    border: 2px solid $grayBlue4;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    & ~ button {
+      cursor: default;
+      opacity: 0.4;
+    }
+    & ~ button:active > svg > path {
+      opacity: 1;
+    }
+    & ~ button:hover > svg > path {
+      fill: $blue2;
+    }
+  }
+}
+
+.receipt-ocr_search-input_button {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+
+  & > svg > path {
+    fill: $blue2;
+    transition: $transition;
+  }
+
+  &:hover > svg > path {
+    fill: $blue3;
+  }
+
+  &:active {
+    & > svg > path {
+      opacity: 0.6;
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    & > svg > path {
+      fill: $grayBlue3;
+      opacity: 1;
+    }
+  }
+}
+
+.receipt-ocr_search-input_error {
+  border-color: #FA9A9A;
+  &:hover, &:focus{
+    border-color: #FA9A9A;
+  }
+}
+
+.receipt-ocr_tooltip{
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  max-width: 244px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: $cardShadow;
+  border-radius: 12px;
+  font-family: $fontBook;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "ss04" on, "cv10" on;
+  color: $grayBlue6;
+  z-index: 20;
+}
+
+.receipt-ocr_tooltip_arrow {
+  z-index: 20;
+  top: 86px;
+
+}

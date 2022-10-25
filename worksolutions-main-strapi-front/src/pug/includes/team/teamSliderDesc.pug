@@ -1,0 +1,36 @@
+-
+    function declOfNum(number, titles) {
+        const cases = [2, 0, 1, 1, 1, 2];
+        return titles[number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]];
+    }
+
+mixin teamCarousel(attributes)
+    +b.teamCarousel&attributes(attributes)
+        +e.in.dragscroll#teamCarouselWrapper
+            +e.line#teamCarouselLine
+                each person, index in teamPeople
+                    +b.teamCard.js-teamCarousel-card.hidden
+                        +e.view
+                            if (person.image === "i/team/06")
+                                picture
+                                    source(type="image/webp", srcset=person.image + ".webp")
+                                    img.teamCard__image(src=person.image + ".jpg", title=person.name)
+                            else
+                                picture
+                                    source(type="image/webp", data-srcset=person.image + ".webp")
+                                    img.teamCard__image(class="lazyload", data-src=person.image + ".jpg", title=person.name)
+                            +e.name-wrapper
+                                +e.SPAN.name=person.name
+                        +e.info
+                            +b.personalCard
+                                .js-personalCard-animate
+                                    +e.name=person.name
+                                    +e.employment=person.employment
+                                +e.experience.js-personalCard-animate
+                                    p
+                                        strong Опыт:
+                                        span=person.exp + declOfNum(person.exp, [" год", " года", " лет"])
+                                    - if (person.stack)
+                                        p
+                                            strong=person.stack
+                                +e.comment.js-personalCard-animate=person.comment

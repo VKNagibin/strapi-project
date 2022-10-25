@@ -1,0 +1,132 @@
+.features {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px;
+  }
+
+  &__item {
+    position: relative;
+    margin: 20px;
+    padding: 48px 40px 48px 152px;
+    box-sizing: border-box;
+    width: calc((100% - 81px) / 2);
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+
+    .item__ticket{
+      position: absolute;
+      top: 52px;
+      left: 40px;
+      width: 80px;
+      height: 80px;
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: contain;
+    }
+
+    &:first-child {
+      &::after {
+        content: "";
+        position: absolute;
+        right: -96px;
+        bottom: -96px;
+        width: 152px;
+        height: 152px;
+        background: url(../../../images/decor_plus_gray_big.svg) no-repeat center center;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 16px;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 1.3;
+    color: $gray5;
+  }
+
+  &__item-desc {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 1300px) {
+    &__list {
+      display: block;
+      margin: 0;
+    }
+
+    &__item {
+      margin: 0 0 40px -0px;
+      width: 100%;
+
+      &:nth-child(n) {
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -26px;
+          left: 50%;
+          width: 72px;
+          height: 12px;
+          margin-left: -36px;
+          background: url(../../../images/decor_divider.svg) no-repeat center center;
+          background-size: contain;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media #{$desktop-small-down} {
+    &__item {
+      &:nth-child(n) {
+        margin-bottom: 24px;
+        padding: 32px 24px 32px 96px;
+
+        &::before {
+          top: 32px;
+          left: 24px;
+          width: 56px;
+          height: 56px;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__item-title {
+      margin-bottom: 8px;
+      font-size: 24px;
+      line-height: 1.32;
+    }
+
+    &__item-desc {
+      font-size: 18px;
+      line-height: 1.45;
+    }
+  }
+
+  @media #{$mobile-down} {
+    &__item {
+      &:nth-child(n) {
+        padding: 104px 24px 32px 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+include includes/_
+
+-
+    var mainPage = false;
+    var outstaffingPage = false;
+    var pathJs = "tehnicheskiy-audit-backend";
+    var pathCss = "tehnicheskiy-audit-backend";
+    var ogUrlSite = process.env.OG_URL;
+    var description = "Вам нужен профессиональный технический аудит в области Back-end? Можете смело доверить свой проект нам. 32 сотрудника! 12 лет на рынке! Узкая специализация!";
+    //- var description = "Вам нужен профессиональный технический аудит в области Back-end? Можете смело доверить свой проект нам. 32 сотрудника! 12 лет на рынке! Узкая специализация! Звоните 8(863)270-16-44";
+    var title = "Заказать технический аудит в области Back-end | Компания «Work Solutions»";
+
+    var openGraphMeta = {
+        title: title,
+        type: "article",
+        locale: "ru_RU",
+        description: description,
+        image: ogUrlSite + "/i/og/og-image.png",
+        url: ogUrlSite + "/tehnicheskiy-audit-backend/",
+        siteName: "Work Solutions"
+    };
+
+
+    var titleFirst = [
+        {text: "Технический", highlighted: false},
+        {text: "аудит", highlighted: false},
+        {text: "Backend", highlighted: false}
+    ];
+    var headerAudit = 'Что анализируем в рамках технического аудита';
+    var listAudit = [
+      ['Статический анализ внутреннего кода', 'Профилирование и нагрузочное тестирование'],
+      ['Анализ безопасности', 'Анализ сетевой инфраструктуры'],
+    ]
+
+    var articleAudit = {
+        categoryId: null,
+        url: "/useful/Tehnicheskiy-audit-backenda",
+        announceImage: server + "uploads/2_Uxy_N_Gu6e_Oo_Ett_F4f3_Ouj3_Qqo_Fh3eudj_Nt_Lxb9_Y3_98059a1cf3.jpeg",
+        title: "Технический аудит бэкенда",
+    }
+
+    var benefitCardHeadlineTag = "h3";
+    var benefitHeadTitle = "Преимущества компании «Work Solutions»";
+
+    var customServices = [
+        {
+            title: "Подключаем старших специалистов",
+            desc: "Умения писать код недостаточно, нужно уметь его оптимизировать."
+        },
+        {
+            title: "Проводим аудит в несколько этапов",
+            desc: "Отмечаем не только проблемы, но и возможные риски при масштабировании проекта."
+        },
+        {
+            title: "Предоставляем документ с результатами аудита",
+            desc: "Документ содержит результаты исследований и рекомендации по оптимизации приложения."
+        }
+    ];
+
+    var developmentTypes = [
+        {name: "Аудит front-end", link: "/tehnicheskiy-audit-frontend/"},
+        {name: "Strapi разработка", link: "/outstaffing-strapi"},
+        {name: "DevOps разработка", link: "/outstaffing-devops/"},
+        {name: "Node.js разработка", link: "/outstaffing-nodejs/"},
+    ];
+
+
+    var outstaffPricesContext = {
+        minWage: "3 000",
+        type: 'Backend',
+    }
+
++structure(
+    title,
+    description,
+    "Контакты, Work Solutions, Телефон, Адрес, Почта, Рабочие решения",
+    "",
+    {
+        footer: true
+    },
+    openGraphMeta
+)
+    +firstScreenOutstaffing(titleFirst)
+    +auditAnalyzing(
+      headerAudit, listAudit, articleAudit
+    )
+    +certificationDevelopers("Сертифика&shy;ция разработчиков")
+    +outstaffBenefits(
+        benefitHeadTitle,
+        benefitCardHeadlineTag
+    )
+    +reviews("Отзывы")
+    +approachToWork(customServices)
+    +ourPartners
+    +formPriceAudit(outstaffPricesContext)
+    +outstaffSeeAlso(developmentTypes)

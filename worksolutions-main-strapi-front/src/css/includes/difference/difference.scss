@@ -1,0 +1,220 @@
+.mobile,
+.tablet {
+
+  .difference {
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+
+}
+
+.difference-section {
+
+  &.section__in {
+
+    @media #{$desktop-up}{
+      padding: 144px 96px 108px;
+    }
+
+  }
+
+}
+
+.difference {
+  position: relative;
+  overflow: hidden;
+  margin: -28px;
+
+  @media #{$desktop-middle-down}{
+    display: none;
+  }
+
+  &__content {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    background: $grayBlue1;
+
+    &_top {
+      z-index: 2;
+      width: 0;
+    }
+
+    &_bottom {
+      z-index: 1;
+    }
+
+  }
+
+  &__wrapper {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    margin-left: 10px;
+    padding: 60px 0;
+  }
+
+  &__separator {
+    width: 4px;
+    height: 92%;
+    top: 4%;
+    left: 0;
+    z-index: 3;
+    position: absolute;
+    background: $blue2;
+  }
+
+  &__touch {
+    width: 36px;
+    height: 56px;
+    top: 50%;
+    left: 50%;
+    border-radius: 8px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: $blue2;
+    cursor: grab;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+  }
+
+  &__arrows {
+    display: block;
+    height: 16px;
+    width: 16px;
+    text-align: center;
+    line-height: 0;
+    font-size: 32px;
+    color: white;
+  }
+
+  .icon-arrow_l_s {
+    background-image: url(../../../images/arrow_left_short_white.svg);
+  }
+
+  .icon-arrow_r_s {
+    background-image: url(../../../images/arrow_right_short_white.svg);
+  }
+
+}
+
+.diffCard {
+  position: relative;
+  width: 488px;
+  height: 100%;
+  border-radius: 20px;
+  padding: 56px 32px 48px;
+  margin: 0 20px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  cursor: default;
+  background: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+
+  * {
+    cursor: default;
+
+    button, button * {
+      cursor: pointer;
+    }
+  }
+
+  @media #{$desktop-middle-down} {
+    padding: 56px 32px 120px;
+    margin: 0;
+    width: 100%;
+
+    cursor: grab;
+    * {
+      cursor: grab;
+
+      button, button * {
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  @media #{$desktop-small-down} {
+    padding: 32px 24px 112px;
+  }
+
+  &.with-border {
+    border: 1px solid $grayBlue4;
+    background: none;
+  }
+
+  &__image {
+    position: relative;
+    width: 144px;
+    height: 144px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin: 0 auto 40px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media #{$desktop-small-down} {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 24px;
+    }
+
+  }
+
+  &__title {
+    display: block;
+    position: relative;
+    text-align: center;
+    font-family: $fontDemi;
+    font-size: 32px;
+    line-height: 40px;
+    width: 100%;
+    margin: 0 auto 24px;
+
+    @media #{$desktop-small-down} {
+      font-size: 24px;
+      line-height: 32px;
+      margin: 0 auto 8px;
+    }
+
+  }
+
+  &__text {
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 24px;
+    line-height: 36px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media #{$desktop-small-down} {
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+  }
+
+  &__bar {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    width: 100%;
+    padding: 0 32px;
+  }
+
+}

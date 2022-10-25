@@ -1,0 +1,5 @@
+mixin textareaField(textareaName, placeholder)
+  .form__field
+    label.form__hidden-label
+      span.visually-hidden= placeholder
+    textarea.form__textarea(name=textareaName, placeholder=placeholder)
