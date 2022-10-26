@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skills",
+  "info": {
+    "singularName": "skill",
+    "pluralName": "skills",
+    "displayName": "skill",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "specialists": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::specialist.specialist",
+      "inversedBy": "skills"
+    }
+  }
+}

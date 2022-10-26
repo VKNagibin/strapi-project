@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "frontend_developers",
+  "info": {
+    "singularName": "frontend-developer",
+    "pluralName": "frontend-developers",
+    "displayName": "frontend-developer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

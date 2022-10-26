@@ -32,5 +32,5 @@ mixin teamCarousel(attributes)
                                         span=person.exp + declOfNum(person.exp, [" год", " года", " лет"])
                                     - if (person.stack)
                                         p
-                                            strong=person.stack
+                                            strong.stack=person.stack
                                 +e.comment.js-personalCard-animate=person.comment

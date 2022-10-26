@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "backend_developers",
+  "info": {
+    "singularName": "backend-developer",
+    "pluralName": "backend-developers",
+    "displayName": "Backend-developer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
